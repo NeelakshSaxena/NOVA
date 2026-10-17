@@ -1,0 +1,27 @@
+$ nova tac examples/basic.nova
+x = 10
+y = 20
+$t1 = x * 2
+z = $t1 + y
+print z
+exit 0
+$ nova tac examples/undeclared.nova
+examples/undeclared.nova:2:7: error: use of undeclared variable 'y'
+exit 1
+$ nova tac examples/duplicate.nova
+examples/duplicate.nova:2:5: error: variable 'x' is already declared (first declared at 1:5)
+exit 1
+$ nova tac examples/divzero.nova
+a = 10
+b = a - 10
+print a
+$t1 = a / b
+print $t1
+exit 0
+$ nova run examples/basic.nova
+40
+exit 0
+$ nova run examples/divzero.nova
+10
+examples/divzero.nova:4:9: error: runtime error: division by zero
+exit 1

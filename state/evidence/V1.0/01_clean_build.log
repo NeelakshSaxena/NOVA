@@ -1,0 +1,89 @@
+-- The CXX compiler identification is GNU 6.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/MinGW/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (2.3s)
+-- Generating done (0.2s)
+-- Build files have been written to: G:/Projects/NOVA/build
+configure exit 0
+[  1%] Building CXX object CMakeFiles/nova_core.dir/src/cli.cpp.obj
+[  3%] Building CXX object CMakeFiles/nova_core.dir/src/lexer.cpp.obj
+[  5%] Building CXX object CMakeFiles/nova_core.dir/src/ast.cpp.obj
+[  6%] Building CXX object CMakeFiles/nova_core.dir/src/parser.cpp.obj
+[  8%] Building CXX object CMakeFiles/nova_core.dir/src/semantic.cpp.obj
+[ 10%] Building CXX object CMakeFiles/nova_core.dir/src/tac.cpp.obj
+[ 11%] Building CXX object CMakeFiles/nova_core.dir/src/interp.cpp.obj
+[ 13%] Building CXX object CMakeFiles/nova_core.dir/src/optimizer.cpp.obj
+[ 15%] Building CXX object CMakeFiles/nova_core.dir/src/bench/util.cpp.obj
+[ 16%] Building CXX object CMakeFiles/nova_core.dir/src/bench/sha256.cpp.obj
+[ 18%] Building CXX object CMakeFiles/nova_core.dir/src/bench/json.cpp.obj
+[ 20%] Building CXX object CMakeFiles/nova_core.dir/src/bench/stats.cpp.obj
+[ 21%] Building CXX object CMakeFiles/nova_core.dir/src/bench/process.cpp.obj
+[ 23%] Building CXX object CMakeFiles/nova_core.dir/src/bench/env.cpp.obj
+[ 25%] Building CXX object CMakeFiles/nova_core.dir/src/bench/registry.cpp.obj
+[ 26%] Building CXX object CMakeFiles/nova_core.dir/src/bench/records.cpp.obj
+[ 28%] Building CXX object CMakeFiles/nova_core.dir/src/bench/harness.cpp.obj
+[ 30%] Building CXX object CMakeFiles/nova_core.dir/src/bench/cli.cpp.obj
+[ 31%] Building CXX object CMakeFiles/nova_core.dir/src/tune/space.cpp.obj
+[ 33%] Building CXX object CMakeFiles/nova_core.dir/src/tune/features.cpp.obj
+[ 35%] Building CXX object CMakeFiles/nova_core.dir/src/tune/adaptive.cpp.obj
+[ 36%] Building CXX object CMakeFiles/nova_core.dir/src/tune/tuner.cpp.obj
+[ 38%] Building CXX object CMakeFiles/nova_core.dir/src/tune/evaluate.cpp.obj
+[ 40%] Building CXX object CMakeFiles/nova_core.dir/src/tune/study.cpp.obj
+[ 41%] Building CXX object CMakeFiles/nova_core.dir/src/tune/cli.cpp.obj
+[ 43%] Linking CXX static library libnova_core.a
+[ 43%] Built target nova_core
+[ 45%] Building CXX object CMakeFiles/nova.dir/src/main.cpp.obj
+[ 46%] Linking CXX executable nova.exe
+[ 46%] Built target nova
+[ 48%] Building CXX object CMakeFiles/test_cli.dir/tests/test_cli.cpp.obj
+[ 50%] Linking CXX executable test_cli.exe
+[ 50%] Built target test_cli
+[ 51%] Building CXX object CMakeFiles/test_lexer.dir/tests/test_lexer.cpp.obj
+[ 53%] Linking CXX executable test_lexer.exe
+[ 53%] Built target test_lexer
+[ 55%] Building CXX object CMakeFiles/test_parser.dir/tests/test_parser.cpp.obj
+[ 56%] Linking CXX executable test_parser.exe
+[ 56%] Built target test_parser
+[ 58%] Building CXX object CMakeFiles/test_semantic.dir/tests/test_semantic.cpp.obj
+[ 60%] Linking CXX executable test_semantic.exe
+[ 60%] Built target test_semantic
+[ 61%] Building CXX object CMakeFiles/test_tac.dir/tests/test_tac.cpp.obj
+[ 63%] Linking CXX executable test_tac.exe
+[ 63%] Built target test_tac
+[ 65%] Building CXX object CMakeFiles/helper_child.dir/tests/helper_child.cpp.obj
+[ 66%] Linking CXX executable helper_child.exe
+[ 66%] Built target helper_child
+[ 68%] Building CXX object CMakeFiles/test_shuffle_checked.dir/tests/test_shuffle_checked.cpp.obj
+[ 70%] Linking CXX executable test_shuffle_checked.exe
+[ 70%] Built target test_shuffle_checked
+[ 71%] Building CXX object CMakeFiles/test_bench_unit.dir/tests/test_bench_unit.cpp.obj
+[ 73%] Linking CXX executable test_bench_unit.exe
+[ 73%] Built target test_bench_unit
+[ 75%] Building CXX object CMakeFiles/test_bench_process.dir/tests/test_bench_process.cpp.obj
+[ 76%] Linking CXX executable test_bench_process.exe
+[ 76%] Built target test_bench_process
+[ 78%] Building CXX object CMakeFiles/test_bench_integration.dir/tests/test_bench_integration.cpp.obj
+[ 80%] Linking CXX executable test_bench_integration.exe
+[ 80%] Built target test_bench_integration
+[ 81%] Building CXX object CMakeFiles/test_tune_unit.dir/tests/test_tune_unit.cpp.obj
+[ 83%] Linking CXX executable test_tune_unit.exe
+[ 83%] Built target test_tune_unit
+[ 85%] Building CXX object CMakeFiles/test_adaptive_unit.dir/tests/test_adaptive_unit.cpp.obj
+[ 86%] Linking CXX executable test_adaptive_unit.exe
+[ 86%] Built target test_adaptive_unit
+[ 88%] Building CXX object CMakeFiles/test_study_unit.dir/tests/test_study_unit.cpp.obj
+[ 90%] Linking CXX executable test_study_unit.exe
+[ 90%] Built target test_study_unit
+[ 91%] Building CXX object CMakeFiles/test_adaptive_integration.dir/tests/test_adaptive_integration.cpp.obj
+[ 93%] Linking CXX executable test_adaptive_integration.exe
+[ 93%] Built target test_adaptive_integration
+[ 95%] Building CXX object CMakeFiles/test_tune_integration.dir/tests/test_tune_integration.cpp.obj
+[ 96%] Linking CXX executable test_tune_integration.exe
+[ 96%] Built target test_tune_integration
+[ 98%] Building CXX object CMakeFiles/test_optimizer.dir/tests/test_optimizer.cpp.obj
+[100%] Linking CXX executable test_optimizer.exe
+[100%] Built target test_optimizer
+build exit 0

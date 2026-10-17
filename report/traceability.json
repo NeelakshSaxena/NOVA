@@ -1,0 +1,6733 @@
+{
+ "note": "every value in report.md that is not prose comes from one of these entries; 'sources' are repository-relative raw data files",
+ "entries": [
+  {
+   "key": "baseline_iqr_max",
+   "value": 7.246905918002236,
+   "text": "7.2",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json",
+    "benchmarks/results/V0.8-table-stencil/results.json",
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "max over workloads and {O2,O3} of 100*IQR/median"
+  },
+  {
+   "key": "baseline_iqr_median",
+   "value": 2.1241599171741288,
+   "text": "2.1",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json",
+    "benchmarks/results/V0.8-table-stencil/results.json",
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "median over workloads and {O2,O3} of 100*IQR/median"
+  },
+  {
+   "key": "bin_max",
+   "value": 90936,
+   "text": "90936",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json",
+    "benchmarks/results/V0.8-table-stencil/results.json",
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "max binary_size_bytes"
+  },
+  {
+   "key": "bin_min",
+   "value": 81660,
+   "text": "81660",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json",
+    "benchmarks/results/V0.8-table-stencil/results.json",
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "min binary_size_bytes"
+  },
+  {
+   "key": "boot_n",
+   "value": 4000,
+   "text": "4000",
+   "sources": [
+    "scripts/make_report.py"
+   ],
+   "formula": "BOOTSTRAP_RESAMPLES constant in bootstrap_ci()"
+  },
+  {
+   "key": "env_compiler",
+   "value": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+   "text": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "manifest.environment.compiler_version"
+  },
+  {
+   "key": "env_cpu",
+   "value": "Intel(R) Core(TM) Ultra 7 155H",
+   "text": "Intel(R) Core(TM) Ultra 7 155H",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "manifest.environment.cpu"
+  },
+  {
+   "key": "env_cpus",
+   "value": 22,
+   "text": "22",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "manifest.environment.logical_cpus"
+  },
+  {
+   "key": "env_os",
+   "value": "Windows 11 Home 26H2 (build 26300)",
+   "text": "Windows 11 Home 26H2 (build 26300)",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "manifest.environment.os"
+  },
+  {
+   "key": "env_ram_mib",
+   "value": 15789,
+   "text": "15789",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "ram_bytes / 2^20"
+  },
+  {
+   "key": "env_target",
+   "value": "mingw32",
+   "text": "mingw32",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "manifest.environment.compiler_target"
+  },
+  {
+   "key": "leakage_rules",
+   "value": "history = tuning tables of OTHER workloads only; holdout tables never enter history, policy or selection",
+   "text": "history = tuning tables of OTHER workloads only; holdout tables never enter history, policy or selection",
+   "sources": [
+    "benchmarks/results/V0.8-study/manifest.json"
+   ],
+   "formula": "manifest.leakage_rules"
+  },
+  {
+   "key": "n_holdout",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "tables with size_role=holdout"
+  },
+  {
+   "key": "n_table_failed",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "records with build!=OK or correctness!=PASS"
+  },
+  {
+   "key": "n_table_records",
+   "value": 288,
+   "text": "288",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "number of table records"
+  },
+  {
+   "key": "n_tuning",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "tables with size_role=tuning"
+  },
+  {
+   "key": "n_workloads",
+   "value": 12,
+   "text": "12",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "count of (benchmark,size) tables"
+  },
+  {
+   "key": "oracle_gt1",
+   "value": 12,
+   "text": "12",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "workloads where some searched configuration beats both baselines"
+  },
+  {
+   "key": "pair_H1_1_hi",
+   "value": 0.047149894444444444,
+   "text": "+0.0471",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_1_l",
+   "value": 53,
+   "text": "53",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H1_1_lo",
+   "value": 0.026439538888888864,
+   "text": "+0.0264",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_1_mean",
+   "value": 0.03670152777777777,
+   "text": "+0.0367",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H1_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H1_1_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_1_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H1_1_w",
+   "value": 127,
+   "text": "127",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_2_hi",
+   "value": 0.0369481277777777,
+   "text": "+0.0369",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_2_l",
+   "value": 56,
+   "text": "56",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H1_2_lo",
+   "value": 0.020795327777777727,
+   "text": "+0.0208",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_2_mean",
+   "value": 0.028512622222222166,
+   "text": "+0.0285",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H1_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H1_2_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_2_t",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H1_2_w",
+   "value": 118,
+   "text": "118",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_4_hi",
+   "value": 0.02133154999999998,
+   "text": "+0.0213",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_4_l",
+   "value": 27,
+   "text": "27",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H1_4_lo",
+   "value": 0.013549299999999997,
+   "text": "+0.0135",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_4_mean",
+   "value": 0.017426972222222215,
+   "text": "+0.0174",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H1_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H1_4_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_4_t",
+   "value": 33,
+   "text": "33",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H1_4_w",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_8_hi",
+   "value": 0.011058861111111115,
+   "text": "+0.0111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_8_l",
+   "value": 12,
+   "text": "12",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H1_8_lo",
+   "value": 0.006153961111111123,
+   "text": "+0.0062",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H1_8_mean",
+   "value": 0.00854285000000001,
+   "text": "+0.0085",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H1_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H1_8_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H1_8_t",
+   "value": 73,
+   "text": "73",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H1_8_w",
+   "value": 95,
+   "text": "95",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_1_hi",
+   "value": 0.05023299444444451,
+   "text": "+0.0502",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_1_l",
+   "value": 34,
+   "text": "34",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H2_1_lo",
+   "value": 0.03621036666666672,
+   "text": "+0.0362",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_1_mean",
+   "value": 0.04325761111111114,
+   "text": "+0.0433",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H2_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H2_1_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_1_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H2_1_w",
+   "value": 146,
+   "text": "146",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_2_hi",
+   "value": 0.03249231666666665,
+   "text": "+0.0325",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_2_l",
+   "value": 43,
+   "text": "43",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H2_2_lo",
+   "value": 0.021011655555555557,
+   "text": "+0.0210",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_2_mean",
+   "value": 0.026663649999999983,
+   "text": "+0.0267",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H2_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H2_2_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_2_t",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H2_2_w",
+   "value": 131,
+   "text": "131",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_4_hi",
+   "value": 0.01589579444444447,
+   "text": "+0.0159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_4_l",
+   "value": 33,
+   "text": "33",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H2_4_lo",
+   "value": 0.00926685000000001,
+   "text": "+0.0093",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_4_mean",
+   "value": 0.012390411111111119,
+   "text": "+0.0124",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H2_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H2_4_pw",
+   "value": 5,
+   "text": "5",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_4_t",
+   "value": 33,
+   "text": "33",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H2_4_w",
+   "value": 114,
+   "text": "114",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_8_hi",
+   "value": 0.008694588888888879,
+   "text": "+0.0087",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_8_l",
+   "value": 28,
+   "text": "28",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H2_8_lo",
+   "value": 0.004120477777777772,
+   "text": "+0.0041",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H2_8_mean",
+   "value": 0.006302822222222214,
+   "text": "+0.0063",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H2_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H2_8_pw",
+   "value": 5,
+   "text": "5",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H2_8_t",
+   "value": 73,
+   "text": "73",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H2_8_w",
+   "value": 79,
+   "text": "79",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_1_hi",
+   "value": 0.0156751000000001,
+   "text": "+0.0157",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_1_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3_1_lo",
+   "value": 0.013566100000000091,
+   "text": "+0.0136",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_1_mean",
+   "value": 0.0146180000000001,
+   "text": "+0.0146",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3_1_pw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_1_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3_1_w",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_2_hi",
+   "value": 0.009529350000000018,
+   "text": "+0.0095",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_2_l",
+   "value": 60,
+   "text": "60",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3_2_lo",
+   "value": 0.003133033333333341,
+   "text": "+0.0031",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_2_mean",
+   "value": 0.006393000000000049,
+   "text": "+0.0064",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3_2_pw",
+   "value": 4,
+   "text": "4",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_2_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3_2_w",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_4_hi",
+   "value": 0.012345200000000004,
+   "text": "+0.0123",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_4_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3_4_lo",
+   "value": 0.00809232222222223,
+   "text": "+0.0081",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_4_mean",
+   "value": 0.010220500000000002,
+   "text": "+0.0102",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3_4_pw",
+   "value": 3,
+   "text": "3",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_4_t",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3_4_w",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_8_hi",
+   "value": 0.008034400000000034,
+   "text": "+0.0080",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_8_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3_8_lo",
+   "value": 0.005312933333333356,
+   "text": "+0.0053",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3_8_mean",
+   "value": 0.0066520000000000285,
+   "text": "+0.0067",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3_8_pw",
+   "value": 2,
+   "text": "2",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3_8_t",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3_8_w",
+   "value": 60,
+   "text": "60",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_1_hi",
+   "value": -0.005712872222222268,
+   "text": "-0.0057",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_1_l",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3t_1_lo",
+   "value": -0.009755872222222274,
+   "text": "-0.0098",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_1_mean",
+   "value": -0.007693166666666714,
+   "text": "-0.0077",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3t_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3t_1_pw",
+   "value": 2,
+   "text": "2",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_1_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3t_1_w",
+   "value": 60,
+   "text": "60",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_2_hi",
+   "value": 0.010075422222222123,
+   "text": "+0.0101",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_2_l",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3t_2_lo",
+   "value": 0.002055405555555455,
+   "text": "+0.0021",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_2_mean",
+   "value": 0.005973833333333199,
+   "text": "+0.0060",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3t_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3t_2_pw",
+   "value": 3,
+   "text": "3",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_2_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3t_2_w",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_4_hi",
+   "value": 0.02765255555555558,
+   "text": "+0.0277",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_4_l",
+   "value": 30,
+   "text": "30",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3t_4_lo",
+   "value": 0.017701633333333334,
+   "text": "+0.0177",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_4_mean",
+   "value": 0.022683833333333344,
+   "text": "+0.0227",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3t_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3t_4_pw",
+   "value": 2,
+   "text": "2",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_4_t",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3t_4_w",
+   "value": 60,
+   "text": "60",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_8_hi",
+   "value": 0.009879427777777764,
+   "text": "+0.0099",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_8_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H3t_8_lo",
+   "value": 0.0058892666666666565,
+   "text": "+0.0059",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H3t_8_mean",
+   "value": 0.007876233333333323,
+   "text": "+0.0079",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H3t_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H3t_8_pw",
+   "value": 2,
+   "text": "2",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H3t_8_t",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H3t_8_w",
+   "value": 60,
+   "text": "60",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_1_hi",
+   "value": 0.03183540000000011,
+   "text": "+0.0318",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_1_l",
+   "value": 60,
+   "text": "60",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4_1_lo",
+   "value": 0.020021300000000092,
+   "text": "+0.0200",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_1_mean",
+   "value": 0.02603000000000009,
+   "text": "+0.0260",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4_1_pw",
+   "value": 4,
+   "text": "4",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_1_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4_1_w",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_2_hi",
+   "value": -0.0010893666666666716,
+   "text": "-0.0011",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_2_l",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4_2_lo",
+   "value": -0.003944266666666663,
+   "text": "-0.0039",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_2_mean",
+   "value": -0.0025339999999999994,
+   "text": "-0.0025",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4_2_pw",
+   "value": 3,
+   "text": "3",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_2_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4_2_w",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_4_hi",
+   "value": 0.005151050000000022,
+   "text": "+0.0052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_4_l",
+   "value": 47,
+   "text": "47",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4_4_lo",
+   "value": 0.0007241944444444444,
+   "text": "+0.0007",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_4_mean",
+   "value": 0.0028515777777777867,
+   "text": "+0.0029",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4_4_pw",
+   "value": 3,
+   "text": "3",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_4_t",
+   "value": 78,
+   "text": "78",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4_4_w",
+   "value": 55,
+   "text": "55",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_8_hi",
+   "value": 0.0032842111111110843,
+   "text": "+0.0033",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_8_l",
+   "value": 30,
+   "text": "30",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4_8_lo",
+   "value": 0.0016621166666666355,
+   "text": "+0.0017",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4_8_mean",
+   "value": 0.0024384999999999732,
+   "text": "+0.0024",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4_8_pw",
+   "value": 1,
+   "text": "1",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4_8_t",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4_8_w",
+   "value": 30,
+   "text": "30",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_1_hi",
+   "value": 0.01722677222222221,
+   "text": "+0.0172",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_1_l",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4t_1_lo",
+   "value": 0.0006833111111111413,
+   "text": "+0.0007",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_1_mean",
+   "value": 0.00887299999999992,
+   "text": "+0.0089",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4t_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4t_1_pw",
+   "value": 3,
+   "text": "3",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_1_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4t_1_w",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_2_hi",
+   "value": -0.003138816666666712,
+   "text": "-0.0031",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_2_l",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4t_2_lo",
+   "value": -0.008027366666666712,
+   "text": "-0.0080",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_2_mean",
+   "value": -0.005572166666666711,
+   "text": "-0.0056",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4t_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4t_2_pw",
+   "value": 3,
+   "text": "3",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_2_t",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4t_2_w",
+   "value": 90,
+   "text": "90",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_4_hi",
+   "value": 0.007944644444444439,
+   "text": "+0.0079",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_4_l",
+   "value": 17,
+   "text": "17",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4t_4_lo",
+   "value": 0.004873422222222227,
+   "text": "+0.0049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_4_mean",
+   "value": 0.006414061111111107,
+   "text": "+0.0064",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4t_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4t_4_pw",
+   "value": 4,
+   "text": "4",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_4_t",
+   "value": 78,
+   "text": "78",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4t_4_w",
+   "value": 85,
+   "text": "85",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_8_hi",
+   "value": 0.0005003222222222505,
+   "text": "+0.0005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_8_l",
+   "value": 30,
+   "text": "30",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H4t_8_lo",
+   "value": -0.001414855555555514,
+   "text": "-0.0014",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H4t_8_mean",
+   "value": -0.0004813333333332966,
+   "text": "-0.0005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H4t_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H4t_8_pw",
+   "value": 1,
+   "text": "1",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H4t_8_t",
+   "value": 120,
+   "text": "120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H4t_8_w",
+   "value": 30,
+   "text": "30",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_1_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_1_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5_1_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_1_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5_1_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_1_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5_1_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_2_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_2_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5_2_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_2_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5_2_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_2_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5_2_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_4_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_4_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5_4_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_4_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5_4_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_4_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5_4_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_8_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_8_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5_8_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5_8_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5_8_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5_8_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5_8_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_1_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_1_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5t_1_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_1_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5t_1_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5t_1_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_1_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5t_1_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_2_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_2_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5t_2_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_2_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5t_2_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5t_2_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_2_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5t_2_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_4_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_4_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5t_4_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_4_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5t_4_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5t_4_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_4_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5t_4_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_8_hi",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "97.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_8_l",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference < -1e-9"
+  },
+  {
+   "key": "pair_H5t_8_lo",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "2.5th percentile of 4000 bootstrap means of the paired differences"
+  },
+  {
+   "key": "pair_H5t_8_mean",
+   "value": 0.0,
+   "text": "+0.0000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "mean of paired differences (same benchmark, tuning size, seed)"
+  },
+  {
+   "key": "pair_H5t_8_nw",
+   "value": 6,
+   "text": "6",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "number of workloads (benchmark, tuning size)"
+  },
+  {
+   "key": "pair_H5t_8_pw",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "workloads whose mean paired difference > 1e-9"
+  },
+  {
+   "key": "pair_H5t_8_t",
+   "value": 180,
+   "text": "180",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with |difference| <= 1e-9"
+  },
+  {
+   "key": "pair_H5t_8_w",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "pairs with difference > 1e-9"
+  },
+  {
+   "key": "pb_budget",
+   "value": 4,
+   "text": "4",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "budget used in the per-benchmark table"
+  },
+  {
+   "key": "pb_matmul_adaptive-no-features_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_adaptive-no-features_h",
+   "value": 1.10766,
+   "text": "1.108",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_adaptive-no-features_t",
+   "value": 1.100532,
+   "text": "1.101",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_adaptive_g",
+   "value": 1.002107,
+   "text": "1.002",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_adaptive_h",
+   "value": 1.109952,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_adaptive_t",
+   "value": 1.098209,
+   "text": "1.098",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_random_g",
+   "value": 1.016443,
+   "text": "1.016",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_random_h",
+   "value": 1.088055,
+   "text": "1.088",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_matmul_random_t",
+   "value": 1.08307,
+   "text": "1.083",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_adaptive-no-features_g",
+   "value": 1.066626,
+   "text": "1.067",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_adaptive-no-features_h",
+   "value": 1.142317,
+   "text": "1.142",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_adaptive-no-features_t",
+   "value": 1.231556,
+   "text": "1.232",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_adaptive_g",
+   "value": 1.008803,
+   "text": "1.009",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_adaptive_h",
+   "value": 1.170686,
+   "text": "1.171",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_adaptive_t",
+   "value": 1.301929,
+   "text": "1.302",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_random_g",
+   "value": 1.031842,
+   "text": "1.032",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_random_h",
+   "value": 1.156008,
+   "text": "1.156",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_stencil_random_t",
+   "value": 1.273792,
+   "text": "1.274",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_adaptive-no-features_g",
+   "value": 1.004633,
+   "text": "1.005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_adaptive-no-features_h",
+   "value": 1.04865,
+   "text": "1.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_adaptive-no-features_t",
+   "value": 1.057258,
+   "text": "1.057",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_adaptive_g",
+   "value": 1.004633,
+   "text": "1.005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_adaptive_h",
+   "value": 1.04865,
+   "text": "1.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_adaptive_t",
+   "value": 1.057258,
+   "text": "1.057",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_random_g",
+   "value": 1.013387,
+   "text": "1.013",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_random_h",
+   "value": 1.048054,
+   "text": "1.048",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean at B=4"
+  },
+  {
+   "key": "pb_vector_add_random_t",
+   "value": 1.048254,
+   "text": "1.048",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean at B=4"
+  },
+  {
+   "key": "proto_affinity",
+   "value": "0x10",
+   "text": "0x10",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "protocol.cpu_affinity_mask (stored as a decimal string), shown in hex"
+  },
+  {
+   "key": "proto_reps",
+   "value": 15,
+   "text": "15",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "protocol.repetitions"
+  },
+  {
+   "key": "proto_tol",
+   "value": 1e-09,
+   "text": "1e-09",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "protocol.relative_tolerance"
+  },
+  {
+   "key": "proto_warmup",
+   "value": 2,
+   "text": "2",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/manifest.json"
+   ],
+   "formula": "protocol.warmup_runs"
+  },
+  {
+   "key": "real_h_adaptive",
+   "value": 1.110784330456361,
+   "text": "1.111",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json"
+   ],
+   "formula": "mean holdout speedup over all runs"
+  },
+  {
+   "key": "real_h_adaptive-no-features",
+   "value": 1.0951135521186368,
+   "text": "1.095",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json"
+   ],
+   "formula": "mean holdout speedup over all runs"
+  },
+  {
+   "key": "real_h_random",
+   "value": 1.1000596552742166,
+   "text": "1.100",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json"
+   ],
+   "formula": "mean holdout speedup over all runs"
+  },
+  {
+   "key": "real_matmul_adaptive-no-features_h",
+   "value": 1.1039810578683822,
+   "text": "1.104",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_matmul_adaptive-no-features_hmin",
+   "value": 1.1028065415082446,
+   "text": "1.103",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_matmul_adaptive-no-features_t",
+   "value": 1.0915968253062887,
+   "text": "1.092",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_matmul_adaptive-no-features_wall",
+   "value": 18.788040666666667,
+   "text": "18.8",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_matmul_adaptive_h",
+   "value": 1.1070732749886874,
+   "text": "1.107",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_matmul_adaptive_hmin",
+   "value": 1.1049201913053432,
+   "text": "1.105",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_matmul_adaptive_t",
+   "value": 1.0916140670795236,
+   "text": "1.092",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_matmul_adaptive_wall",
+   "value": 18.828969666666666,
+   "text": "18.8",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_matmul_random_h",
+   "value": 1.0984761200896156,
+   "text": "1.098",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_matmul_random_hmin",
+   "value": 1.0857869307515697,
+   "text": "1.086",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_matmul_random_t",
+   "value": 1.088155380511792,
+   "text": "1.088",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_matmul_random_wall",
+   "value": 15.44535,
+   "text": "15.4",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_n_adaptive",
+   "value": 9,
+   "text": "9",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json"
+   ],
+   "formula": "number of real runs"
+  },
+  {
+   "key": "real_n_adaptive-no-features",
+   "value": 9,
+   "text": "9",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json"
+   ],
+   "formula": "number of real runs"
+  },
+  {
+   "key": "real_n_random",
+   "value": 9,
+   "text": "9",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json"
+   ],
+   "formula": "number of real runs"
+  },
+  {
+   "key": "real_overhead_pct",
+   "value": 26.311721076715223,
+   "text": "+26",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json"
+   ],
+   "formula": "100*(mean adaptive wall / mean random wall - 1)"
+  },
+  {
+   "key": "real_stencil_adaptive-no-features_h",
+   "value": 1.1312340367217495,
+   "text": "1.131",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_stencil_adaptive-no-features_hmin",
+   "value": 1.122084314748398,
+   "text": "1.122",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_stencil_adaptive-no-features_t",
+   "value": 1.258368868494839,
+   "text": "1.258",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_stencil_adaptive-no-features_wall",
+   "value": 18.562082333333333,
+   "text": "18.6",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_stencil_adaptive_h",
+   "value": 1.1659344392052708,
+   "text": "1.166",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_stencil_adaptive_hmin",
+   "value": 1.1616863872540266,
+   "text": "1.162",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_stencil_adaptive_t",
+   "value": 1.312779944745698,
+   "text": "1.313",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_stencil_adaptive_wall",
+   "value": 18.530401333333334,
+   "text": "18.5",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_stencil_random_h",
+   "value": 1.1536283064347552,
+   "text": "1.154",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_stencil_random_hmin",
+   "value": 1.1012715151394874,
+   "text": "1.101",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_stencil_random_t",
+   "value": 1.287603591463837,
+   "text": "1.288",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_stencil_random_wall",
+   "value": 15.036859666666667,
+   "text": "15.0",
+   "sources": [
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_vector_add_adaptive-no-features_h",
+   "value": 1.050125561765779,
+   "text": "1.050",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_vector_add_adaptive-no-features_hmin",
+   "value": 1.0432400133333055,
+   "text": "1.043",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_vector_add_adaptive-no-features_t",
+   "value": 1.0642602004550576,
+   "text": "1.064",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_vector_add_adaptive-no-features_wall",
+   "value": 25.073751333333334,
+   "text": "25.1",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_vector_add_adaptive_h",
+   "value": 1.0593452771751244,
+   "text": "1.059",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_vector_add_adaptive_hmin",
+   "value": 1.0537773547149474,
+   "text": "1.054",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_vector_add_adaptive_t",
+   "value": 1.083514070168228,
+   "text": "1.084",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_vector_add_adaptive_wall",
+   "value": 24.216732,
+   "text": "24.2",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_vector_add_random_h",
+   "value": 1.0480745392982789,
+   "text": "1.048",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of mean holdout speedup (winner vs best of -O2/-O3, holdout re-measurement)"
+  },
+  {
+   "key": "real_vector_add_random_hmin",
+   "value": 1.0411525190103932,
+   "text": "1.041",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/results.json"
+   ],
+   "formula": "minimum over seeds"
+  },
+  {
+   "key": "real_vector_add_random_t",
+   "value": 1.067940383556262,
+   "text": "1.068",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/results.json"
+   ],
+   "formula": "mean over seeds of best-baseline median / winner median at the tuning size"
+  },
+  {
+   "key": "real_vector_add_random_wall",
+   "value": 18.267108666666665,
+   "text": "18.3",
+   "sources": [
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/results.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/results.json"
+   ],
+   "formula": "mean manifest.tuning_wall_time_s over seeds"
+  },
+  {
+   "key": "real_wall_adaptive",
+   "value": 20.525367666666668,
+   "text": "20.5",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json"
+   ],
+   "formula": "mean tuning_wall_time_s over all runs of this method"
+  },
+  {
+   "key": "real_wall_adaptive-no-features",
+   "value": 20.807958111111112,
+   "text": "20.8",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json"
+   ],
+   "formula": "mean tuning_wall_time_s over all runs of this method"
+  },
+  {
+   "key": "real_wall_random",
+   "value": 16.24977277777778,
+   "text": "16.2",
+   "sources": [
+    "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+    "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json"
+   ],
+   "formula": "mean tuning_wall_time_s over all runs of this method"
+  },
+  {
+   "key": "reg_adaptive_1_min",
+   "value": 1.061042,
+   "text": "1.061",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "minimum holdout_mean_speedup"
+  },
+  {
+   "key": "reg_adaptive_1_n",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "runs whose mean holdout speedup < 1 (selected config slower than best baseline)"
+  },
+  {
+   "key": "reg_adaptive_1_p",
+   "value": 0.0,
+   "text": "0.0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "100 * slower / runs"
+  },
+  {
+   "key": "reg_adaptive_4_min",
+   "value": 1.036258,
+   "text": "1.036",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "minimum holdout_mean_speedup"
+  },
+  {
+   "key": "reg_adaptive_4_n",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "runs whose mean holdout speedup < 1 (selected config slower than best baseline)"
+  },
+  {
+   "key": "reg_adaptive_4_p",
+   "value": 0.0,
+   "text": "0.0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "100 * slower / runs"
+  },
+  {
+   "key": "reg_adaptive_8_min",
+   "value": 1.036258,
+   "text": "1.036",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "minimum holdout_mean_speedup"
+  },
+  {
+   "key": "reg_adaptive_8_n",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "runs whose mean holdout speedup < 1 (selected config slower than best baseline)"
+  },
+  {
+   "key": "reg_adaptive_8_p",
+   "value": 0.0,
+   "text": "0.0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "100 * slower / runs"
+  },
+  {
+   "key": "reg_random_1_min",
+   "value": 0.988392,
+   "text": "0.988",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "minimum holdout_mean_speedup"
+  },
+  {
+   "key": "reg_random_1_n",
+   "value": 36,
+   "text": "36",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "runs whose mean holdout speedup < 1 (selected config slower than best baseline)"
+  },
+  {
+   "key": "reg_random_1_p",
+   "value": 20.0,
+   "text": "20.0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "100 * slower / runs"
+  },
+  {
+   "key": "reg_random_4_min",
+   "value": 0.999234,
+   "text": "0.999",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "minimum holdout_mean_speedup"
+  },
+  {
+   "key": "reg_random_4_n",
+   "value": 2,
+   "text": "2",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "runs whose mean holdout speedup < 1 (selected config slower than best baseline)"
+  },
+  {
+   "key": "reg_random_4_p",
+   "value": 1.1111111111111112,
+   "text": "1.1",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "100 * slower / runs"
+  },
+  {
+   "key": "reg_random_8_min",
+   "value": 1.012925,
+   "text": "1.013",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "minimum holdout_mean_speedup"
+  },
+  {
+   "key": "reg_random_8_n",
+   "value": 0,
+   "text": "0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "runs whose mean holdout speedup < 1 (selected config slower than best baseline)"
+  },
+  {
+   "key": "reg_random_8_p",
+   "value": 0.0,
+   "text": "0.0",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "100 * slower / runs"
+  },
+  {
+   "key": "space_search",
+   "value": 22,
+   "text": "22",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "configurations per table minus 2 baselines"
+  },
+  {
+   "key": "space_total",
+   "value": 24,
+   "text": "24",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul",
+    "benchmarks/results/V0.8-table-stencil",
+    "benchmarks/results/V0.8-table-vector_add"
+   ],
+   "formula": "configurations per table (2 baselines + searchable)"
+  },
+  {
+   "key": "st_adaptive-no-features_12_g",
+   "value": 1.001616,
+   "text": "1.002",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_12_h",
+   "value": 1.112365,
+   "text": "1.112",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_12_hs",
+   "value": 0.054884,
+   "text": "0.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_12_t",
+   "value": 1.156527,
+   "text": "1.157",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_12_ts",
+   "value": 0.108274,
+   "text": "0.108",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_1_g",
+   "value": 1.030943,
+   "text": "1.031",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_1_h",
+   "value": 1.083887,
+   "text": "1.084",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_1_hs",
+   "value": 0.044089,
+   "text": "0.044",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_1_t",
+   "value": 1.122037,
+   "text": "1.122",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_1_ts",
+   "value": 0.079861,
+   "text": "0.080",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_22_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_22_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_22_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_22_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_22_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_2_g",
+   "value": 1.02517,
+   "text": "1.025",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_2_h",
+   "value": 1.094647,
+   "text": "1.095",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_2_hs",
+   "value": 0.044079,
+   "text": "0.044",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_2_t",
+   "value": 1.128252,
+   "text": "1.128",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_2_ts",
+   "value": 0.077032,
+   "text": "0.077",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_3_g",
+   "value": 1.024285,
+   "text": "1.024",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_3_h",
+   "value": 1.098508,
+   "text": "1.099",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_3_hs",
+   "value": 0.0402,
+   "text": "0.040",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_3_t",
+   "value": 1.129211,
+   "text": "1.129",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_3_ts",
+   "value": 0.076509,
+   "text": "0.077",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_4_g",
+   "value": 1.023753,
+   "text": "1.024",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_4_h",
+   "value": 1.099542,
+   "text": "1.100",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_4_hs",
+   "value": 0.039456,
+   "text": "0.039",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_4_t",
+   "value": 1.129782,
+   "text": "1.130",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_4_ts",
+   "value": 0.076137,
+   "text": "0.076",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_6_g",
+   "value": 1.022209,
+   "text": "1.022",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_6_h",
+   "value": 1.099452,
+   "text": "1.099",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_6_hs",
+   "value": 0.039544,
+   "text": "0.040",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_6_t",
+   "value": 1.131392,
+   "text": "1.131",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_6_ts",
+   "value": 0.07435,
+   "text": "0.074",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_8_g",
+   "value": 1.007824,
+   "text": "1.008",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_8_h",
+   "value": 1.105713,
+   "text": "1.106",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-features_8_hs",
+   "value": 0.046723,
+   "text": "0.047",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-features_8_t",
+   "value": 1.148651,
+   "text": "1.149",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-features_8_ts",
+   "value": 0.09763,
+   "text": "0.098",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_12_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_12_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_12_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_12_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_12_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_1_g",
+   "value": 1.038141,
+   "text": "1.038",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_1_h",
+   "value": 1.098505,
+   "text": "1.099",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_1_hs",
+   "value": 0.039529,
+   "text": "0.040",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_1_t",
+   "value": 1.114344,
+   "text": "1.114",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_1_ts",
+   "value": 0.079766,
+   "text": "0.080",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_22_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_22_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_22_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_22_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_22_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_2_g",
+   "value": 1.021041,
+   "text": "1.021",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_2_h",
+   "value": 1.10104,
+   "text": "1.101",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_2_hs",
+   "value": 0.045917,
+   "text": "0.046",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_2_t",
+   "value": 1.134226,
+   "text": "1.134",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_2_ts",
+   "value": 0.102008,
+   "text": "0.102",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_3_g",
+   "value": 1.014892,
+   "text": "1.015",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_3_h",
+   "value": 1.099524,
+   "text": "1.100",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_3_hs",
+   "value": 0.053909,
+   "text": "0.054",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_3_t",
+   "value": 1.141251,
+   "text": "1.141",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_3_ts",
+   "value": 0.103945,
+   "text": "0.104",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_4_g",
+   "value": 1.005181,
+   "text": "1.005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_4_h",
+   "value": 1.109763,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_4_hs",
+   "value": 0.050828,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_4_t",
+   "value": 1.152465,
+   "text": "1.152",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_4_ts",
+   "value": 0.108129,
+   "text": "0.108",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_6_g",
+   "value": 1.00316,
+   "text": "1.003",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_6_h",
+   "value": 1.112454,
+   "text": "1.112",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_6_hs",
+   "value": 0.054799,
+   "text": "0.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_6_t",
+   "value": 1.154917,
+   "text": "1.155",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_6_ts",
+   "value": 0.10988,
+   "text": "0.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_8_g",
+   "value": 1.001616,
+   "text": "1.002",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_8_h",
+   "value": 1.112365,
+   "text": "1.112",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-feedback_8_hs",
+   "value": 0.054884,
+   "text": "0.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-feedback_8_t",
+   "value": 1.156527,
+   "text": "1.157",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-feedback_8_ts",
+   "value": 0.108274,
+   "text": "0.108",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_12_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_12_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_12_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_12_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_12_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_1_g",
+   "value": 1.050226,
+   "text": "1.050",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_1_h",
+   "value": 1.072475,
+   "text": "1.072",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_1_hs",
+   "value": 0.068757,
+   "text": "0.069",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_1_t",
+   "value": 1.105471,
+   "text": "1.105",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_1_ts",
+   "value": 0.122299,
+   "text": "0.122",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_22_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_22_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_22_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_22_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_22_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_2_g",
+   "value": 1.017107,
+   "text": "1.017",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_2_h",
+   "value": 1.103574,
+   "text": "1.104",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_2_hs",
+   "value": 0.05083,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_2_t",
+   "value": 1.139798,
+   "text": "1.140",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_2_ts",
+   "value": 0.11612,
+   "text": "0.116",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_3_g",
+   "value": 1.01479,
+   "text": "1.015",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_3_h",
+   "value": 1.10558,
+   "text": "1.106",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_3_hs",
+   "value": 0.051332,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_3_t",
+   "value": 1.142328,
+   "text": "1.142",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_3_ts",
+   "value": 0.115615,
+   "text": "0.116",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_4_g",
+   "value": 1.01138,
+   "text": "1.011",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_4_h",
+   "value": 1.106911,
+   "text": "1.107",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_4_hs",
+   "value": 0.052116,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_4_t",
+   "value": 1.146051,
+   "text": "1.146",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_4_ts",
+   "value": 0.114611,
+   "text": "0.115",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_6_g",
+   "value": 1.004669,
+   "text": "1.005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_6_h",
+   "value": 1.112569,
+   "text": "1.113",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_6_hs",
+   "value": 0.050109,
+   "text": "0.050",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_6_t",
+   "value": 1.153634,
+   "text": "1.154",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_6_ts",
+   "value": 0.114528,
+   "text": "0.115",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_8_g",
+   "value": 1.001544,
+   "text": "1.002",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_8_h",
+   "value": 1.109926,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive-no-history_8_hs",
+   "value": 0.051829,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive-no-history_8_t",
+   "value": 1.157009,
+   "text": "1.157",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive-no-history_8_ts",
+   "value": 0.112618,
+   "text": "0.113",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_12_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_12_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_12_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_12_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_12_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_1_g",
+   "value": 1.038141,
+   "text": "1.038",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_1_h",
+   "value": 1.098505,
+   "text": "1.099",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_1_hs",
+   "value": 0.039529,
+   "text": "0.040",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_1_t",
+   "value": 1.114344,
+   "text": "1.114",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_1_ts",
+   "value": 0.079766,
+   "text": "0.080",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_22_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_22_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_22_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_22_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_22_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_2_g",
+   "value": 1.021041,
+   "text": "1.021",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_2_h",
+   "value": 1.10104,
+   "text": "1.101",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_2_hs",
+   "value": 0.045917,
+   "text": "0.046",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_2_t",
+   "value": 1.134226,
+   "text": "1.134",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_2_ts",
+   "value": 0.102008,
+   "text": "0.102",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_3_g",
+   "value": 1.014114,
+   "text": "1.014",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_3_h",
+   "value": 1.100322,
+   "text": "1.100",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_3_hs",
+   "value": 0.052362,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_3_t",
+   "value": 1.142478,
+   "text": "1.142",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_3_ts",
+   "value": 0.108588,
+   "text": "0.109",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_4_g",
+   "value": 1.005181,
+   "text": "1.005",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_4_h",
+   "value": 1.109763,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_4_hs",
+   "value": 0.050828,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_4_t",
+   "value": 1.152465,
+   "text": "1.152",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_4_ts",
+   "value": 0.108129,
+   "text": "0.108",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_6_g",
+   "value": 1.0028,
+   "text": "1.003",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_6_h",
+   "value": 1.112434,
+   "text": "1.112",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_6_hs",
+   "value": 0.054819,
+   "text": "0.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_6_t",
+   "value": 1.155293,
+   "text": "1.155",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_6_ts",
+   "value": 0.109509,
+   "text": "0.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_adaptive_8_g",
+   "value": 1.001616,
+   "text": "1.002",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_adaptive_8_h",
+   "value": 1.112365,
+   "text": "1.112",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_adaptive_8_hs",
+   "value": 0.054884,
+   "text": "0.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_adaptive_8_t",
+   "value": 1.156527,
+   "text": "1.157",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_adaptive_8_ts",
+   "value": 0.108274,
+   "text": "0.108",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_baseline-O2_h",
+   "value": 0.927198,
+   "text": "0.927",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean (no search)"
+  },
+  {
+   "key": "st_baseline-O2_t",
+   "value": 0.885529,
+   "text": "0.886",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean (no search)"
+  },
+  {
+   "key": "st_baseline-O3_h",
+   "value": 0.999745,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean (no search)"
+  },
+  {
+   "key": "st_baseline-O3_t",
+   "value": 0.999931,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean (no search)"
+  },
+  {
+   "key": "st_fixed_12_g",
+   "value": 1.024872,
+   "text": "1.025",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_12_h",
+   "value": 1.097181,
+   "text": "1.097",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_12_hs",
+   "value": 0.030094,
+   "text": "0.030",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_12_t",
+   "value": 1.128602,
+   "text": "1.129",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_12_ts",
+   "value": 0.086591,
+   "text": "0.087",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_1_g",
+   "value": 1.119647,
+   "text": "1.120",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_1_h",
+   "value": 1.018163,
+   "text": "1.018",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_1_hs",
+   "value": 0.028593,
+   "text": "0.029",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_1_t",
+   "value": 1.0326,
+   "text": "1.033",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_1_ts",
+   "value": 0.050673,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_22_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_22_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_22_hs",
+   "value": 0.056711,
+   "text": "0.057",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_22_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_22_ts",
+   "value": 0.12128,
+   "text": "0.121",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_2_g",
+   "value": 1.088744,
+   "text": "1.089",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_2_h",
+   "value": 1.054993,
+   "text": "1.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_2_hs",
+   "value": 0.049151,
+   "text": "0.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_2_t",
+   "value": 1.063264,
+   "text": "1.063",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_2_ts",
+   "value": 0.049446,
+   "text": "0.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_3_g",
+   "value": 1.088744,
+   "text": "1.089",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_3_h",
+   "value": 1.054993,
+   "text": "1.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_3_hs",
+   "value": 0.049151,
+   "text": "0.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_3_t",
+   "value": 1.063264,
+   "text": "1.063",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_3_ts",
+   "value": 0.049446,
+   "text": "0.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_4_g",
+   "value": 1.087692,
+   "text": "1.088",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_4_h",
+   "value": 1.053058,
+   "text": "1.053",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_4_hs",
+   "value": 0.0519,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_4_t",
+   "value": 1.06427,
+   "text": "1.064",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_4_ts",
+   "value": 0.04794,
+   "text": "0.048",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_6_g",
+   "value": 1.02686,
+   "text": "1.027",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_6_h",
+   "value": 1.098375,
+   "text": "1.098",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_6_hs",
+   "value": 0.028338,
+   "text": "0.028",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_6_t",
+   "value": 1.126548,
+   "text": "1.127",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_6_ts",
+   "value": 0.088955,
+   "text": "0.089",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_fixed_8_g",
+   "value": 1.02686,
+   "text": "1.027",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_fixed_8_h",
+   "value": 1.098375,
+   "text": "1.098",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_fixed_8_hs",
+   "value": 0.028338,
+   "text": "0.028",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_fixed_8_t",
+   "value": 1.126548,
+   "text": "1.127",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_fixed_8_ts",
+   "value": 0.088955,
+   "text": "0.089",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_12_g",
+   "value": 1.003718,
+   "text": "1.004",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_12_h",
+   "value": 1.109479,
+   "text": "1.109",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_12_hs",
+   "value": 0.050666,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_12_t",
+   "value": 1.154268,
+   "text": "1.154",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_12_ts",
+   "value": 0.109636,
+   "text": "0.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_1_g",
+   "value": 1.077067,
+   "text": "1.077",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_1_h",
+   "value": 1.055248,
+   "text": "1.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_1_hs",
+   "value": 0.055086,
+   "text": "0.055",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_1_t",
+   "value": 1.077642,
+   "text": "1.078",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_1_ts",
+   "value": 0.093634,
+   "text": "0.094",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_22_g",
+   "value": 1.0,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_22_h",
+   "value": 1.109837,
+   "text": "1.110",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_22_hs",
+   "value": 0.051914,
+   "text": "0.052",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_22_t",
+   "value": 1.158619,
+   "text": "1.159",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_22_ts",
+   "value": 0.111021,
+   "text": "0.111",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_2_g",
+   "value": 1.049077,
+   "text": "1.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_2_h",
+   "value": 1.074377,
+   "text": "1.074",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_2_hs",
+   "value": 0.057333,
+   "text": "0.057",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_2_t",
+   "value": 1.105713,
+   "text": "1.106",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_2_ts",
+   "value": 0.104143,
+   "text": "0.104",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_3_g",
+   "value": 1.030116,
+   "text": "1.030",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_3_h",
+   "value": 1.090333,
+   "text": "1.090",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_3_hs",
+   "value": 0.050545,
+   "text": "0.051",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_3_t",
+   "value": 1.124618,
+   "text": "1.125",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_3_ts",
+   "value": 0.100066,
+   "text": "0.100",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_4_g",
+   "value": 1.020557,
+   "text": "1.021",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_4_h",
+   "value": 1.097372,
+   "text": "1.097",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_4_hs",
+   "value": 0.048617,
+   "text": "0.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_4_t",
+   "value": 1.135039,
+   "text": "1.135",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_4_ts",
+   "value": 0.102878,
+   "text": "0.103",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_6_g",
+   "value": 1.013979,
+   "text": "1.014",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_6_h",
+   "value": 1.102728,
+   "text": "1.103",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_6_hs",
+   "value": 0.047397,
+   "text": "0.047",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_6_t",
+   "value": 1.142402,
+   "text": "1.142",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_6_ts",
+   "value": 0.104986,
+   "text": "0.105",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "st_random_8_g",
+   "value": 1.009096,
+   "text": "1.009",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "regret_mean"
+  },
+  {
+   "key": "st_random_8_h",
+   "value": 1.106062,
+   "text": "1.106",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_mean"
+  },
+  {
+   "key": "st_random_8_hs",
+   "value": 0.049164,
+   "text": "0.049",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "holdout_stdev"
+  },
+  {
+   "key": "st_random_8_t",
+   "value": 1.147984,
+   "text": "1.148",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_mean, benchmark=ALL"
+  },
+  {
+   "key": "st_random_8_ts",
+   "value": 0.106659,
+   "text": "0.107",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_summary.csv"
+   ],
+   "formula": "tuning_stdev"
+  },
+  {
+   "key": "study_budgets",
+   "value": "1, 2, 3, 4, 6, 8, 12, 22",
+   "text": "1, 2, 3, 4, 6, 8, 12, 22",
+   "sources": [
+    "benchmarks/results/V0.8-study/manifest.json"
+   ],
+   "formula": "config.budgets"
+  },
+  {
+   "key": "study_pilot",
+   "value": 5,
+   "text": "5",
+   "sources": [
+    "benchmarks/results/V0.8-study/manifest.json"
+   ],
+   "formula": "config.pilot_reps"
+  },
+  {
+   "key": "study_rows",
+   "value": 7260,
+   "text": "7260",
+   "sources": [
+    "benchmarks/results/V0.8-study/manifest.json"
+   ],
+   "formula": "number of replayed runs"
+  },
+  {
+   "key": "study_seeds",
+   "value": 30,
+   "text": "30",
+   "sources": [
+    "benchmarks/results/V0.8-study/manifest.json"
+   ],
+   "formula": "config.seeds"
+  },
+  {
+   "key": "verdict_H1",
+   "value": "SUPPORTED",
+   "text": "SUPPORTED",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H2",
+   "value": "SUPPORTED",
+   "text": "SUPPORTED",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H3",
+   "value": "INCONCLUSIVE",
+   "text": "INCONCLUSIVE",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H3t",
+   "value": "INCONCLUSIVE",
+   "text": "INCONCLUSIVE",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H4",
+   "value": "INCONCLUSIVE",
+   "text": "INCONCLUSIVE",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H4t",
+   "value": "INCONCLUSIVE",
+   "text": "INCONCLUSIVE",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H5",
+   "value": "INCONCLUSIVE",
+   "text": "INCONCLUSIVE",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "verdict_H5t",
+   "value": "INCONCLUSIVE",
+   "text": "INCONCLUSIVE",
+   "sources": [
+    "benchmarks/results/V0.8-study/study_runs.csv"
+   ],
+   "formula": "rule (see report): CI lower bound > 0 AND >= 2/3 of workloads positive at >= 3/4 of budgets {1,2,4,8}, and no budget with CI upper < 0 AND >= 2/3 of workloads negative -> SUPPORTED; mirror image -> NOT SUPPORTED; else INCONCLUSIVE"
+  },
+  {
+   "key": "wl_matmul_256_o2",
+   "value": 14.0647,
+   "text": "14.065",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_matmul_256_o2iqr",
+   "value": 0.8716858518134196,
+   "text": "0.9",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_matmul_256_o3",
+   "value": 14.0371,
+   "text": "14.037",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_matmul_256_o3iqr",
+   "value": 2.135412585220603,
+   "text": "2.1",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_matmul_256_oracle",
+   "value": 1.0941097609453065,
+   "text": "1.094",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_matmul_256_ratio",
+   "value": 1.0019662180934807,
+   "text": "1.002",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_matmul_320_o2",
+   "value": 27.8268,
+   "text": "27.827",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_matmul_320_o2iqr",
+   "value": 0.9593269797461489,
+   "text": "1.0",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_matmul_320_o3",
+   "value": 27.8695,
+   "text": "27.869",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_matmul_320_o3iqr",
+   "value": 1.9628985091228845,
+   "text": "2.0",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_matmul_320_oracle",
+   "value": 1.1087832264799755,
+   "text": "1.109",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_matmul_320_ratio",
+   "value": 0.9984678591291555,
+   "text": "0.998",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_matmul_384_o2",
+   "value": 48.5895,
+   "text": "48.590",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_matmul_384_o2iqr",
+   "value": 0.9237592483973024,
+   "text": "0.9",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_matmul_384_o3",
+   "value": 48.6095,
+   "text": "48.609",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_matmul_384_o3iqr",
+   "value": 0.8100268466040531,
+   "text": "0.8",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_matmul_384_oracle",
+   "value": 1.106953443232456,
+   "text": "1.107",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_matmul_384_ratio",
+   "value": 0.9995885577922012,
+   "text": "1.000",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_matmul_448_o2",
+   "value": 78.3697,
+   "text": "78.370",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_matmul_448_o2iqr",
+   "value": 0.8570914524363387,
+   "text": "0.9",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_matmul_448_o3",
+   "value": 78.3061,
+   "text": "78.306",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_matmul_448_o3iqr",
+   "value": 1.227490578639474,
+   "text": "1.2",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_matmul_448_oracle",
+   "value": 1.1145189296897238,
+   "text": "1.115",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_matmul_448_ratio",
+   "value": 1.0008121972617714,
+   "text": "1.001",
+   "sources": [
+    "benchmarks/results/V0.8-table-matmul/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_stencil_1600000_o2",
+   "value": 192.1202,
+   "text": "192.120",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_stencil_1600000_o2iqr",
+   "value": 3.6041499019884506,
+   "text": "3.6",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_stencil_1600000_o3",
+   "value": 183.1689,
+   "text": "183.169",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_stencil_1600000_o3iqr",
+   "value": 3.157823189416987,
+   "text": "3.2",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_stencil_1600000_oracle",
+   "value": 1.0403517122143944,
+   "text": "1.040",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_stencil_1600000_ratio",
+   "value": 1.0488691038707991,
+   "text": "1.049",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_stencil_200000_o2",
+   "value": 16.3124,
+   "text": "16.312",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_stencil_200000_o2iqr",
+   "value": 1.6325004291214111,
+   "text": "1.6",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_stencil_200000_o3",
+   "value": 11.6986,
+   "text": "11.699",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_stencil_200000_o3iqr",
+   "value": 1.8707366693450478,
+   "text": "1.9",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_stencil_200000_oracle",
+   "value": 1.319415779980168,
+   "text": "1.319",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_stencil_200000_ratio",
+   "value": 1.394389072196673,
+   "text": "1.394",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_stencil_400000_o2",
+   "value": 32.4139,
+   "text": "32.414",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_stencil_400000_o2iqr",
+   "value": 1.2901872344889038,
+   "text": "1.3",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_stencil_400000_o3",
+   "value": 23.2255,
+   "text": "23.226",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_stencil_400000_o3iqr",
+   "value": 2.6759380852941854,
+   "text": "2.7",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_stencil_400000_oracle",
+   "value": 1.325459692054832,
+   "text": "1.325",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_stencil_400000_ratio",
+   "value": 1.3956168866116982,
+   "text": "1.396",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_stencil_800000_o2",
+   "value": 68.4089,
+   "text": "68.409",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_stencil_800000_o2iqr",
+   "value": 3.472647564863644,
+   "text": "3.5",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_stencil_800000_o3",
+   "value": 49.1681,
+   "text": "49.168",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_stencil_800000_o3iqr",
+   "value": 2.394133594749436,
+   "text": "2.4",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_stencil_800000_oracle",
+   "value": 1.307057372386183,
+   "text": "1.307",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_stencil_800000_ratio",
+   "value": 1.391326896910802,
+   "text": "1.391",
+   "sources": [
+    "benchmarks/results/V0.8-table-stencil/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_vector_add_1000000_o2",
+   "value": 16.4346,
+   "text": "16.435",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_vector_add_1000000_o2iqr",
+   "value": 7.246905918002236,
+   "text": "7.2",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_vector_add_1000000_o3",
+   "value": 15.3833,
+   "text": "15.383",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_vector_add_1000000_o3iqr",
+   "value": 5.582352291120883,
+   "text": "5.6",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_vector_add_1000000_oracle",
+   "value": 1.0717679681186079,
+   "text": "1.072",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_vector_add_1000000_ratio",
+   "value": 1.068340343099335,
+   "text": "1.068",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_vector_add_2000000_o2",
+   "value": 36.0752,
+   "text": "36.075",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_vector_add_2000000_o2iqr",
+   "value": 3.485219763161418,
+   "text": "3.5",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_vector_add_2000000_o3",
+   "value": 34.3832,
+   "text": "34.383",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_vector_add_2000000_o3iqr",
+   "value": 5.014949161218268,
+   "text": "5.0",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_vector_add_2000000_oracle",
+   "value": 1.0959836797143951,
+   "text": "1.096",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_vector_add_2000000_ratio",
+   "value": 1.0492100793410735,
+   "text": "1.049",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_vector_add_4000000_o2",
+   "value": 73.9548,
+   "text": "73.955",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_vector_add_4000000_o2iqr",
+   "value": 2.2809878466306563,
+   "text": "2.3",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_vector_add_4000000_o3",
+   "value": 69.7546,
+   "text": "69.755",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_vector_add_4000000_o3iqr",
+   "value": 2.1129072491276544,
+   "text": "2.1",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_vector_add_4000000_oracle",
+   "value": 1.0524103511122376,
+   "text": "1.052",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_vector_add_4000000_ratio",
+   "value": 1.060213950047739,
+   "text": "1.060",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  },
+  {
+   "key": "wl_vector_add_6000000_o2",
+   "value": 111.8699,
+   "text": "111.870",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median_ms"
+  },
+  {
+   "key": "wl_vector_add_6000000_o2iqr",
+   "value": 2.5459484633489473,
+   "text": "2.5",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O2"
+  },
+  {
+   "key": "wl_vector_add_6000000_o3",
+   "value": 105.2655,
+   "text": "105.266",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O3 median_ms"
+  },
+  {
+   "key": "wl_vector_add_6000000_o3iqr",
+   "value": 1.865900983703116,
+   "text": "1.9",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "100*iqr_ms/median_ms of O3"
+  },
+  {
+   "key": "wl_vector_add_6000000_oracle",
+   "value": 1.0431901358970064,
+   "text": "1.043",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "min(O2,O3 median) / best configuration median"
+  },
+  {
+   "key": "wl_vector_add_6000000_ratio",
+   "value": 1.0627404040260104,
+   "text": "1.063",
+   "sources": [
+    "benchmarks/results/V0.8-table-vector_add/results.json"
+   ],
+   "formula": "O2 median / O3 median"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+Usage: nova [option]
+
+Options:
+  -h, --help     Show this help and exit
+      --version  Print the version and exit
+
+No other commands are implemented yet.
+help exit 0
+nova 0.1.0
+version exit 0
+nova: unknown argument '--bogus'
+Try 'nova --help' for usage.
+bogus exit 2

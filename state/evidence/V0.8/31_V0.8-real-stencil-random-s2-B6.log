@@ -1,0 +1,43 @@
+tuning stencil -> benchmarks/results/V0.8-real-stencil-random-s2-B6
+build O2 ... ok
+build O3 ... ok
+build O3+prefetch ... ok
+build O2+prefetch ... ok
+build O2+prefetch+unroll+native ... ok
+build O3+native ... ok
+build O2+unroll+native ... ok
+build O2+prefetch+native ... ok
+  validate O2 n=200000: PASS
+  validate O3 n=200000: PASS
+  validate O3+prefetch n=200000: PASS
+  validate O2+prefetch n=200000: PASS
+  validate O2+prefetch+unroll+native n=200000: PASS
+  validate O3+native n=200000: PASS
+  validate O2+unroll+native n=200000: PASS
+  validate O2+prefetch+native n=200000: PASS
+  O2 n=200000 median 16.2080 ms (IQR 0.2078, 15 samples)
+  O3 n=200000 median 11.6314 ms (IQR 0.1479, 15 samples)
+  O3+prefetch n=200000 median 9.7796 ms (IQR 0.1551, 15 samples)
+  O2+prefetch n=200000 median 17.4798 ms (IQR 0.8227, 15 samples)
+  O2+prefetch+unroll+native n=200000 median 11.8004 ms (IQR 0.3552, 15 samples)
+  O3+native n=200000 median 9.3500 ms (IQR 0.3809, 15 samples)
+  O2+unroll+native n=200000 median 10.8187 ms (IQR 0.2383, 15 samples)
+  O2+prefetch+native n=200000 median 11.7569 ms (IQR 0.1276, 15 samples)
+
+SmartPass tuning result: stencil, input size 200000, experiment V0.8-real-stencil-random-s2-B6
+strategy random (search seed 2), budget 6 search candidates; evaluated 6 + baselines (8 builds total)
+tuning wall time 15.40 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     7  O2                              ELIGIBLE                16.2080   0.2078       81660  
+     4  O3                              ELIGIBLE                11.6314   0.1479       81746  
+     2  O3+prefetch                     ELIGIBLE                 9.7796   0.1551       85330  
+     8  O2+prefetch                     ELIGIBLE                17.4798   0.8227       84732  
+     6  O2+prefetch+unroll+native       ELIGIBLE                11.8004   0.3552       86780  
+     1  O3+native                       ELIGIBLE                 9.3500   0.3809       82258  WINNER
+     3  O2+unroll+native                ELIGIBLE                10.8187   0.2383       83708  
+     5  O2+prefetch+native              ELIGIBLE                11.7569   0.1276       84732  
+
+winner: O3+native [-std=c++17 -msse2 -mfpmath=sse -O3 -march=native], median 9.3500 ms over 15 samples
+best baseline: O3, median 11.6314 ms; ratio of medians 1.244; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)
+results written to benchmarks/results/V0.8-real-stencil-random-s2-B6

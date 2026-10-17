@@ -1,0 +1,29 @@
+-- The CXX compiler identification is GNU 6.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/MinGW/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (1.8s)
+-- Generating done (0.1s)
+-- Build files have been written to: G:/Projects/NOVA/build
+configure exit 0
+[  7%] Building CXX object CMakeFiles/nova_core.dir/src/cli.cpp.obj
+[ 15%] Building CXX object CMakeFiles/nova_core.dir/src/lexer.cpp.obj
+[ 23%] Building CXX object CMakeFiles/nova_core.dir/src/ast.cpp.obj
+[ 30%] Building CXX object CMakeFiles/nova_core.dir/src/parser.cpp.obj
+[ 38%] Linking CXX static library libnova_core.a
+[ 38%] Built target nova_core
+[ 46%] Building CXX object CMakeFiles/nova.dir/src/main.cpp.obj
+[ 53%] Linking CXX executable nova.exe
+[ 53%] Built target nova
+[ 61%] Building CXX object CMakeFiles/test_cli.dir/tests/test_cli.cpp.obj
+[ 69%] Linking CXX executable test_cli.exe
+[ 69%] Built target test_cli
+[ 76%] Building CXX object CMakeFiles/test_lexer.dir/tests/test_lexer.cpp.obj
+[ 84%] Linking CXX executable test_lexer.exe
+[ 84%] Built target test_lexer
+[ 92%] Building CXX object CMakeFiles/test_parser.dir/tests/test_parser.cpp.obj
+[100%] Linking CXX executable test_parser.exe
+[100%] Built target test_parser
+build exit 0

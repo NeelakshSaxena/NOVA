@@ -1,0 +1,70 @@
+Test project G:/Projects/NOVA/build
+      Start  1: cli_unit
+ 1/32 Test  #1: cli_unit .........................   Passed    0.12 sec
+      Start  2: lexer_unit
+ 2/32 Test  #2: lexer_unit .......................   Passed    0.19 sec
+      Start  3: parser_unit
+ 3/32 Test  #3: parser_unit ......................   Passed    0.37 sec
+      Start  4: semantic_unit
+ 4/32 Test  #4: semantic_unit ....................   Passed    0.08 sec
+      Start  5: tac_unit
+ 5/32 Test  #5: tac_unit .........................   Passed    0.09 sec
+      Start  6: bench_unit
+ 6/32 Test  #6: bench_unit .......................   Passed    0.09 sec
+      Start  7: bench_process
+ 7/32 Test  #7: bench_process ....................   Passed    1.18 sec
+      Start  8: bench_integration
+ 8/32 Test  #8: bench_integration ................   Passed   22.44 sec
+      Start  9: optimizer_unit
+ 9/32 Test  #9: optimizer_unit ...................   Passed    1.78 sec
+      Start 10: cli_help
+10/32 Test #10: cli_help .........................   Passed    0.09 sec
+      Start 11: cli_version
+11/32 Test #11: cli_version ......................   Passed    0.02 sec
+      Start 12: cli_unknown_option
+12/32 Test #12: cli_unknown_option ...............   Passed    0.02 sec
+      Start 13: cli_tokens_basic
+13/32 Test #13: cli_tokens_basic .................   Passed    0.02 sec
+      Start 14: cli_tokens_invalid_exit
+14/32 Test #14: cli_tokens_invalid_exit ..........   Passed    0.02 sec
+      Start 15: cli_tokens_invalid_location
+15/32 Test #15: cli_tokens_invalid_location ......   Passed    0.02 sec
+      Start 16: cli_ast_basic
+16/32 Test #16: cli_ast_basic ....................   Passed    0.02 sec
+      Start 17: cli_ast_invalid_exit
+17/32 Test #17: cli_ast_invalid_exit .............   Passed    0.02 sec
+      Start 18: cli_ast_invalid_location
+18/32 Test #18: cli_ast_invalid_location .........   Passed    0.02 sec
+      Start 19: cli_ast_lexical_error
+19/32 Test #19: cli_ast_lexical_error ............   Passed    0.02 sec
+      Start 20: cli_tac_basic
+20/32 Test #20: cli_tac_basic ....................   Passed    0.02 sec
+      Start 21: cli_tac_undeclared_exit
+21/32 Test #21: cli_tac_undeclared_exit ..........   Passed    0.03 sec
+      Start 22: cli_tac_undeclared_msg
+22/32 Test #22: cli_tac_undeclared_msg ...........   Passed    0.02 sec
+      Start 23: cli_tac_duplicate_msg
+23/32 Test #23: cli_tac_duplicate_msg ............   Passed    0.02 sec
+      Start 24: cli_run_basic
+24/32 Test #24: cli_run_basic ....................   Passed    0.02 sec
+      Start 25: cli_run_divzero_exit
+25/32 Test #25: cli_run_divzero_exit .............   Passed    0.02 sec
+      Start 26: cli_run_divzero_msg
+26/32 Test #26: cli_run_divzero_msg ..............   Passed    0.01 sec
+      Start 27: cli_opt_showall
+27/32 Test #27: cli_opt_showall ..................   Passed    0.03 sec
+      Start 28: cli_opt_bad_pass
+28/32 Test #28: cli_opt_bad_pass .................   Passed    0.05 sec
+      Start 29: cli_bench_list
+29/32 Test #29: cli_bench_list ...................   Passed    0.07 sec
+      Start 30: cli_bench_report_saved
+30/32 Test #30: cli_bench_report_saved ...........   Passed    0.03 sec
+      Start 31: cli_bench_report_missing_dir
+31/32 Test #31: cli_bench_report_missing_dir .....   Passed    0.07 sec
+      Start 32: cli_bench_bad_option
+32/32 Test #32: cli_bench_bad_option .............   Passed    0.12 sec
+
+100% tests passed out of 32
+
+Total Test time (real) =  27.14 sec
+ctest exit 0

@@ -1,0 +1,2 @@
+differential corpus: 4000 programs, 1836 with runtime errors, 3999 shrunk by the pipeline
+all optimizer tests passed

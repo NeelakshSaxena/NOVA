@@ -1,0 +1,298 @@
+{
+  "experiment_id": "V0.6-baseline",
+  "created_utc": "2026-10-14T14:36:01Z",
+  "kind": "baseline",
+  "kernel_dir": "benchmarks/kernels",
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "validation_run_discarded": true,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds, seeded Fisher-Yates shuffle of variants per round",
+    "timed_region": "kernel computation only (in-process QueryPerformanceCounter/steady_clock)",
+    "relative_tolerance": 1.0000000000000001e-009,
+    "tolerance_rule": "|actual-expected| <= tol*max(1,|expected|) for sum,s0,s1,s2,wsum",
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ],
+    "build_timeout_ms": 180000,
+    "run_timeout_ms": 120000,
+    "cpu_affinity_mask": "0",
+    "high_priority": false
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "benchmarks": [
+    {
+      "name": "matmul",
+      "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1",
+      "sizes": [
+        {
+          "size": 256,
+          "role": "tuning"
+        },
+        {
+          "size": 384,
+          "role": "tuning"
+        }
+      ]
+    },
+    {
+      "name": "vector_add",
+      "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173",
+      "sizes": [
+        {
+          "size": 1000000,
+          "role": "tuning"
+        },
+        {
+          "size": 4000000,
+          "role": "tuning"
+        }
+      ]
+    },
+    {
+      "name": "stencil",
+      "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668",
+      "sizes": [
+        {
+          "size": 200000,
+          "role": "tuning"
+        },
+        {
+          "size": 800000,
+          "role": "tuning"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "opt_level": "O2",
+      "flags": [
+        "-O2"
+      ],
+      "fp_semantics": "strict"
+    },
+    {
+      "opt_level": "O3",
+      "flags": [
+        "-O3"
+      ],
+      "fp_semantics": "strict"
+    }
+  ],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "matmul-O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.6-baseline/bin/matmul_O2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "matmul-O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.6-baseline/bin/matmul_O3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "matmul-O2",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/matmul_O2.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "matmul-O3",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/matmul_O3.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "matmul-O2",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/matmul_O2.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "matmul-O3",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/matmul_O3.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "build",
+      "candidate_id": "vector_add-O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.6-baseline/bin/vector_add_O2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "vector_add-O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.6-baseline/bin/vector_add_O3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "vector_add-O2",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/vector_add_O2.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "vector_add-O3",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/vector_add_O3.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "vector_add-O2",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/vector_add_O2.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "vector_add-O3",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/vector_add_O3.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "build",
+      "candidate_id": "stencil-O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.6-baseline/bin/stencil_O2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "stencil-O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.6-baseline/bin/stencil_O3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "stencil-O2",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/stencil_O2.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "stencil-O3",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/stencil_O3.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "stencil-O2",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/stencil_O2.exe",
+        "800000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "stencil-O3",
+      "argv": [
+        "benchmarks/results/V0.6-baseline/bin/stencil_O3.exe",
+        "800000",
+        "1"
+      ]
+    }
+  ],
+  "wall_time_s": 25.674664
+}

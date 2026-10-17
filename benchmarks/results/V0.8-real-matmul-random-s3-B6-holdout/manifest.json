@@ -1,0 +1,139 @@
+{
+  "experiment_id": "V0.8-real-matmul-random-s3-B6-holdout",
+  "created_utc": "2026-10-14T15:50:58Z",
+  "kind": "holdout-eval",
+  "benchmark": "matmul",
+  "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1",
+  "kernel_dir": "benchmarks/kernels",
+  "source_tune_experiment": "V0.8-real-matmul-random-s3-B6",
+  "source_tune_dir": "benchmarks/results/V0.8-real-matmul-random-s3-B6",
+  "selected_candidate": "O2+prefetch",
+  "selected_by_strategy": "random",
+  "note": "measurements on sizes the search did not use; nothing here feeds back into any selection or history",
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "cpu_affinity_mask": "16",
+    "high_priority": true,
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ]
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_0.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_1.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_2.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_0.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_1.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/bin/matmul_2.exe",
+        "448",
+        "1"
+      ]
+    }
+  ]
+}

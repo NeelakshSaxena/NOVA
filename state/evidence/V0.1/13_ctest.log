@@ -1,0 +1,14 @@
+Test project G:/Projects/NOVA/build
+    Start 1: cli_unit
+1/4 Test #1: cli_unit .........................   Passed    0.08 sec
+    Start 2: cli_help
+2/4 Test #2: cli_help .........................   Passed    0.08 sec
+    Start 3: cli_version
+3/4 Test #3: cli_version ......................   Passed    0.05 sec
+    Start 4: cli_unknown_option
+4/4 Test #4: cli_unknown_option ...............   Passed    0.02 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.25 sec
+ctest exit 0

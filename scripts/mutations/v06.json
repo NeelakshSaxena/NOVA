@@ -1,0 +1,20 @@
+[
+  {"name": "V0.6 oracle accepts everything", "file": "src/bench/registry.cpp",
+   "old": "    cmp(\"out.sum\", e.sum, a.sum);", "new": "    return bad;\n    cmp(\"out.sum\", e.sum, a.sum);", "test": "test_bench_unit"},
+  {"name": "V0.6 oracle ignores wsum", "file": "src/bench/registry.cpp",
+   "old": "    cmp(\"out.wsum\", e.wsum, a.wsum);", "new": "", "test": "test_bench_unit"},
+  {"name": "V0.6 one timed repetition is lost", "file": "src/bench/harness.cpp",
+   "old": "for (int rep = 1; rep <= cfg.repetitions; ++rep) {", "new": "for (int rep = 1; rep < cfg.repetitions; ++rep) {", "test": "test_bench_integration"},
+  {"name": "V0.6 harness skips the oracle (incorrect kernel accepted)", "file": "src/bench/harness.cpp",
+   "old": "if (reference) k.mismatches = compare_to_reference(*reference, k.output);", "new": "", "test": "test_bench_integration"},
+  {"name": "V0.6 arguments are not quoted", "file": "src/bench/process.cpp",
+   "old": "    if (!a.empty() && a.find_first_of(\" \\t\\n\\v\\\"\") == std::string::npos) return a;", "new": "    return a;", "test": "test_bench_process"},
+  {"name": "V0.6 relative program path fix removed", "file": "src/bench/process.cpp",
+   "old": "if (c == '/') c = '\\\\';", "new": ";", "test": "test_bench_integration"},
+  {"name": "V0.6 validate_record ignores the source hash", "file": "src/bench/records.cpp",
+   "old": "need(is_hex64(r.source_hash),", "new": "need(true || is_hex64(r.source_hash),", "test": "test_bench_unit"},
+  {"name": "V0.6 median is the first sample", "file": "src/bench/stats.cpp",
+   "old": "s.median = quantile_sorted(v, 0.5);", "new": "s.median = samples[0];", "test": "test_bench_unit"},
+  {"name": "V0.6 timeout is never enforced", "file": "src/bench/process.cpp",
+   "old": "if (timeout_ms > 0 && ms_since(t0) > timeout_ms) {", "new": "if (false) {", "test": "test_bench_process"}
+]

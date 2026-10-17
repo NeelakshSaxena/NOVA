@@ -1,0 +1,5 @@
+build exit 0
+all parser tests passed
+run exit 0
+all lexer tests passed
+lexer run exit 0

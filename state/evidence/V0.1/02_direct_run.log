@@ -1,0 +1,23 @@
+++ 'C:\Users\neela\AppData\Local\Temp/nova_direct/test_cli.exe'
+all cli tests passed
+++ echo 'test_cli exit 0'
+test_cli exit 0
+++ 'C:\Users\neela\AppData\Local\Temp/nova_direct/nova.exe' --help
+Usage: nova [option]
+
+Options:
+  -h, --help     Show this help and exit
+      --version  Print the version and exit
+
+No other commands are implemented yet.
+++ echo '--help exit 0'
+--help exit 0
+++ 'C:\Users\neela\AppData\Local\Temp/nova_direct/nova.exe' --version
+nova 0.1.0
+++ echo '--version exit 0'
+--version exit 0
+++ 'C:\Users\neela\AppData\Local\Temp/nova_direct/nova.exe' --bogus
+nova: unknown argument '--bogus'
+Try 'nova --help' for usage.
+++ echo '--bogus exit 2'
+--bogus exit 2

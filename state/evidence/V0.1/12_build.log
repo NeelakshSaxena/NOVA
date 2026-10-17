@@ -1,0 +1,10 @@
+[ 16%] Building CXX object CMakeFiles/nova_core.dir/src/cli.cpp.obj
+[ 33%] Linking CXX static library libnova_core.a
+[ 33%] Built target nova_core
+[ 50%] Building CXX object CMakeFiles/nova.dir/src/main.cpp.obj
+[ 66%] Linking CXX executable nova.exe
+[ 66%] Built target nova
+[ 83%] Building CXX object CMakeFiles/test_cli.dir/tests/test_cli.cpp.obj
+[100%] Linking CXX executable test_cli.exe
+[100%] Built target test_cli
+build exit 0

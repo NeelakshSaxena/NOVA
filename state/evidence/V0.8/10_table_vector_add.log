@@ -1,0 +1,218 @@
+table vector_add -> benchmarks/results/V0.8-table-vector_add
+build O2 ... ok
+build O3 ... ok
+build O2+native ... ok
+build O2+prefetch ... ok
+build O2+prefetch+native ... ok
+build O2+vec ... ok
+build O2+vec+native ... ok
+build O2+prefetch+vec ... ok
+build O2+prefetch+vec+native ... ok
+build O2+unroll ... ok
+build O2+unroll+native ... ok
+build O2+prefetch+unroll ... ok
+build O2+prefetch+unroll+native ... ok
+build O2+vec+unroll ... ok
+build O2+vec+unroll+native ... ok
+build O2+prefetch+vec+unroll ... ok
+build O2+prefetch+vec+unroll+native ... ok
+build O3+native ... ok
+build O3+prefetch ... ok
+build O3+prefetch+native ... ok
+build O3+unroll ... ok
+build O3+unroll+native ... ok
+build O3+prefetch+unroll ... ok
+build O3+prefetch+unroll+native ... ok
+  validate O2 n=1000000: PASS
+  validate O3 n=1000000: PASS
+  validate O2+native n=1000000: PASS
+  validate O2+prefetch n=1000000: PASS
+  validate O2+prefetch+native n=1000000: PASS
+  validate O2+vec n=1000000: PASS
+  validate O2+vec+native n=1000000: PASS
+  validate O2+prefetch+vec n=1000000: PASS
+  validate O2+prefetch+vec+native n=1000000: PASS
+  validate O2+unroll n=1000000: PASS
+  validate O2+unroll+native n=1000000: PASS
+  validate O2+prefetch+unroll n=1000000: PASS
+  validate O2+prefetch+unroll+native n=1000000: PASS
+  validate O2+vec+unroll n=1000000: PASS
+  validate O2+vec+unroll+native n=1000000: PASS
+  validate O2+prefetch+vec+unroll n=1000000: PASS
+  validate O2+prefetch+vec+unroll+native n=1000000: PASS
+  validate O3+native n=1000000: PASS
+  validate O3+prefetch n=1000000: PASS
+  validate O3+prefetch+native n=1000000: PASS
+  validate O3+unroll n=1000000: PASS
+  validate O3+unroll+native n=1000000: PASS
+  validate O3+prefetch+unroll n=1000000: PASS
+  validate O3+prefetch+unroll+native n=1000000: PASS
+  O2 n=1000000 median 16.4346 ms (IQR 1.1910, 15 samples)
+  O3 n=1000000 median 15.3833 ms (IQR 0.8587, 15 samples)
+  O2+native n=1000000 median 15.7940 ms (IQR 0.4976, 15 samples)
+  O2+prefetch n=1000000 median 16.4406 ms (IQR 1.2847, 15 samples)
+  O2+prefetch+native n=1000000 median 16.1485 ms (IQR 1.3838, 15 samples)
+  O2+vec n=1000000 median 15.5274 ms (IQR 0.9748, 15 samples)
+  O2+vec+native n=1000000 median 15.8073 ms (IQR 1.1235, 15 samples)
+  O2+prefetch+vec n=1000000 median 14.5735 ms (IQR 0.9575, 15 samples)
+  O2+prefetch+vec+native n=1000000 median 14.8292 ms (IQR 0.8002, 15 samples)
+  O2+unroll n=1000000 median 16.5813 ms (IQR 0.6412, 15 samples)
+  O2+unroll+native n=1000000 median 16.2360 ms (IQR 0.2804, 15 samples)
+  O2+prefetch+unroll n=1000000 median 15.8384 ms (IQR 0.7994, 15 samples)
+  O2+prefetch+unroll+native n=1000000 median 15.6744 ms (IQR 0.7502, 15 samples)
+  O2+vec+unroll n=1000000 median 14.5637 ms (IQR 1.0138, 15 samples)
+  O2+vec+unroll+native n=1000000 median 26.4270 ms (IQR 4.8706, 15 samples)
+  O2+prefetch+vec+unroll n=1000000 median 14.3532 ms (IQR 0.8913, 15 samples)
+  O2+prefetch+vec+unroll+native n=1000000 median 14.6247 ms (IQR 1.1407, 15 samples)
+  O3+native n=1000000 median 15.6612 ms (IQR 0.6921, 15 samples)
+  O3+prefetch n=1000000 median 14.3655 ms (IQR 0.6116, 15 samples)
+  O3+prefetch+native n=1000000 median 14.7174 ms (IQR 0.9521, 15 samples)
+  O3+unroll n=1000000 median 14.5882 ms (IQR 0.9377, 15 samples)
+  O3+unroll+native n=1000000 median 14.8405 ms (IQR 0.5907, 15 samples)
+  O3+prefetch+unroll n=1000000 median 14.8197 ms (IQR 0.6940, 15 samples)
+  O3+prefetch+unroll+native n=1000000 median 14.6354 ms (IQR 0.6966, 15 samples)
+  validate O2 n=4000000: PASS
+  validate O3 n=4000000: PASS
+  validate O2+native n=4000000: PASS
+  validate O2+prefetch n=4000000: PASS
+  validate O2+prefetch+native n=4000000: PASS
+  validate O2+vec n=4000000: PASS
+  validate O2+vec+native n=4000000: PASS
+  validate O2+prefetch+vec n=4000000: PASS
+  validate O2+prefetch+vec+native n=4000000: PASS
+  validate O2+unroll n=4000000: PASS
+  validate O2+unroll+native n=4000000: PASS
+  validate O2+prefetch+unroll n=4000000: PASS
+  validate O2+prefetch+unroll+native n=4000000: PASS
+  validate O2+vec+unroll n=4000000: PASS
+  validate O2+vec+unroll+native n=4000000: PASS
+  validate O2+prefetch+vec+unroll n=4000000: PASS
+  validate O2+prefetch+vec+unroll+native n=4000000: PASS
+  validate O3+native n=4000000: PASS
+  validate O3+prefetch n=4000000: PASS
+  validate O3+prefetch+native n=4000000: PASS
+  validate O3+unroll n=4000000: PASS
+  validate O3+unroll+native n=4000000: PASS
+  validate O3+prefetch+unroll n=4000000: PASS
+  validate O3+prefetch+unroll+native n=4000000: PASS
+  O2 n=4000000 median 73.9548 ms (IQR 1.6869, 15 samples)
+  O3 n=4000000 median 69.7546 ms (IQR 1.4738, 15 samples)
+  O2+native n=4000000 median 74.2011 ms (IQR 2.0348, 15 samples)
+  O2+prefetch n=4000000 median 73.3884 ms (IQR 1.4477, 15 samples)
+  O2+prefetch+native n=4000000 median 72.7106 ms (IQR 1.3666, 15 samples)
+  O2+vec n=4000000 median 69.3361 ms (IQR 1.2700, 15 samples)
+  O2+vec+native n=4000000 median 68.2986 ms (IQR 2.1084, 15 samples)
+  O2+prefetch+vec n=4000000 median 67.2752 ms (IQR 1.7713, 15 samples)
+  O2+prefetch+vec+native n=4000000 median 69.6485 ms (IQR 1.8111, 15 samples)
+  O2+unroll n=4000000 median 72.9214 ms (IQR 1.8116, 15 samples)
+  O2+unroll+native n=4000000 median 72.1227 ms (IQR 2.6809, 15 samples)
+  O2+prefetch+unroll n=4000000 median 72.3894 ms (IQR 1.2232, 15 samples)
+  O2+prefetch+unroll+native n=4000000 median 73.0777 ms (IQR 1.4516, 15 samples)
+  O2+vec+unroll n=4000000 median 66.5298 ms (IQR 0.7270, 15 samples)
+  O2+vec+unroll+native n=4000000 median 68.3394 ms (IQR 1.3553, 15 samples)
+  O2+prefetch+vec+unroll n=4000000 median 66.9642 ms (IQR 2.2362, 15 samples)
+  O2+prefetch+vec+unroll+native n=4000000 median 67.2232 ms (IQR 2.7883, 15 samples)
+  O3+native n=4000000 median 69.6317 ms (IQR 1.6125, 15 samples)
+  O3+prefetch n=4000000 median 66.9468 ms (IQR 0.9308, 15 samples)
+  O3+prefetch+native n=4000000 median 68.3358 ms (IQR 2.9941, 15 samples)
+  O3+unroll n=4000000 median 66.2808 ms (IQR 1.6216, 15 samples)
+  O3+unroll+native n=4000000 median 68.3075 ms (IQR 1.2497, 15 samples)
+  O3+prefetch+unroll n=4000000 median 66.8950 ms (IQR 1.6774, 15 samples)
+  O3+prefetch+unroll+native n=4000000 median 67.5602 ms (IQR 2.8600, 15 samples)
+  validate O2 n=2000000: PASS
+  validate O3 n=2000000: PASS
+  validate O2+native n=2000000: PASS
+  validate O2+prefetch n=2000000: PASS
+  validate O2+prefetch+native n=2000000: PASS
+  validate O2+vec n=2000000: PASS
+  validate O2+vec+native n=2000000: PASS
+  validate O2+prefetch+vec n=2000000: PASS
+  validate O2+prefetch+vec+native n=2000000: PASS
+  validate O2+unroll n=2000000: PASS
+  validate O2+unroll+native n=2000000: PASS
+  validate O2+prefetch+unroll n=2000000: PASS
+  validate O2+prefetch+unroll+native n=2000000: PASS
+  validate O2+vec+unroll n=2000000: PASS
+  validate O2+vec+unroll+native n=2000000: PASS
+  validate O2+prefetch+vec+unroll n=2000000: PASS
+  validate O2+prefetch+vec+unroll+native n=2000000: PASS
+  validate O3+native n=2000000: PASS
+  validate O3+prefetch n=2000000: PASS
+  validate O3+prefetch+native n=2000000: PASS
+  validate O3+unroll n=2000000: PASS
+  validate O3+unroll+native n=2000000: PASS
+  validate O3+prefetch+unroll n=2000000: PASS
+  validate O3+prefetch+unroll+native n=2000000: PASS
+  O2 n=2000000 median 36.0752 ms (IQR 1.2573, 15 samples)
+  O3 n=2000000 median 34.3832 ms (IQR 1.7243, 15 samples)
+  O2+native n=2000000 median 36.5846 ms (IQR 1.4376, 15 samples)
+  O2+prefetch n=2000000 median 35.2096 ms (IQR 1.5756, 15 samples)
+  O2+prefetch+native n=2000000 median 36.7611 ms (IQR 1.9778, 15 samples)
+  O2+vec n=2000000 median 35.0820 ms (IQR 1.7709, 15 samples)
+  O2+vec+native n=2000000 median 33.8545 ms (IQR 1.2646, 15 samples)
+  O2+prefetch+vec n=2000000 median 31.7080 ms (IQR 1.7645, 15 samples)
+  O2+prefetch+vec+native n=2000000 median 32.2102 ms (IQR 0.9089, 15 samples)
+  O2+unroll n=2000000 median 35.7272 ms (IQR 1.8118, 15 samples)
+  O2+unroll+native n=2000000 median 36.8003 ms (IQR 2.1504, 15 samples)
+  O2+prefetch+unroll n=2000000 median 37.2691 ms (IQR 0.9228, 15 samples)
+  O2+prefetch+unroll+native n=2000000 median 36.0089 ms (IQR 2.1219, 15 samples)
+  O2+vec+unroll n=2000000 median 31.6870 ms (IQR 1.4042, 15 samples)
+  O2+vec+unroll+native n=2000000 median 33.0478 ms (IQR 1.8783, 15 samples)
+  O2+prefetch+vec+unroll n=2000000 median 33.0652 ms (IQR 1.5831, 15 samples)
+  O2+prefetch+vec+unroll+native n=2000000 median 31.9225 ms (IQR 1.8162, 15 samples)
+  O3+native n=2000000 median 33.6555 ms (IQR 1.7831, 15 samples)
+  O3+prefetch n=2000000 median 32.1751 ms (IQR 2.0093, 15 samples)
+  O3+prefetch+native n=2000000 median 31.7508 ms (IQR 1.5619, 15 samples)
+  O3+unroll n=2000000 median 31.7101 ms (IQR 1.8359, 15 samples)
+  O3+unroll+native n=2000000 median 33.2936 ms (IQR 1.3287, 15 samples)
+  O3+prefetch+unroll n=2000000 median 31.3720 ms (IQR 2.3707, 15 samples)
+  O3+prefetch+unroll+native n=2000000 median 31.7566 ms (IQR 1.4700, 15 samples)
+  validate O2 n=6000000: PASS
+  validate O3 n=6000000: PASS
+  validate O2+native n=6000000: PASS
+  validate O2+prefetch n=6000000: PASS
+  validate O2+prefetch+native n=6000000: PASS
+  validate O2+vec n=6000000: PASS
+  validate O2+vec+native n=6000000: PASS
+  validate O2+prefetch+vec n=6000000: PASS
+  validate O2+prefetch+vec+native n=6000000: PASS
+  validate O2+unroll n=6000000: PASS
+  validate O2+unroll+native n=6000000: PASS
+  validate O2+prefetch+unroll n=6000000: PASS
+  validate O2+prefetch+unroll+native n=6000000: PASS
+  validate O2+vec+unroll n=6000000: PASS
+  validate O2+vec+unroll+native n=6000000: PASS
+  validate O2+prefetch+vec+unroll n=6000000: PASS
+  validate O2+prefetch+vec+unroll+native n=6000000: PASS
+  validate O3+native n=6000000: PASS
+  validate O3+prefetch n=6000000: PASS
+  validate O3+prefetch+native n=6000000: PASS
+  validate O3+unroll n=6000000: PASS
+  validate O3+unroll+native n=6000000: PASS
+  validate O3+prefetch+unroll n=6000000: PASS
+  validate O3+prefetch+unroll+native n=6000000: PASS
+  O2 n=6000000 median 111.8699 ms (IQR 2.8482, 15 samples)
+  O3 n=6000000 median 105.2655 ms (IQR 1.9642, 15 samples)
+  O2+native n=6000000 median 111.7810 ms (IQR 1.7896, 15 samples)
+  O2+prefetch n=6000000 median 109.2881 ms (IQR 1.1164, 15 samples)
+  O2+prefetch+native n=6000000 median 109.5377 ms (IQR 1.5782, 15 samples)
+  O2+vec n=6000000 median 105.6137 ms (IQR 1.7407, 15 samples)
+  O2+vec+native n=6000000 median 104.1993 ms (IQR 1.5886, 15 samples)
+  O2+prefetch+vec n=6000000 median 100.9073 ms (IQR 1.7028, 15 samples)
+  O2+prefetch+vec+native n=6000000 median 103.3151 ms (IQR 2.1716, 15 samples)
+  O2+unroll n=6000000 median 110.6240 ms (IQR 2.4504, 15 samples)
+  O2+unroll+native n=6000000 median 109.6068 ms (IQR 2.4146, 15 samples)
+  O2+prefetch+unroll n=6000000 median 109.2671 ms (IQR 2.6260, 15 samples)
+  O2+prefetch+unroll+native n=6000000 median 110.4316 ms (IQR 1.0936, 15 samples)
+  O2+vec+unroll n=6000000 median 101.6759 ms (IQR 1.1857, 15 samples)
+  O2+vec+unroll+native n=6000000 median 103.2483 ms (IQR 1.7087, 15 samples)
+  O2+prefetch+vec+unroll n=6000000 median 101.9367 ms (IQR 1.3562, 15 samples)
+  O2+prefetch+vec+unroll+native n=6000000 median 103.0141 ms (IQR 1.7578, 15 samples)
+  O3+native n=6000000 median 104.5769 ms (IQR 1.5587, 15 samples)
+  O3+prefetch n=6000000 median 100.9201 ms (IQR 1.1949, 15 samples)
+  O3+prefetch+native n=6000000 median 103.5975 ms (IQR 4.1604, 15 samples)
+  O3+unroll n=6000000 median 101.5380 ms (IQR 1.0562, 15 samples)
+  O3+unroll+native n=6000000 median 103.0785 ms (IQR 1.5290, 15 samples)
+  O3+prefetch+unroll n=6000000 median 102.5879 ms (IQR 1.7818, 15 samples)
+  O3+prefetch+unroll+native n=6000000 median 102.7104 ms (IQR 2.2717, 15 samples)
+wrote 96 records (0 not passing) to benchmarks/results/V0.8-table-vector_add

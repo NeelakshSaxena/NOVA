@@ -1,0 +1,485 @@
+{
+  "experiment_id": "V0.8-real-stencil-adaptive-s1-B6",
+  "created_utc": "2026-10-14T15:37:55Z",
+  "kind": "tune",
+  "benchmark": "stencil",
+  "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668",
+  "kernel_dir": "benchmarks/kernels",
+  "search": {
+    "strategy": "adaptive",
+    "search_seed": "1",
+    "budget": 6,
+    "space_size": 22,
+    "evaluations": 6,
+    "builds_attempted": 8,
+    "accounting": "budget counts search candidates built+validated; the baselines are always evaluated in addition and are not counted; no automatic retries",
+    "sequence": [
+      "O3+prefetch+unroll",
+      "O3+prefetch+unroll+native",
+      "O3+unroll+native",
+      "O3+unroll",
+      "O2+prefetch+vec+unroll+native",
+      "O2+prefetch+vec+unroll"
+    ],
+    "baselines": [
+      "O2",
+      "O3"
+    ],
+    "whitelist": [
+      "-O2",
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "max_binary_growth": 2.0,
+    "tuning_size": 200000,
+    "adaptive": {
+      "ablation": "none",
+      "pilot_reps": 5,
+      "history_path": "benchmarks/history/V0.8-tuning-history.json",
+      "history_entries_used": 110,
+      "history_exclude_same_workload": true,
+      "workload_features": {
+        "known": true,
+        "working_set_bytes": 3200000.0,
+        "flops_per_byte": 31.25,
+        "loop_nest_depth": 2,
+        "innermost_reduction": false,
+        "unit_stride_streaming": true,
+        "size_log2": 17.609640474436812
+      },
+      "pilot": [
+        {
+          "step": 1,
+          "candidate": "O3+prefetch+unroll",
+          "prior": 0.38,
+          "history": 0.15268452877159588,
+          "feedback": 0.0,
+          "ok": true,
+          "log_gain": 0.55461331240240164,
+          "failure": "",
+          "candidate_samples_ms": [
+            9.3930999899999996,
+            9.7057000099999993,
+            9.4634999900000008,
+            9.3596000099999994,
+            9.1522000000000006
+          ],
+          "anchor_samples_ms": [
+            16.6218,
+            16.355899999999998,
+            16.1629,
+            16.075299999999999,
+            16.505299999999998
+          ]
+        },
+        {
+          "step": 2,
+          "candidate": "O3+prefetch+unroll+native",
+          "prior": 0.47999999999999998,
+          "history": 0.051638204093912649,
+          "feedback": 0.086166057226249454,
+          "ok": true,
+          "log_gain": 0.59996187796223976,
+          "failure": "",
+          "candidate_samples_ms": [
+            8.9463000000000008,
+            9.4396000099999995,
+            8.9353999900000005,
+            8.8952000000000009,
+            8.9788999999999994
+          ],
+          "anchor_samples_ms": [
+            16.046900000000001,
+            16.199200000000001,
+            17.225300000000001,
+            16.686199999999999,
+            16.300599999999999
+          ]
+        },
+        {
+          "step": 3,
+          "candidate": "O3+unroll+native",
+          "prior": 0.44999999999999996,
+          "history": 0.05691425477698675,
+          "feedback": 0.11815701914250896,
+          "ok": true,
+          "log_gain": 0.57649324843519889,
+          "failure": "",
+          "candidate_samples_ms": [
+            9.1115999999999993,
+            8.8194000100000007,
+            9.4719999999999995,
+            9.3536000099999992,
+            9.0893999900000004
+          ],
+          "anchor_samples_ms": [
+            16.211300000000001,
+            16.197800000000001,
+            16.836099999999998,
+            16.349,
+            16.216699999999999
+          ]
+        },
+        {
+          "step": 4,
+          "candidate": "O3+unroll",
+          "prior": 0.34999999999999998,
+          "history": 0.1483315839692223,
+          "feedback": 0.17321161602900706,
+          "ok": true,
+          "log_gain": 0.52864676766722529,
+          "failure": "",
+          "candidate_samples_ms": [
+            9.6280000099999992,
+            9.6077000100000003,
+            9.5366000100000008,
+            9.8656999899999995,
+            9.7499000000000002
+          ],
+          "anchor_samples_ms": [
+            16.5943,
+            16.3352,
+            16.146599999999999,
+            16.392800000000001,
+            16.213899999999999
+          ]
+        },
+        {
+          "step": 5,
+          "candidate": "O2+prefetch+vec+unroll+native",
+          "prior": 0.43000000000000005,
+          "history": 0.058915843838486678,
+          "feedback": 0.14883254168723103,
+          "ok": true,
+          "log_gain": 0.58124102550104251,
+          "failure": "",
+          "candidate_samples_ms": [
+            8.9503999899999993,
+            9.4472000000000005,
+            9.0618999999999996,
+            9.3949999999999996,
+            9.0029999899999993
+          ],
+          "anchor_samples_ms": [
+            16.191800000000001,
+            16.330100000000002,
+            16.161300000000001,
+            16.204999999999998,
+            16.4207
+          ]
+        },
+        {
+          "step": 6,
+          "candidate": "O2+prefetch+vec+unroll",
+          "prior": 0.33000000000000007,
+          "history": 0.15784266096950539,
+          "feedback": 0.19609210774283978,
+          "ok": true,
+          "log_gain": 0.5526003039016032,
+          "failure": "",
+          "candidate_samples_ms": [
+            9.4506999999999994,
+            9.2970999899999995,
+            9.0015000100000009,
+            9.4407999999999994,
+            9.4422999900000004
+          ],
+          "anchor_samples_ms": [
+            16.7044,
+            16.2788,
+            16.429300000000001,
+            16.405899999999999,
+            16.294499999999999
+          ]
+        }
+      ],
+      "policy": "score = prior(features) + history + feedback, in log-gain units; see docs/adaptive.md"
+    },
+    "candidate_flags": {
+      "O2": [
+        "-O2"
+      ],
+      "O3": [
+        "-O3"
+      ],
+      "O3+prefetch+unroll": [
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops"
+      ],
+      "O3+prefetch+unroll+native": [
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native"
+      ],
+      "O3+unroll+native": [
+        "-O3",
+        "-funroll-loops",
+        "-march=native"
+      ],
+      "O3+unroll": [
+        "-O3",
+        "-funroll-loops"
+      ],
+      "O2+prefetch+vec+unroll+native": [
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "-march=native"
+      ],
+      "O2+prefetch+vec+unroll": [
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops"
+      ]
+    },
+    "holdout_policy": "holdout sizes are refused; no holdout measurement influenced this selection"
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "validation_run_discarded": true,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds, seeded Fisher-Yates shuffle of candidates per round",
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ],
+    "build_timeout_ms": 180000,
+    "run_timeout_ms": 120000,
+    "cpu_affinity_mask": "16",
+    "high_priority": true
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_6.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_7.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_0.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_1.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_2.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_3.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_4.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_5.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_6.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/bin/stencil_7.exe",
+        "200000",
+        "1"
+      ]
+    }
+  ],
+  "has_winner": true,
+  "winner": "O3+prefetch+unroll+native",
+  "tuning_wall_time_s": 18.629925
+}

@@ -1,0 +1,8 @@
+date: 2026-10-14T18:58:29+05:30
+/usr/bin/bash: line 2: ver: command not found
+--- cmake
+cmake: NOT FOUND
+ctest: NOT FOUND
+--- g++
+g++.exe (MinGW.org GCC-6.3.0-1) 6.3.0
+GNU Make 3.82.90

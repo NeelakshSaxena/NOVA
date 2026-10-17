@@ -1,0 +1,1193 @@
+{
+  "format": "nova-history-1",
+  "entries": [
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+native",
+      "log_gain": 0.41977708641655986,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch",
+      "log_gain": -0.060028722824598972,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+native",
+      "log_gain": 0.32488590683634688,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll",
+      "log_gain": -0.091365639412318816,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll+native",
+      "log_gain": 0.32789360677062435,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec",
+      "log_gain": 0.51820300648697837,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+native",
+      "log_gain": 0.54989758483390605,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll",
+      "log_gain": 0.55991315090091687,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll+native",
+      "log_gain": 0.59255882905434709,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll",
+      "log_gain": 0.1357091450006031,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll+native",
+      "log_gain": 0.40874713651527583,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+vec",
+      "log_gain": 0.33607016940192624,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+native",
+      "log_gain": 0.55008884021334348,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll",
+      "log_gain": 0.5123941681330999,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll+native",
+      "log_gain": 0.60016029578992736,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+native",
+      "log_gain": 0.55685942110267872,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch",
+      "log_gain": 0.50343938618137885,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+native",
+      "log_gain": 0.54309995159300839,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll",
+      "log_gain": 0.55526661191804394,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll+native",
+      "log_gain": 0.59628000123962144,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll",
+      "log_gain": 0.5009880311397783,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll+native",
+      "log_gain": 0.60964542597336679,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+native",
+      "log_gain": 0.42951723801688763,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch",
+      "log_gain": -0.044130178842906889,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+native",
+      "log_gain": 0.28476614257399985,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll",
+      "log_gain": -0.063687209656162855,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll+native",
+      "log_gain": 0.27922923697539437,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec",
+      "log_gain": 0.50174149145118052,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+native",
+      "log_gain": 0.49420356184756714,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll",
+      "log_gain": 0.51898250011782421,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll+native",
+      "log_gain": 0.58058320355964332,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll",
+      "log_gain": 0.10628691251586438,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll+native",
+      "log_gain": 0.41963409154152892,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+vec",
+      "log_gain": 0.32566587567886895,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+native",
+      "log_gain": 0.53789929251320756,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll",
+      "log_gain": 0.4672070305769192,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll+native",
+      "log_gain": 0.59803622381293908,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+native",
+      "log_gain": 0.52089285657327233,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch",
+      "log_gain": 0.48536968540175057,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+native",
+      "log_gain": 0.53668348080922756,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll",
+      "log_gain": 0.5070962306634883,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll+native",
+      "log_gain": 0.55127275764553885,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll",
+      "log_gain": 0.48452450926517487,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll+native",
+      "log_gain": 0.58838793700842884,
+      "failed": false,
+      "source": "V0.8-table-stencil"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+native",
+      "log_gain": 0.039758747442208732,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch",
+      "log_gain": -0.00036501679482518041,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+native",
+      "log_gain": 0.017561702419443732,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll",
+      "log_gain": 0.036951497334192125,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll+native",
+      "log_gain": 0.04736006024317789,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec",
+      "log_gain": 0.12018405752922449,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+native",
+      "log_gain": 0.10279065852950105,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll",
+      "log_gain": 0.13541595465631576,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll+native",
+      "log_gain": 0.11667698843058133,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll",
+      "log_gain": -0.0088866858359709922,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll+native",
+      "log_gain": 0.012157869540946714,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec",
+      "log_gain": 0.056782663273780433,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+native",
+      "log_gain": 0.038917009869053359,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll",
+      "log_gain": 0.1208567371531786,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll+native",
+      "log_gain": -0.47499734627817025,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+native",
+      "log_gain": 0.048202552538252889,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch",
+      "log_gain": 0.13455936986995137,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+native",
+      "log_gain": 0.11035840125264287,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll",
+      "log_gain": 0.10343149176952747,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll+native",
+      "log_gain": 0.11594561700827211,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll",
+      "log_gain": 0.11917588576659714,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll+native",
+      "log_gain": 0.1020289386235786,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+native",
+      "log_gain": -0.0033248790888537375,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch",
+      "log_gain": 0.0076882107884512843,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+native",
+      "log_gain": 0.016966917184679839,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll",
+      "log_gain": 0.021394215939367273,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll+native",
+      "log_gain": 0.011930837116956219,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec",
+      "log_gain": 0.09466242629134991,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+native",
+      "log_gain": 0.059992932031224307,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll",
+      "log_gain": 0.099295947543950339,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll+native",
+      "log_gain": 0.095435669729054942,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll",
+      "log_gain": 0.014071947023951131,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+unroll+native",
+      "log_gain": 0.025085260534098305,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec",
+      "log_gain": 0.064488401689213687,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+native",
+      "log_gain": 0.079564827209583758,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll",
+      "log_gain": 0.10580412818579427,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll+native",
+      "log_gain": 0.078967628755089503,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+native",
+      "log_gain": 0.060234172352267371,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch",
+      "log_gain": 0.099555821640894243,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+native",
+      "log_gain": 0.07902030839266555,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll",
+      "log_gain": 0.10032986984685587,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll+native",
+      "log_gain": 0.090435043505663795,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll",
+      "log_gain": 0.10955383328088325,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "size_role": "tuning",
+      "candidate": "O3+unroll+native",
+      "log_gain": 0.079434525561083394,
+      "failed": false,
+      "source": "V0.8-table-vector_add"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+native",
+      "log_gain": -0.5382241751973309,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch",
+      "log_gain": 0.083538041147339648,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+native",
+      "log_gain": -0.48692279782770165,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll",
+      "log_gain": 0.069217877474939224,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll+native",
+      "log_gain": -0.49120417126586391,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec",
+      "log_gain": 0.084473744481678562,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+native",
+      "log_gain": -0.48822397168740267,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll",
+      "log_gain": 0.073034938243092998,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll+native",
+      "log_gain": -0.48498536787989127,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+unroll",
+      "log_gain": 0.070330953949946623,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+unroll+native",
+      "log_gain": -0.48964110969870456,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+vec",
+      "log_gain": -0.0052334606316270264,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+vec+native",
+      "log_gain": -0.54144408254246423,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll",
+      "log_gain": 0.076636309122489615,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll+native",
+      "log_gain": -0.49180001645943,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+native",
+      "log_gain": -0.53856447499643501,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch",
+      "log_gain": 0.091905316515566132,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+native",
+      "log_gain": -0.48887392427247034,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll",
+      "log_gain": 0.069332177558502781,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll+native",
+      "log_gain": -0.4847095366080707,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+unroll",
+      "log_gain": 0.065521606040179189,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "size_role": "tuning",
+      "candidate": "O3+unroll+native",
+      "log_gain": -0.49111715686057406,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+native",
+      "log_gain": -0.55687157504591067,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch",
+      "log_gain": 0.094393118261758266,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+native",
+      "log_gain": -0.52162500140210544,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll",
+      "log_gain": 0.072775081074270873,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+unroll+native",
+      "log_gain": -0.52089056760713615,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec",
+      "log_gain": 0.10161159614151018,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+native",
+      "log_gain": -0.5273742577782965,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll",
+      "log_gain": 0.07882490776410761,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+prefetch+vec+unroll+native",
+      "log_gain": -0.52142953094073463,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+unroll",
+      "log_gain": 0.086061566782072982,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+unroll+native",
+      "log_gain": -0.52164088169887179,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+vec",
+      "log_gain": -0.0053714850002574343,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+vec+native",
+      "log_gain": -0.55913673375388007,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll",
+      "log_gain": 0.085205099053526523,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O2+vec+unroll+native",
+      "log_gain": -0.52422478680740503,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+native",
+      "log_gain": -0.558190302400149,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch",
+      "log_gain": 0.097405830552417791,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+native",
+      "log_gain": -0.52145885394585623,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll",
+      "log_gain": 0.088536437564414427,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+prefetch+unroll+native",
+      "log_gain": -0.52074019267814353,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+unroll",
+      "log_gain": 0.0767560795842223,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "size_role": "tuning",
+      "candidate": "O3+unroll+native",
+      "log_gain": -0.52445260152314999,
+      "failed": false,
+      "source": "V0.8-table-matmul"
+    }
+  ]
+}

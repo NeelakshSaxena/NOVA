@@ -1,0 +1,1441 @@
+{
+  "experiment_id": "V0.8-table-vector_add",
+  "created_utc": "2026-10-14T15:19:14Z",
+  "kind": "table",
+  "benchmark": "vector_add",
+  "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173",
+  "kernel_dir": "benchmarks/kernels",
+  "sizes": [
+    {
+      "size": 1000000,
+      "role": "tuning"
+    },
+    {
+      "size": 4000000,
+      "role": "tuning"
+    },
+    {
+      "size": 2000000,
+      "role": "holdout"
+    },
+    {
+      "size": 6000000,
+      "role": "holdout"
+    }
+  ],
+  "candidate_flags": {
+    "O2": [
+      "-O2"
+    ],
+    "O3": [
+      "-O3"
+    ],
+    "O2+native": [
+      "-O2",
+      "-march=native"
+    ],
+    "O2+prefetch": [
+      "-O2",
+      "-fprefetch-loop-arrays"
+    ],
+    "O2+prefetch+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-march=native"
+    ],
+    "O2+vec": [
+      "-O2",
+      "-ftree-vectorize"
+    ],
+    "O2+vec+native": [
+      "-O2",
+      "-ftree-vectorize",
+      "-march=native"
+    ],
+    "O2+prefetch+vec": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize"
+    ],
+    "O2+prefetch+vec+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-march=native"
+    ],
+    "O2+unroll": [
+      "-O2",
+      "-funroll-loops"
+    ],
+    "O2+unroll+native": [
+      "-O2",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O2+prefetch+unroll": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops"
+    ],
+    "O2+prefetch+unroll+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O2+vec+unroll": [
+      "-O2",
+      "-ftree-vectorize",
+      "-funroll-loops"
+    ],
+    "O2+vec+unroll+native": [
+      "-O2",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O2+prefetch+vec+unroll": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops"
+    ],
+    "O2+prefetch+vec+unroll+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O3+native": [
+      "-O3",
+      "-march=native"
+    ],
+    "O3+prefetch": [
+      "-O3",
+      "-fprefetch-loop-arrays"
+    ],
+    "O3+prefetch+native": [
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-march=native"
+    ],
+    "O3+unroll": [
+      "-O3",
+      "-funroll-loops"
+    ],
+    "O3+unroll+native": [
+      "-O3",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O3+prefetch+unroll": [
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops"
+    ],
+    "O3+prefetch+unroll+native": [
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops",
+      "-march=native"
+    ]
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds over ALL configurations, seeded Fisher-Yates shuffle per round",
+    "cpu_affinity_mask": "16",
+    "high_priority": true,
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ]
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_6.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_7.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_8.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_9.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_10.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_11.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_12.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_13.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_14.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_15.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_16.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_17.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_18.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_19.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_20.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_21.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_22.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_23.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_0.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_1.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_2.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_3.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_4.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_5.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_6.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_7.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_8.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_9.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_10.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_11.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_12.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_13.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_14.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_15.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_16.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_17.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_18.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_19.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_20.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_21.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_22.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_23.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_0.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_1.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_2.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_3.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_4.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_5.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_6.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_7.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_8.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_9.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_10.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_11.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_12.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_13.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_14.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_15.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_16.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_17.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_18.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_19.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_20.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_21.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_22.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_23.exe",
+        "4000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_0.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_1.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_2.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_3.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_4.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_5.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_6.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_7.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_8.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_9.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_10.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_11.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_12.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_13.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_14.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_15.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_16.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_17.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_18.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_19.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_20.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_21.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_22.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_23.exe",
+        "2000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_0.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_1.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_2.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_3.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_4.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_5.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_6.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_7.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_8.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_9.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_10.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_11.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_12.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_13.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_14.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_15.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_16.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_17.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_18.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_19.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_20.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_21.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_22.exe",
+        "6000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-vector_add/bin/vector_add_23.exe",
+        "6000000",
+        "1"
+      ]
+    }
+  ],
+  "note": "exhaustive measurement of every configuration; nothing is selected here"
+}

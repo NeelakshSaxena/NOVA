@@ -1,0 +1,93 @@
+[
+ {
+  "name": "V0.8 no-features ablation still uses the workload prior",
+  "file": "src/tune/adaptive.cpp",
+  "old": "if (!ablation_.use_features || !workload_.known) return 0.0;",
+  "new": "if (!workload_.known) return 0.0;",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 no-feedback ablation still uses outcomes",
+  "file": "src/tune/adaptive.cpp",
+  "old": "if (!ablation_.use_feedback) return 0.0;",
+  "new": "",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 no-history ablation still uses history",
+  "file": "src/tune/adaptive.cpp",
+  "old": "if (!ablation_.use_history || history_.empty()) return 0.0;",
+  "new": "if (history_.empty()) return 0.0;",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 filter_history admits holdout entries",
+  "file": "src/tune/adaptive.cpp",
+  "old": "if (e.size_role != \"tuning\") continue;  // holdout / ad-hoc measurements never influence a selection",
+  "new": "",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 history store accepts holdout measurements",
+  "file": "src/tune/adaptive.cpp",
+  "old": "if (e.size_role != \"tuning\") {\n            error = \"refusing",
+  "new": "if (false) {\n            error = \"refusing",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 feedback sign flipped",
+  "file": "src/tune/adaptive.cpp",
+  "old": "num += sim * outcome_[e];",
+  "new": "num -= sim * outcome_[e];",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 policy history term ignores the size role (second guard removed)",
+  "file": "src/tune/adaptive.cpp",
+  "old": "if (h.candidate != id || h.size_role != \"tuning\") continue;",
+  "new": "if (h.candidate != id) continue;",
+  "test": "test_adaptive_unit"
+ },
+ {
+  "name": "V0.8 study history includes the workload being tuned",
+  "file": "src/tune/study.cpp",
+  "old": "if (t.benchmark == target.benchmark && t.size == target.size) continue;  // never the workload being tuned",
+  "new": "",
+  "test": "test_study_unit"
+ },
+ {
+  "name": "V0.8 study reports the oracle's speed instead of the selected configuration's",
+  "file": "src/tune/study.cpp",
+  "old": "double selected_med = best_base_t;",
+  "new": "double selected_med = oracle_med;",
+  "test": "test_study_unit"
+ },
+ {
+  "name": "V0.8 holdout failure counted as a win",
+  "file": "src/tune/study.cpp",
+  "old": "double v = hs->second.eligible ? hb / hs->second.median_ms : 0.0;",
+  "new": "double v = hb / hs->second.median_ms;",
+  "test": "test_study_unit"
+ },
+ {
+  "name": "V0.8 adaptive tuner evaluates budget+1 candidates",
+  "file": "src/tune/tuner.cpp",
+  "old": "for (int step = 0; step < cfg.budget; ++step) {",
+  "new": "for (int step = 0; step < cfg.budget + 1; ++step) {",
+  "test": "test_adaptive_integration"
+ },
+ {
+  "name": "V0.8 evaluate is allowed to overwrite the tuning directory",
+  "file": "src/tune/evaluate.cpp",
+  "old": "if (cfg.out_dir == cfg.tune_dir) return usage(",
+  "new": "if (false) return usage(",
+  "test": "test_adaptive_integration"
+ },
+ {
+  "name": "V0.8 tampered recorded flags are not re-validated",
+  "file": "src/tune/evaluate.cpp",
+  "old": "if (!validate_flags(flags, whitelist, why)) {  // flags from a file are untrusted: validate before building",
+  "new": "if (false) {",
+  "test": "test_adaptive_integration"
+ }
+]

@@ -1,0 +1,14 @@
+SmartPass tuning result: stencil, input size 200000, experiment V0.7-stencil-random-s2-B4
+strategy random (search seed 2), budget 4 search candidates; evaluated 4 + baselines (6 builds total)
+tuning wall time 12.63 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     5  O2                              ELIGIBLE                16.3300   0.2193       81660  
+     4  O3                              ELIGIBLE                11.7295   0.2715       81746  
+     2  O3+prefetch                     ELIGIBLE                 9.8728   0.6296       85330  
+     6  O2+prefetch                     ELIGIBLE                17.0559   0.8943       84732  
+     3  O2+prefetch+unroll+native       ELIGIBLE                11.6390   0.3925       86780  
+     1  O3+native                       ELIGIBLE                 9.4195   0.1978       82258  WINNER
+
+winner: O3+native [-std=c++17 -msse2 -mfpmath=sse -O3 -march=native], median 9.4195 ms over 15 samples
+best baseline: O3, median 11.7295 ms; ratio of medians 1.245; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)

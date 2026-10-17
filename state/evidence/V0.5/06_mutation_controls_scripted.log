@@ -1,0 +1,4 @@
+KILLED    V0.5 DCE may delete a failing division  [exit=1, FAIL lines=2576]
+KILLED    V0.5 fold turns division by zero into 0  [exit=1, FAIL lines=4240]
+KILLED    V0.5 simplify rewrites x-x to 1  [exit=1, FAIL lines=91]
+KILLED    V0.5 propagate keeps stale constants after redefinition  [exit=1, FAIL lines=608]

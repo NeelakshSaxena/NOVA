@@ -1,0 +1,42 @@
+-- The CXX compiler identification is GNU 6.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/MinGW/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (1.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: G:/Projects/NOVA/build
+configure exit 0
+[  4%] Building CXX object CMakeFiles/nova_core.dir/src/cli.cpp.obj
+[  8%] Building CXX object CMakeFiles/nova_core.dir/src/lexer.cpp.obj
+[ 13%] Building CXX object CMakeFiles/nova_core.dir/src/ast.cpp.obj
+[ 17%] Building CXX object CMakeFiles/nova_core.dir/src/parser.cpp.obj
+[ 21%] Building CXX object CMakeFiles/nova_core.dir/src/semantic.cpp.obj
+[ 26%] Building CXX object CMakeFiles/nova_core.dir/src/tac.cpp.obj
+[ 30%] Building CXX object CMakeFiles/nova_core.dir/src/interp.cpp.obj
+[ 34%] Building CXX object CMakeFiles/nova_core.dir/src/optimizer.cpp.obj
+[ 39%] Linking CXX static library libnova_core.a
+[ 39%] Built target nova_core
+[ 43%] Building CXX object CMakeFiles/nova.dir/src/main.cpp.obj
+[ 47%] Linking CXX executable nova.exe
+[ 47%] Built target nova
+[ 52%] Building CXX object CMakeFiles/test_cli.dir/tests/test_cli.cpp.obj
+[ 56%] Linking CXX executable test_cli.exe
+[ 56%] Built target test_cli
+[ 60%] Building CXX object CMakeFiles/test_lexer.dir/tests/test_lexer.cpp.obj
+[ 65%] Linking CXX executable test_lexer.exe
+[ 65%] Built target test_lexer
+[ 69%] Building CXX object CMakeFiles/test_parser.dir/tests/test_parser.cpp.obj
+[ 73%] Linking CXX executable test_parser.exe
+[ 73%] Built target test_parser
+[ 78%] Building CXX object CMakeFiles/test_semantic.dir/tests/test_semantic.cpp.obj
+[ 82%] Linking CXX executable test_semantic.exe
+[ 82%] Built target test_semantic
+[ 86%] Building CXX object CMakeFiles/test_tac.dir/tests/test_tac.cpp.obj
+[ 91%] Linking CXX executable test_tac.exe
+[ 91%] Built target test_tac
+[ 95%] Building CXX object CMakeFiles/test_optimizer.dir/tests/test_optimizer.cpp.obj
+[100%] Linking CXX executable test_optimizer.exe
+[100%] Built target test_optimizer
+build exit 0

@@ -1,0 +1,30 @@
+[
+ {
+  "name": "V0.5 DCE may delete a failing division",
+  "file": "src/optimizer.cpp",
+  "old": "return i.op == Opcode::Div && !(i.b.is_const() && i.b.value != 0);",
+  "new": "return false;",
+  "test": "test_optimizer"
+ },
+ {
+  "name": "V0.5 fold turns division by zero into 0",
+  "file": "src/optimizer.cpp",
+  "old": "if (!checked_div(i.a.value, i.b.value, r)) continue;  // keep: must fail at run time",
+  "new": "if (!checked_div(i.a.value, i.b.value, r)) r = 0;",
+  "test": "test_optimizer"
+ },
+ {
+  "name": "V0.5 simplify rewrites x-x to 1",
+  "file": "src/optimizer.cpp",
+  "old": "else if (a.is_var() && a == b) { make_copy(i, Operand::constant(0)); changed = true; }",
+  "new": "else if (a.is_var() && a == b) { make_copy(i, Operand::constant(1)); changed = true; }",
+  "test": "test_optimizer"
+ },
+ {
+  "name": "V0.5 propagate keeps stale constants after redefinition",
+  "file": "src/optimizer.cpp",
+  "old": "known.erase(i.dst.name);",
+  "new": ";",
+  "test": "test_optimizer"
+ }
+]

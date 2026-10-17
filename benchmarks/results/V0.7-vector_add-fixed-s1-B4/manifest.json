@@ -1,0 +1,221 @@
+{
+  "experiment_id": "V0.7-vector_add-fixed-s1-B4",
+  "created_utc": "2026-10-14T15:00:38Z",
+  "kind": "tune",
+  "benchmark": "vector_add",
+  "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173",
+  "kernel_dir": "benchmarks/kernels",
+  "search": {
+    "strategy": "fixed",
+    "search_seed": "1",
+    "budget": 4,
+    "space_size": 22,
+    "evaluations": 4,
+    "builds_attempted": 6,
+    "accounting": "budget counts search candidates built+validated; the baselines are always evaluated in addition and are not counted; no automatic retries",
+    "sequence": [
+      "O2+native",
+      "O2+prefetch",
+      "O2+prefetch+native",
+      "O2+vec"
+    ],
+    "baselines": [
+      "O2",
+      "O3"
+    ],
+    "whitelist": [
+      "-O2",
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "max_binary_growth": 2.0,
+    "tuning_size": 1000000,
+    "holdout_policy": "holdout sizes are refused; no holdout measurement influenced this selection"
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "validation_run_discarded": true,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds, seeded Fisher-Yates shuffle of candidates per round",
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ],
+    "build_timeout_ms": 180000,
+    "run_timeout_ms": 120000,
+    "cpu_affinity_mask": "16",
+    "high_priority": true
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-march=native",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_0.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_1.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_2.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_3.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_4.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.7-vector_add-fixed-s1-B4/bin/vector_add_5.exe",
+        "1000000",
+        "1"
+      ]
+    }
+  ],
+  "has_winner": true,
+  "winner": "O2+vec",
+  "tuning_wall_time_s": 15.26487
+}

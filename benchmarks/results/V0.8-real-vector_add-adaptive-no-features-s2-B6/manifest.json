@@ -1,0 +1,477 @@
+{
+  "experiment_id": "V0.8-real-vector_add-adaptive-no-features-s2-B6",
+  "created_utc": "2026-10-14T15:48:00Z",
+  "kind": "tune",
+  "benchmark": "vector_add",
+  "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173",
+  "kernel_dir": "benchmarks/kernels",
+  "search": {
+    "strategy": "adaptive",
+    "search_seed": "2",
+    "budget": 6,
+    "space_size": 22,
+    "evaluations": 6,
+    "builds_attempted": 8,
+    "accounting": "budget counts search candidates built+validated; the baselines are always evaluated in addition and are not counted; no automatic retries",
+    "sequence": [
+      "O2+prefetch+vec+unroll",
+      "O3+prefetch+unroll",
+      "O2+prefetch+vec",
+      "O3+prefetch",
+      "O2+vec+unroll",
+      "O3+unroll"
+    ],
+    "baselines": [
+      "O2",
+      "O3"
+    ],
+    "whitelist": [
+      "-O2",
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "max_binary_growth": 2.0,
+    "tuning_size": 1000000,
+    "adaptive": {
+      "ablation": "no-features",
+      "pilot_reps": 5,
+      "history_path": "benchmarks/history/V0.8-tuning-history.json",
+      "history_entries_used": 110,
+      "history_exclude_same_workload": true,
+      "workload_features": {
+        "known": true,
+        "working_set_bytes": 16000000.0,
+        "flops_per_byte": 1.0,
+        "loop_nest_depth": 2,
+        "innermost_reduction": false,
+        "unit_stride_streaming": true,
+        "size_log2": 19.931568569324174
+      },
+      "pilot": [
+        {
+          "step": 1,
+          "candidate": "O2+prefetch+vec+unroll",
+          "prior": 0.0,
+          "history": 0.14115119246963734,
+          "feedback": 0.0,
+          "ok": true,
+          "log_gain": 0.11491984589557043,
+          "failure": "",
+          "candidate_samples_ms": [
+            14.633100000000001,
+            14.849299999999999,
+            15.087899999999999,
+            15.0898,
+            13.852399999999999
+          ],
+          "anchor_samples_ms": [
+            16.657699999999998,
+            17.0671,
+            16.280799999999999,
+            16.156700000000001,
+            17.291399999999999
+          ]
+        },
+        {
+          "step": 2,
+          "candidate": "O3+prefetch+unroll",
+          "prior": 0.0,
+          "history": 0.14038239113348844,
+          "feedback": 0.017854223467836491,
+          "ok": true,
+          "log_gain": 0.085835008580801897,
+          "failure": "",
+          "candidate_samples_ms": [
+            15.1403,
+            13.8637,
+            15.8482,
+            15.388299999999999,
+            15.7592
+          ],
+          "anchor_samples_ms": [
+            17.113,
+            16.767499999999998,
+            15.919600000000001,
+            16.540400000000002,
+            16.9771
+          ]
+        },
+        {
+          "step": 3,
+          "candidate": "O2+prefetch+vec",
+          "prior": 0.0,
+          "history": 0.13770147769848171,
+          "feedback": 0.021529576891656767,
+          "ok": true,
+          "log_gain": 0.17000627986876202,
+          "failure": "",
+          "candidate_samples_ms": [
+            13.962199999999999,
+            14.6272,
+            14.015700000000001,
+            15.2888,
+            15.7804
+          ],
+          "anchor_samples_ms": [
+            15.8438,
+            17.337800000000001,
+            18.506799999999998,
+            16.698699999999999,
+            17.808
+          ]
+        },
+        {
+          "step": 4,
+          "candidate": "O3+prefetch",
+          "prior": 0.0,
+          "history": 0.13616326035466314,
+          "feedback": 0.038198489423301916,
+          "ok": true,
+          "log_gain": 0.098934694074629584,
+          "failure": "",
+          "candidate_samples_ms": [
+            15.172000000000001,
+            14.3078,
+            15.631600000000001,
+            15.664899999999999,
+            15.0373
+          ],
+          "anchor_samples_ms": [
+            16.288599999999999,
+            16.424199999999999,
+            16.7498,
+            18.215599999999998,
+            17.463699999999999
+          ]
+        },
+        {
+          "step": 5,
+          "candidate": "O2+vec+unroll",
+          "prior": 0.0,
+          "history": 0.13409936234124109,
+          "feedback": 0.030437652715309363,
+          "ok": true,
+          "log_gain": 0.12454670496415993,
+          "failure": "",
+          "candidate_samples_ms": [
+            15.3972,
+            13.853199999999999,
+            14.767799999999999,
+            14.251899999999999,
+            14.6236
+          ],
+          "anchor_samples_ms": [
+            16.4343,
+            16.563199999999998,
+            17.379899999999999,
+            15.8805,
+            17.808299999999999
+          ]
+        },
+        {
+          "step": 6,
+          "candidate": "O3+unroll",
+          "prior": 0.0,
+          "history": 0.13366246584632568,
+          "feedback": 0.037563204564604859,
+          "ok": true,
+          "log_gain": 0.12307026264080496,
+          "failure": "",
+          "candidate_samples_ms": [
+            14.641500000000001,
+            14.007,
+            14.3504,
+            16.070699999999999,
+            14.594099999999999
+          ],
+          "anchor_samples_ms": [
+            17.684200000000001,
+            16.505400000000002,
+            18.342600000000001,
+            15.3498,
+            16.244499999999999
+          ]
+        }
+      ],
+      "policy": "score = prior(features) + history + feedback, in log-gain units; see docs/adaptive.md"
+    },
+    "candidate_flags": {
+      "O2": [
+        "-O2"
+      ],
+      "O3": [
+        "-O3"
+      ],
+      "O2+prefetch+vec+unroll": [
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops"
+      ],
+      "O3+prefetch+unroll": [
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops"
+      ],
+      "O2+prefetch+vec": [
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize"
+      ],
+      "O3+prefetch": [
+        "-O3",
+        "-fprefetch-loop-arrays"
+      ],
+      "O2+vec+unroll": [
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops"
+      ],
+      "O3+unroll": [
+        "-O3",
+        "-funroll-loops"
+      ]
+    },
+    "holdout_policy": "holdout sizes are refused; no holdout measurement influenced this selection"
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "validation_run_discarded": true,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds, seeded Fisher-Yates shuffle of candidates per round",
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ],
+    "build_timeout_ms": 180000,
+    "run_timeout_ms": 120000,
+    "cpu_affinity_mask": "16",
+    "high_priority": true
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_6.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "benchmarks/kernels/vector_add.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_7.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_0.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_1.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_2.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_3.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_4.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_5.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_6.exe",
+        "1000000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/bin/vector_add_7.exe",
+        "1000000",
+        "1"
+      ]
+    }
+  ],
+  "has_winner": true,
+  "winner": "O3+prefetch",
+  "tuning_wall_time_s": 24.194853999999999
+}

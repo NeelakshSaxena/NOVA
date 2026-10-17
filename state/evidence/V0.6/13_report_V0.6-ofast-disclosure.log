@@ -1,0 +1,45 @@
+environment: Windows 11 Home 26H2 (build 26300); Intel(R) Core(TM) Ultra 7 155H; 22 logical CPUs; 15789 MiB RAM
+compiler: g++ (MinGW.org GCC-6.3.0-1) 6.3.0 [mingw32]
+
+matmul  n=256
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      14.0603     0.1216      0.9%   13.9370       15  82232
+  O3                  PASS      14.0538     0.1472      1.0%   13.9549       15  82318
+  Ofast [fast-math]   PASS      14.1194     0.0927      0.7%   13.8342       15  86032
+  median(O2)/median(O3) = 1.000 over 15 samples each; interquartile ranges overlap -> inconclusive
+
+matmul  n=384
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      48.3998     0.2901      0.6%   48.0008       15  82232
+  O3                  PASS      48.2005     0.3021      0.6%   47.9496       15  82318
+  Ofast [fast-math]   PASS      48.4948     0.3555      0.7%   47.9667       15  86032
+  median(O2)/median(O3) = 1.004 over 15 samples each; interquartile ranges overlap -> inconclusive
+
+stencil  n=200000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      16.1913     0.1412      0.9%   16.0035       15  81660
+  O3                  PASS      11.6174     0.1547      1.3%   11.4424       15  81746
+  Ofast [fast-math]   PASS      11.6614     0.1641      1.4%   11.5262       15  85972
+  median(O2)/median(O3) = 1.394 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+
+stencil  n=800000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      68.9023     2.6968      3.9%   66.2302       15  81660
+  O3                  PASS      50.4587     3.1303      6.2%   49.1300       15  81746
+  Ofast [fast-math]   PASS      53.0411     5.2515      9.9%   48.2495       15  85972
+  median(O2)/median(O3) = 1.366 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+
+vector_add  n=1000000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      16.8954     1.1609      6.9%   15.9725       15  81722
+  O3                  PASS      15.6481     1.2340      7.9%   14.1980       15  82320
+  Ofast [fast-math]   PASS      15.2859     0.6100      4.0%   14.1982       15  86034
+  median(O2)/median(O3) = 1.080 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+
+vector_add  n=4000000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      72.3473     1.5843      2.2%   68.0394       15  81722
+  O3                  PASS      69.9392     1.5863      2.3%   67.9563       15  82320
+  Ofast [fast-math]   PASS      69.0919     2.2578      3.3%   67.5915       15  86034
+  median(O2)/median(O3) = 1.034 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+

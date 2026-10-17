@@ -1,0 +1,6 @@
+workload O2 uses min instead of median -> FAILED (failures=1)
+paired mean uses wrong sign -> FAILED (failures=1)
+verdict ignores workload consistency -> FAILED (failures=1)
+template lint disabled -> FAILED (failures=1)
+missing data silently ignored -> OK
+missing data silently ignored -> OK (equivalent: the same condition is re-checked before the next stage and in main(); defense in depth)

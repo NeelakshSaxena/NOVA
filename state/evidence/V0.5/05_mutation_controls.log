@@ -1,0 +1,8 @@
+mutation A: DCE may delete failing division
+2576
+mutation B: fold folds division by zero as 0
+4240
+mutation C: simplify rewrites x/x -> 1
+37
+mutation D: propagate forgets to invalidate on redefinition
+608

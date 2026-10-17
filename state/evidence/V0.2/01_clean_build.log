@@ -1,0 +1,24 @@
+-- The CXX compiler identification is GNU 6.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/MinGW/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (1.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: G:/Projects/NOVA/build
+configure exit 0
+[ 11%] Building CXX object CMakeFiles/nova_core.dir/src/cli.cpp.obj
+[ 22%] Building CXX object CMakeFiles/nova_core.dir/src/lexer.cpp.obj
+[ 33%] Linking CXX static library libnova_core.a
+[ 33%] Built target nova_core
+[ 44%] Building CXX object CMakeFiles/nova.dir/src/main.cpp.obj
+[ 55%] Linking CXX executable nova.exe
+[ 55%] Built target nova
+[ 66%] Building CXX object CMakeFiles/test_cli.dir/tests/test_cli.cpp.obj
+[ 77%] Linking CXX executable test_cli.exe
+[ 77%] Built target test_cli
+[ 88%] Building CXX object CMakeFiles/test_lexer.dir/tests/test_lexer.cpp.obj
+[100%] Linking CXX executable test_lexer.exe
+[100%] Built target test_lexer
+build exit 0

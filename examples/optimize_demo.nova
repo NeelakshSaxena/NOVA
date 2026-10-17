@@ -1,0 +1,6 @@
+let a = 4;
+let b = a * 2 + 0;
+let unused = b - b;
+let z = 1 - 1;
+print b * 1;
+print a * (3 + 4);

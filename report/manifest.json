@@ -1,0 +1,489 @@
+{
+ "generator": "scripts/make_report.py",
+ "inputs": [
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/manifest.json",
+   "sha256": "0881255040171ac2622ec8dac85dd3b969d21901ca6af19149a46e9cb086c22a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6-holdout/results.json",
+   "sha256": "acdd08ddc24d8b2bba409e66e1659f4d24c1ec18510fb3d5d51ebfb9b4f57110"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/manifest.json",
+   "sha256": "420eda132c3e4a1c54eed70c22a48a2da9301cf4ebe7e85ca789cab9a5c000cd"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s1-B6/results.json",
+   "sha256": "5af6b47ad04f36810e3a7508f4cfe88e9f2e4dbce341859d1d9a9c566ab74726"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/manifest.json",
+   "sha256": "b31340982350ede72fc082b09fb8cc7faa1b3a31d982d341a7a69e90612a56cb"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6-holdout/results.json",
+   "sha256": "5f859b19e3bf8b29f5e7683b00c8e1f0a5b2eef912fcad6551c00fe93b9e5bac"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/manifest.json",
+   "sha256": "4ac810e3cc7d80493fc28d8c8c590eee7ddbe2c85a0e8f6675995a6b6c14d13b"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s2-B6/results.json",
+   "sha256": "1aabc2d772018098ebf7b1c8b2d4496bdc36f407b6fd4ede6376cdf79f832dab"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/manifest.json",
+   "sha256": "03575ee36925a9ad8c8e43a04f89314779ffc2b247ec1181f24414793c05e4d9"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6-holdout/results.json",
+   "sha256": "1eb8586ef1617f533429801ec00aeffb1b2efb76ae8f86e6cddbed51fb6f08bd"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/manifest.json",
+   "sha256": "63299a734bbb8e4b76d5176b51f76ba0f88a286996b5efcea3d81c8cb6daf69e"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-no-features-s3-B6/results.json",
+   "sha256": "c39bd5c271e1ad3ab7507e8a7decc33b04919f5c6347447106dbe5aca34e9b78"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/manifest.json",
+   "sha256": "4fec3d1167e3422c1c0c5608930eac782066449ca81b9a490f5ebd9078b5743a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6-holdout/results.json",
+   "sha256": "c7d838feff95bddbcfd399e96ab815b105da68f7cade0bc3dc95dc8ab07a4a99"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/manifest.json",
+   "sha256": "b01ac0e4514f9cf481383a6c052d2685d46ddc8e07732f48ac1e0b7dbeb7d95c"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s1-B6/results.json",
+   "sha256": "3b928a8e68b67d20861b31b45fd9815f01c051ebcdd0652b0d88ab46f159d008"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/manifest.json",
+   "sha256": "e38448e262a83da02fed0b11318d2e2dcfc0ad419172c549abdd69ec32700cdc"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6-holdout/results.json",
+   "sha256": "db48a2963f0d314febe1aaeaa26bb006272869e0703caf574b433c8f4da74078"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/manifest.json",
+   "sha256": "0341f285cda164d03bbeb7b0624dd317ae6c0ea9e953183ff00e106ec30ba28e"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s2-B6/results.json",
+   "sha256": "ee711e95241997b08e56d362aafd22bec2b862e7bab3f070d405a77cf6cffb9a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/manifest.json",
+   "sha256": "18c1d841cbe4204e8648b647044e252a3fade4f8c9653bd1bcfd7144ddec84b7"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6-holdout/results.json",
+   "sha256": "3b538c4b13251e20a72a8c59e1689bef0f8833b405376894bbd36b50a0ab75ce"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/manifest.json",
+   "sha256": "a1c67aa21593f2f6a91b25cfe570c8ef9e5bcc010adcaef4bed56d15c61fcec7"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/results.json",
+   "sha256": "981aee6b17139816f259e4392f6dad637b6f4bd4b361e7c403e142f1bdc0a57a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/manifest.json",
+   "sha256": "e9f7b87fad9f9fb7e79f0d94653eaa911437660500f582f01db1f2fb2405250b"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout/results.json",
+   "sha256": "d1e3c71b6f4db16bd8f6a23bdf675ce81b17b1e95bc4e3792e93d65b28d95260"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s1-B6/manifest.json",
+   "sha256": "74490511df56b0f9f802ca66d51bbb0f0c6d72460a35d2a1f176c8897df328d7"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s1-B6/results.json",
+   "sha256": "52b77614950ee3074409471549e6b9846974728e83065e9fe0c20eefcad7f03e"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/manifest.json",
+   "sha256": "eddd209345f131027b9af3f86dc2fddd3a857e0dfa1e55d832847b27b673d256"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s2-B6-holdout/results.json",
+   "sha256": "5da952078e683983c2d1685acf5068fac372d025baa4a50e8f5b89eee159813e"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s2-B6/manifest.json",
+   "sha256": "091523419e27bafc6564128195c7430179848ea0fd724f8ac6cb333fcb341d79"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s2-B6/results.json",
+   "sha256": "326b63c348ebc7469d8e6d8dc287e6e1ec68d18e644cbe482f4c867c54f42083"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/manifest.json",
+   "sha256": "50f1a3f36315ceeee376cf4dae8514b584e1541e6f2bffa2fb5b3390fc41be21"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s3-B6-holdout/results.json",
+   "sha256": "68d895302599b349eb81bfdc2aa27f2f07078563ff11931d08e98d9c90aac02b"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s3-B6/manifest.json",
+   "sha256": "00fde0c1e294890d1fdb37ff78be94db4ebcbdc2a1b54b41df71d88497a4d3f5"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-matmul-random-s3-B6/results.json",
+   "sha256": "41eb7209e90d9e7970840b1759959d86a2932aa14b1bab27e50006433db03e85"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/manifest.json",
+   "sha256": "c32e2f8f1e3a8a9a89c59d7e178261467bc3c88bfcda34841ee73760eb931268"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6-holdout/results.json",
+   "sha256": "9dd3f45e958f16f9e3a5a3b28c9ace5e6c0d5bd8acb9e8fd4f82b015d31e30d3"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/manifest.json",
+   "sha256": "3ed2da33b40e883348a0a28b8c7f9513eb9eec328b0d9d1766863f24ca877451"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6/results.json",
+   "sha256": "af18b32928af94d191f31ae32df4dc8321caa46b608d7866b43ac7bc6a4f15a1"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/manifest.json",
+   "sha256": "978794882f0c1fb91ed40f4100fc99c9b4ddfaaf8b60fa30abde761d2570bca0"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout/results.json",
+   "sha256": "76d4e350ab77867680ca59b7b0f8b5e7ea09ae6c1188478bfcaf5682c94ac33d"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/manifest.json",
+   "sha256": "ee7bafb41b59df17e9a5cdba2be5db2f47e2fb4f7a3e4bb935c9891b0c593b2e"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6/results.json",
+   "sha256": "3a61f7728818d8fdf048c24c0ecb4f2e285df34c9514daa757a4eb276b08a1b8"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/manifest.json",
+   "sha256": "90e18234b2f24cc2ca6d89531b0af0753f5e8ddf03074f6bacf7a27533e68ae5"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6-holdout/results.json",
+   "sha256": "385472c4946974d941671ef60e7fd9e4f57a9c5103b130e94b0b0b084bb55792"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/manifest.json",
+   "sha256": "4cd974b30968e19be5e890ad06d46774f448e956281ca48d36edc5c06feab7a3"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-no-features-s3-B6/results.json",
+   "sha256": "12dbec3454b362dc19b08165a2b180d10ba65da7d952198d33533fa597742619"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/manifest.json",
+   "sha256": "814393440160f98d9b61a22a52338d69c1c71a44d928c648bb47966c32940373"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6-holdout/results.json",
+   "sha256": "ac81032ff2f37494ac692bfff526eab7473e818f989e8e9e6f5276b53a68f492"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/manifest.json",
+   "sha256": "50aba2954b9034dae507f1c7e46a17a612d93177003085b70086b18fd9ebda2b"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s1-B6/results.json",
+   "sha256": "dcae3ebc632aa3a4b68430fdde3d65a64c8b6dde9dd3e849ed187b486ad52bf9"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/manifest.json",
+   "sha256": "13929beee2451053cf06704513244140958dbc0b96c8f6ebafbc6c80068bda3c"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6-holdout/results.json",
+   "sha256": "43e816bb31c18a4185be9b3325e28bdb0a3dc1c4c00a649edc76ed6214ad7066"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/manifest.json",
+   "sha256": "5aecfc0da392e6db0f9e062ad9a3597a72764fa19352acec568c02381d4375b3"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s2-B6/results.json",
+   "sha256": "5b8f9b8707b1baf364064b20821dd4fa53a530380ccd66288a133074cefa4449"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/manifest.json",
+   "sha256": "9494f47e6271b89f9e027cf180601ccf96ddaa1e5febe514e85733e9c0fe8ab4"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6-holdout/results.json",
+   "sha256": "e074325d34eeb1a2b1175d22219a7c1a9165f96ef8ad13f093b1a69d0b833eda"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/manifest.json",
+   "sha256": "e2b0580eb7e21f11d8092d48bb25eb32f0efcfd1e52b8e6924ef3a9d397cad3d"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-adaptive-s3-B6/results.json",
+   "sha256": "c81225e07fd2c8f18eccc4b3d2fad4df907087d9bae84432b2ca2d9d22924742"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/manifest.json",
+   "sha256": "d25fbc7cd8eea76af9867c39be3eb57a1a73f2a8c8509ce530ff6e1d7fbf971a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s1-B6-holdout/results.json",
+   "sha256": "9656cd68b328375b7ddad934d53c17a767859f9f12d8fd6087be9d25bde9389d"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s1-B6/manifest.json",
+   "sha256": "58f852f4cf85c651f13d099ac2eb32b51ba7813be1b9f453ec948bf0f236c562"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s1-B6/results.json",
+   "sha256": "5abd58f9384122b217898de7cef7f401ce54b68d937f55d160b375a9364b4191"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/manifest.json",
+   "sha256": "b79502755ea79c0a8a239d183545acf6e27621b1b52cba1d23be94f7109bc4e1"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout/results.json",
+   "sha256": "098fc490f9b426be8207f405cedf536f16a93c93fbd8fed4c205394e79db27b6"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s2-B6/manifest.json",
+   "sha256": "5094c89da2c8df553e4dffc26c961e20c5964eea06780f2a0197ebaec2a51093"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s2-B6/results.json",
+   "sha256": "7dc82dce69abbb7932215cdca4fb46c522a87891abba3eb15f565439c92adf97"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/manifest.json",
+   "sha256": "07fb60529afd01ce63a45dd81984a43eff22a65b4eedc74b6885530438afbdaa"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s3-B6-holdout/results.json",
+   "sha256": "639857a2fe97821bf0d4e6f8d21b80807ff244e5c130dbfc004207f8c7d23967"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s3-B6/manifest.json",
+   "sha256": "2915d85722a169fb46dbde1bd451f7bb509c94bc966cfca137e69efb3f82543b"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-stencil-random-s3-B6/results.json",
+   "sha256": "90da00d247ecff4422793ee47778af7c3b64fc0a8e281e7bcbf999425292aee4"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/manifest.json",
+   "sha256": "0670cc911d21f3e6cd4bda575cca0533d7778db30c3cd8c5ba7c9250e1fc2b68"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6-holdout/results.json",
+   "sha256": "25d62b6e69c3b6d6d88228dcaad2b718117d6eba56473d29f3ebf14cd18bf4f5"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/manifest.json",
+   "sha256": "99ed7878557c4c41495c23f8372c222d10c7c8b8c562743ca5572f1f0e80614c"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s1-B6/results.json",
+   "sha256": "682b7d4f31b55d3b013e95d88b7cea05f41bfbbfabe478a09b5477eb89742726"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/manifest.json",
+   "sha256": "4ee3ae95ca63d5c23849b075cdb51be77dd7fb0a616dc52a18e625d218641bf1"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6-holdout/results.json",
+   "sha256": "82b8732d52564ba9ffd8eeb9924753b18c3bbb994ca9c244f5a04a82a12170a0"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/manifest.json",
+   "sha256": "dc4a82933865cda38a36bb8fbba2eaa0388ba2f7b0620b6135a14b69a819b483"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6/results.json",
+   "sha256": "b4ba7bf2f79a52b150dc45c0b90171aeda8c88093351c05ea49e3a39fcbefd9d"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/manifest.json",
+   "sha256": "b5ddad69a83d3607eee99e7c49f70b0049f5b191c8d258b6e2e760375fa3f365"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout/results.json",
+   "sha256": "7962af866d0025f745a99b8e89bd091431379c2f5754f223eb7031d3e12e53f8"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/manifest.json",
+   "sha256": "dc0f057395e001c986a180d39819837376e33cd60c7070374b0d009db729032d"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6/results.json",
+   "sha256": "90f533fcef4bc746e6175b1601aa16956a34725c615a3b381b82b38514a79eb7"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/manifest.json",
+   "sha256": "ed5c0cf2b37dd6aef6ca05db689be2eeb7be6e0b9341b0fb87c8882bbcf7b639"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6-holdout/results.json",
+   "sha256": "1c2921806c18f1268e8e0bcc8bd8f97279ffde720973392dd6f4719a4b693e44"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/manifest.json",
+   "sha256": "afea93a4ee342e6f9c3ff48e1e1bcc760a91eabb14c4d69533ccbbdab59d2042"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s1-B6/results.json",
+   "sha256": "b890a284c41a926e1d1cf7184260b76239009474a73ac990929bd8062a651e76"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/manifest.json",
+   "sha256": "ebaf0fcbf1c72897ea4365cccedf5c011ec0335c9af967db71c2e9b330b70b9f"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6-holdout/results.json",
+   "sha256": "26d245730b3a1e4d246fd4ca1a6651b5ac257c029c5d30d02f2ad3a792f35be4"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/manifest.json",
+   "sha256": "265f0d63047160b1455784af3cc6532f64a4fdfcb934db1cab60f8352a2f0ea1"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s2-B6/results.json",
+   "sha256": "e88238c542e4e8182553e95e535098ba5bfa5c78a76b8e4d0e63ea7e0c3f7ce1"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/manifest.json",
+   "sha256": "943360d24675f4f1f090ed4703278daedd217b26a3267f68f5d9a8c4923fd807"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6-holdout/results.json",
+   "sha256": "0399b18f7e18c39504dffc9f355a67ad8540ad13f16eb4905cb59e67cc35dede"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/manifest.json",
+   "sha256": "8b730fc527b7e6873349aaa8d07c831a452be21348ff1b393363025bda402bfd"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-adaptive-s3-B6/results.json",
+   "sha256": "0e78b081e5f6d6646a5a51d6efecc36f434ce951dc117877ace2f61e9c81f8af"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/manifest.json",
+   "sha256": "ad76a5a0c7a8a0c0c7dcfd21df2264fed0702f1171380886cadee9a92ec041bb"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout/results.json",
+   "sha256": "c54cda840f0ee146ff818a27b7eca23c58cc42173947c0c7947116f25e19d3e8"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s1-B6/manifest.json",
+   "sha256": "cbceb498719810f66ae613666162205ad4fcf6a0b5268de5c3d243e220845c5f"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s1-B6/results.json",
+   "sha256": "2935230aae345f70e40c0bab393074b7c951906a27ce80e00aae25a3062a6263"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/manifest.json",
+   "sha256": "0697d7d6e08ed59f4c1e7ce42435d6a3b4addc9c317b09e9a630d00d86a1e78a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s2-B6-holdout/results.json",
+   "sha256": "582fef37fd96dec0862919619447d90e3b435265cb35b187f6baa9940fffcfde"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s2-B6/manifest.json",
+   "sha256": "ce75d4c4b5a347f7e692aaa9ae724a09a88cec2d2947e5ad6d682041105a3d11"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s2-B6/results.json",
+   "sha256": "4a9a0aa8984c100e05f2e970103178e8fa0e3db3f7ba8bc59a24c9de6318f163"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/manifest.json",
+   "sha256": "dc794a2dfe757b21418e286e7ed852636840e955838d462d292dcc4f2494bd1c"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s3-B6-holdout/results.json",
+   "sha256": "ea2b19030991e72a5a384ed97533cf3d09440be6047c9bbcb47eb06a0eab1fd8"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s3-B6/manifest.json",
+   "sha256": "a1f365965e8293f704beeb904ff611f428d6f3762f7e9c484a27a518470dd5d3"
+  },
+  {
+   "path": "benchmarks/results/V0.8-real-vector_add-random-s3-B6/results.json",
+   "sha256": "fa88f43f04889f137242c31fdf91ec1a76117de6b62b96f656c19e1313da4782"
+  },
+  {
+   "path": "benchmarks/results/V0.8-study/manifest.json",
+   "sha256": "50d9ab8dd7099fc56c04fa35bd545fb4a1d8170b045c3185da30d77773517a50"
+  },
+  {
+   "path": "benchmarks/results/V0.8-study/study_runs.csv",
+   "sha256": "28448449a4c3872fb1856eaab1f1befa4b63031723bf1077f90cbd91a91b94af"
+  },
+  {
+   "path": "benchmarks/results/V0.8-study/study_summary.csv",
+   "sha256": "da5c37e8aec648bc70b2f7c3d5aefa6936d798e03f68b681a9b89ad45b455f14"
+  },
+  {
+   "path": "benchmarks/results/V0.8-table-matmul/manifest.json",
+   "sha256": "58ff0de8bcae694ad586b91d62d1ca4281110788d4950afc2db0e99a61b21a2a"
+  },
+  {
+   "path": "benchmarks/results/V0.8-table-matmul/results.json",
+   "sha256": "498546164a6ecb85f8aa3c375d8dd8683b3be579825c001196cedda35e52ba54"
+  },
+  {
+   "path": "benchmarks/results/V0.8-table-stencil/manifest.json",
+   "sha256": "0566820f6b8270d4f872e28bc681d6b1cafd51ab3172437b2473689a359a2d78"
+  },
+  {
+   "path": "benchmarks/results/V0.8-table-stencil/results.json",
+   "sha256": "da2bb98808e3ca0e68119922877302a626ca65b2619dd6ff7a422536a8278055"
+  },
+  {
+   "path": "benchmarks/results/V0.8-table-vector_add/manifest.json",
+   "sha256": "eee226f068efbfef49bec4fcac817c786c6e7dbd1662e336335d59be01165a0e"
+  },
+  {
+   "path": "benchmarks/results/V0.8-table-vector_add/results.json",
+   "sha256": "be511fea4e7cb1dea39bc9205951679818d8639ec188546b12c6befc3e06d166"
+  },
+  {
+   "path": "report/template.md",
+   "sha256": "b5a6a81b257fdbc03531fb49c47fad6a6eaf8d31e74b483185c988a236b6a971"
+  }
+ ],
+ "verdicts": {
+  "H1": "SUPPORTED",
+  "H2": "SUPPORTED",
+  "H3": "INCONCLUSIVE",
+  "H3t": "INCONCLUSIVE",
+  "H4": "INCONCLUSIVE",
+  "H4t": "INCONCLUSIVE",
+  "H5": "INCONCLUSIVE",
+  "H5t": "INCONCLUSIVE"
+ },
+ "warnings": [],
+ "registered_values": 700
+}

@@ -1,0 +1,222 @@
+{
+  "experiment_id": "V0.7-stencil-random-s2-B4",
+  "created_utc": "2026-10-14T15:00:11Z",
+  "kind": "tune",
+  "benchmark": "stencil",
+  "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668",
+  "kernel_dir": "benchmarks/kernels",
+  "search": {
+    "strategy": "random",
+    "search_seed": "2",
+    "budget": 4,
+    "space_size": 22,
+    "evaluations": 4,
+    "builds_attempted": 6,
+    "accounting": "budget counts search candidates built+validated; the baselines are always evaluated in addition and are not counted; no automatic retries",
+    "sequence": [
+      "O3+prefetch",
+      "O2+prefetch",
+      "O2+prefetch+unroll+native",
+      "O3+native"
+    ],
+    "baselines": [
+      "O2",
+      "O3"
+    ],
+    "whitelist": [
+      "-O2",
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "max_binary_growth": 2.0,
+    "tuning_size": 200000,
+    "holdout_policy": "holdout sizes are refused; no holdout measurement influenced this selection"
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "validation_run_discarded": true,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds, seeded Fisher-Yates shuffle of candidates per round",
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ],
+    "build_timeout_ms": 180000,
+    "run_timeout_ms": 120000,
+    "cpu_affinity_mask": "16",
+    "high_priority": true
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-march=native",
+        "benchmarks/kernels/stencil.cpp",
+        "-o",
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_0.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_1.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_2.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_3.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_4.exe",
+        "200000",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.7-stencil-random-s2-B4/bin/stencil_5.exe",
+        "200000",
+        "1"
+      ]
+    }
+  ],
+  "has_winner": true,
+  "winner": "O3+native",
+  "tuning_wall_time_s": 12.633151
+}

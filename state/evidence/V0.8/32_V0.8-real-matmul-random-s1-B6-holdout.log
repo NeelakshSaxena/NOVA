@@ -1,0 +1,30 @@
+evaluating benchmarks/results/V0.8-real-matmul-random-s1-B6 -> benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout
+build O2 ... ok
+build O3 ... ok
+build O3+prefetch+unroll ... ok
+  validate O2 n=320: PASS
+  validate O3 n=320: PASS
+  validate O3+prefetch+unroll n=320: PASS
+  O2 n=320 median 27.6954 ms (IQR 0.2351, 15 samples)
+  O3 n=320 median 27.7937 ms (IQR 0.2998, 15 samples)
+  O3+prefetch+unroll n=320 median 25.5175 ms (IQR 0.5379, 15 samples)
+  validate O2 n=448: PASS
+  validate O3 n=448: PASS
+  validate O3+prefetch+unroll n=448: PASS
+  O2 n=448 median 78.0032 ms (IQR 0.5708, 15 samples)
+  O3 n=448 median 78.1323 ms (IQR 0.3567, 15 samples)
+  O3+prefetch+unroll n=448 median 71.8113 ms (IQR 0.7936, 15 samples)
+
+size 320 (holdout)
+  O2                                  27.6954 ms  IQR   0.2351  (15 samples)
+  O3                                  27.7937 ms  IQR   0.2998  (15 samples)
+  O3+prefetch+unroll                  25.5175 ms  IQR   0.5379  (15 samples)
+  selected vs best baseline (O2): median ratio 1.085; interquartile ranges are disjoint
+
+size 448 (holdout)
+  O2                                  78.0032 ms  IQR   0.5708  (15 samples)
+  O3                                  78.1323 ms  IQR   0.3567  (15 samples)
+  O3+prefetch+unroll                  71.8113 ms  IQR   0.7936  (15 samples)
+  selected vs best baseline (O2): median ratio 1.086; interquartile ranges are disjoint
+
+results written to benchmarks/results/V0.8-real-matmul-random-s1-B6-holdout

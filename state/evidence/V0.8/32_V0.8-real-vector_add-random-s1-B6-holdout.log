@@ -1,0 +1,30 @@
+evaluating benchmarks/results/V0.8-real-vector_add-random-s1-B6 -> benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout
+build O2 ... ok
+build O3 ... ok
+build O2+prefetch+vec+native ... ok
+  validate O2 n=2000000: PASS
+  validate O3 n=2000000: PASS
+  validate O2+prefetch+vec+native n=2000000: PASS
+  O2 n=2000000 median 36.1119 ms (IQR 1.2271, 15 samples)
+  O3 n=2000000 median 34.2471 ms (IQR 1.5737, 15 samples)
+  O2+prefetch+vec+native n=2000000 median 32.5122 ms (IQR 0.8366, 15 samples)
+  validate O2 n=6000000: PASS
+  validate O3 n=6000000: PASS
+  validate O2+prefetch+vec+native n=6000000: PASS
+  O2 n=6000000 median 111.2538 ms (IQR 1.6727, 15 samples)
+  O3 n=6000000 median 106.3266 ms (IQR 1.6360, 15 samples)
+  O2+prefetch+vec+native n=6000000 median 103.3357 ms (IQR 1.6837, 15 samples)
+
+size 2000000 (holdout)
+  O2                                  36.1119 ms  IQR   1.2271  (15 samples)
+  O3                                  34.2471 ms  IQR   1.5737  (15 samples)
+  O2+prefetch+vec+native              32.5122 ms  IQR   0.8366  (15 samples)
+  selected vs best baseline (O3): median ratio 1.053; interquartile ranges are disjoint
+
+size 6000000 (holdout)
+  O2                                 111.2538 ms  IQR   1.6727  (15 samples)
+  O3                                 106.3266 ms  IQR   1.6360  (15 samples)
+  O2+prefetch+vec+native             103.3357 ms  IQR   1.6837  (15 samples)
+  selected vs best baseline (O3): median ratio 1.029; interquartile ranges are disjoint
+
+results written to benchmarks/results/V0.8-real-vector_add-random-s1-B6-holdout

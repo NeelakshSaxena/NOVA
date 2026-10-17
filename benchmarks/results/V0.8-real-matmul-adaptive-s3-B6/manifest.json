@@ -1,0 +1,477 @@
+{
+  "experiment_id": "V0.8-real-matmul-adaptive-s3-B6",
+  "created_utc": "2026-10-14T15:52:25Z",
+  "kind": "tune",
+  "benchmark": "matmul",
+  "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1",
+  "kernel_dir": "benchmarks/kernels",
+  "search": {
+    "strategy": "adaptive",
+    "search_seed": "3",
+    "budget": 6,
+    "space_size": 22,
+    "evaluations": 6,
+    "builds_attempted": 8,
+    "accounting": "budget counts search candidates built+validated; the baselines are always evaluated in addition and are not counted; no automatic retries",
+    "sequence": [
+      "O3+prefetch+unroll",
+      "O3+unroll",
+      "O2+prefetch+vec+unroll",
+      "O3+prefetch",
+      "O2+vec+unroll",
+      "O2+prefetch+vec"
+    ],
+    "baselines": [
+      "O2",
+      "O3"
+    ],
+    "whitelist": [
+      "-O2",
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "max_binary_growth": 2.0,
+    "tuning_size": 256,
+    "adaptive": {
+      "ablation": "none",
+      "pilot_reps": 5,
+      "history_path": "benchmarks/history/V0.8-tuning-history.json",
+      "history_entries_used": 110,
+      "history_exclude_same_workload": true,
+      "workload_features": {
+        "known": true,
+        "working_set_bytes": 1572864.0,
+        "flops_per_byte": 21.333333333333332,
+        "loop_nest_depth": 3,
+        "innermost_reduction": true,
+        "unit_stride_streaming": false,
+        "size_log2": 8.0
+      },
+      "pilot": [
+        {
+          "step": 1,
+          "candidate": "O3+prefetch+unroll",
+          "prior": 0.18000000000000002,
+          "history": 0.13723078842310135,
+          "feedback": 0.0,
+          "ok": true,
+          "log_gain": 0.075675784153916195,
+          "failure": "",
+          "candidate_samples_ms": [
+            13.097200000000001,
+            12.9922,
+            13.065300000000001,
+            13.020300000000001,
+            13.174799999999999
+          ],
+          "anchor_samples_ms": [
+            14.106999999999999,
+            13.9956,
+            14.161799999999999,
+            14.0924,
+            14.084899999999999
+          ]
+        },
+        {
+          "step": 2,
+          "candidate": "O3+unroll",
+          "prior": 0.15000000000000002,
+          "history": 0.12914820119665377,
+          "feedback": 0.011757171712669852,
+          "ok": true,
+          "log_gain": 0.096657173791148521,
+          "failure": "",
+          "candidate_samples_ms": [
+            13.5623,
+            13.097799999999999,
+            12.964700000000001,
+            13.170400000000001,
+            13.0206
+          ],
+          "anchor_samples_ms": [
+            14.5037,
+            13.896599999999999,
+            14.0625,
+            14.5962,
+            14.427
+          ]
+        },
+        {
+          "step": 3,
+          "candidate": "O2+prefetch+vec+unroll",
+          "prior": 0.13,
+          "history": 0.13844609014899451,
+          "feedback": 0.016347255701887754,
+          "ok": true,
+          "log_gain": 0.065643097269190862,
+          "failure": "",
+          "candidate_samples_ms": [
+            13.175800000000001,
+            13.085599999999999,
+            13.164099999999999,
+            13.1652,
+            13.222
+          ],
+          "anchor_samples_ms": [
+            14.0083,
+            14.000299999999999,
+            14.267300000000001,
+            14.1349,
+            14.058400000000001
+          ]
+        },
+        {
+          "step": 4,
+          "candidate": "O3+prefetch",
+          "prior": 0.13,
+          "history": 0.13613535194702936,
+          "feedback": 0.018875715144221202,
+          "ok": true,
+          "log_gain": 0.082050861461902727,
+          "failure": "",
+          "candidate_samples_ms": [
+            13.1309,
+            12.976800000000001,
+            12.8315,
+            12.9292,
+            12.9457
+          ],
+          "anchor_samples_ms": [
+            13.886799999999999,
+            13.9009,
+            14.2675,
+            14.0867,
+            14.0527
+          ]
+        },
+        {
+          "step": 5,
+          "candidate": "O2+vec+unroll",
+          "prior": 0.10000000000000001,
+          "history": 0.13100035648391223,
+          "feedback": 0.025346326201517295,
+          "ok": true,
+          "log_gain": 0.080161428220570097,
+          "failure": "",
+          "candidate_samples_ms": [
+            12.915100000000001,
+            13.0229,
+            13.0227,
+            12.9559,
+            13.1676
+          ],
+          "anchor_samples_ms": [
+            14.317399999999999,
+            14.6076,
+            14.002000000000001,
+            14.011699999999999,
+            14.1096
+          ]
+        },
+        {
+          "step": 6,
+          "candidate": "O2+prefetch+vec",
+          "prior": 0.080000000000000002,
+          "history": 0.13843994890152403,
+          "feedback": 0.02625341534100888,
+          "ok": true,
+          "log_gain": 0.088001052058837695,
+          "failure": "",
+          "candidate_samples_ms": [
+            12.946099999999999,
+            12.7766,
+            13.0756,
+            13.226699999999999,
+            13.0113
+          ],
+          "anchor_samples_ms": [
+            14.0663,
+            14.2536,
+            13.980399999999999,
+            14.346500000000001,
+            14.2082
+          ]
+        }
+      ],
+      "policy": "score = prior(features) + history + feedback, in log-gain units; see docs/adaptive.md"
+    },
+    "candidate_flags": {
+      "O2": [
+        "-O2"
+      ],
+      "O3": [
+        "-O3"
+      ],
+      "O3+prefetch+unroll": [
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops"
+      ],
+      "O3+unroll": [
+        "-O3",
+        "-funroll-loops"
+      ],
+      "O2+prefetch+vec+unroll": [
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops"
+      ],
+      "O3+prefetch": [
+        "-O3",
+        "-fprefetch-loop-arrays"
+      ],
+      "O2+vec+unroll": [
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops"
+      ],
+      "O2+prefetch+vec": [
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize"
+      ]
+    },
+    "holdout_policy": "holdout sizes are refused; no holdout measurement influenced this selection"
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "validation_run_discarded": true,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds, seeded Fisher-Yates shuffle of candidates per round",
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ],
+    "build_timeout_ms": 180000,
+    "run_timeout_ms": 120000,
+    "cpu_affinity_mask": "16",
+    "high_priority": true
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_6.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_7.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_0.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_1.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_2.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_3.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_4.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_5.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_6.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-real-matmul-adaptive-s3-B6/bin/matmul_7.exe",
+        "256",
+        "1"
+      ]
+    }
+  ],
+  "has_winner": true,
+  "winner": "O3+prefetch",
+  "tuning_wall_time_s": 18.858141
+}

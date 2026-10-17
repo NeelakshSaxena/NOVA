@@ -1,0 +1,30 @@
+evaluating benchmarks/results/V0.8-real-stencil-random-s2-B6 -> benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout
+build O2 ... ok
+build O3 ... ok
+build O3+native ... ok
+  validate O2 n=400000: PASS
+  validate O3 n=400000: PASS
+  validate O3+native n=400000: PASS
+  O2 n=400000 median 32.2426 ms (IQR 0.3602, 15 samples)
+  O3 n=400000 median 23.2346 ms (IQR 0.2547, 15 samples)
+  O3+native n=400000 median 18.8072 ms (IQR 0.4775, 15 samples)
+  validate O2 n=1600000: PASS
+  validate O3 n=1600000: PASS
+  validate O3+native n=1600000: PASS
+  O2 n=1600000 median 185.5958 ms (IQR 11.0530, 15 samples)
+  O3 n=1600000 median 162.8955 ms (IQR 14.0662, 15 samples)
+  O3+native n=1600000 median 168.4313 ms (IQR 7.2570, 15 samples)
+
+size 400000 (holdout)
+  O2                                  32.2426 ms  IQR   0.3602  (15 samples)
+  O3                                  23.2346 ms  IQR   0.2547  (15 samples)
+  O3+native                           18.8072 ms  IQR   0.4775  (15 samples)
+  selected vs best baseline (O3): median ratio 1.235; interquartile ranges are disjoint
+
+size 1600000 (holdout)
+  O2                                 185.5958 ms  IQR  11.0530  (15 samples)
+  O3                                 162.8955 ms  IQR  14.0662  (15 samples)
+  O3+native                          168.4313 ms  IQR   7.2570  (15 samples)
+  selected vs best baseline (O3): median ratio 0.967; interquartile ranges overlap -> inconclusive
+
+results written to benchmarks/results/V0.8-real-stencil-random-s2-B6-holdout

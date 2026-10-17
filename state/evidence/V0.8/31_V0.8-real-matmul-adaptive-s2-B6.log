@@ -1,0 +1,43 @@
+tuning matmul -> benchmarks/results/V0.8-real-matmul-adaptive-s2-B6
+build O2 ... ok
+build O3 ... ok
+build O3+prefetch+unroll ... ok
+build O3+unroll ... ok
+build O2+prefetch+vec+unroll ... ok
+build O3+prefetch ... ok
+build O2+vec+unroll ... ok
+build O2+prefetch+vec ... ok
+  validate O2 n=256: PASS
+  validate O3 n=256: PASS
+  validate O3+prefetch+unroll n=256: PASS
+  validate O3+unroll n=256: PASS
+  validate O2+prefetch+vec+unroll n=256: PASS
+  validate O3+prefetch n=256: PASS
+  validate O2+vec+unroll n=256: PASS
+  validate O2+prefetch+vec n=256: PASS
+  O2 n=256 median 14.1813 ms (IQR 0.2211, 15 samples)
+  O3 n=256 median 14.0458 ms (IQR 0.2647, 15 samples)
+  O3+prefetch+unroll n=256 median 13.0920 ms (IQR 0.2177, 15 samples)
+  O3+unroll n=256 median 13.0739 ms (IQR 0.1848, 15 samples)
+  O2+prefetch+vec+unroll n=256 median 13.0807 ms (IQR 0.1792, 15 samples)
+  O3+prefetch n=256 median 12.8800 ms (IQR 0.1714, 15 samples)
+  O2+vec+unroll n=256 median 13.0672 ms (IQR 0.2451, 15 samples)
+  O2+prefetch+vec n=256 median 12.9276 ms (IQR 0.1521, 15 samples)
+
+SmartPass tuning result: matmul, input size 256, experiment V0.8-real-matmul-adaptive-s2-B6
+strategy adaptive (search seed 2), budget 6 search candidates; evaluated 6 + baselines (8 builds total)
+tuning wall time 18.70 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     8  O2                              ELIGIBLE                14.1813   0.2211       82232  
+     7  O3                              ELIGIBLE                14.0458   0.2647       82318  
+     6  O3+prefetch+unroll              ELIGIBLE                13.0920   0.2177       89486  
+     4  O3+unroll                       ELIGIBLE                13.0739   0.1848       83854  
+     5  O2+prefetch+vec+unroll          ELIGIBLE                13.0807   0.1792       90424  
+     1  O3+prefetch                     ELIGIBLE                12.8800   0.1714       86926  WINNER
+     3  O2+vec+unroll                   ELIGIBLE                13.0672   0.2451       83768  
+     2  O2+prefetch+vec                 ELIGIBLE                12.9276   0.1521       86840  
+
+winner: O3+prefetch [-std=c++17 -msse2 -mfpmath=sse -O3 -fprefetch-loop-arrays], median 12.8800 ms over 15 samples
+best baseline: O3, median 14.0458 ms; ratio of medians 1.091; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)
+results written to benchmarks/results/V0.8-real-matmul-adaptive-s2-B6

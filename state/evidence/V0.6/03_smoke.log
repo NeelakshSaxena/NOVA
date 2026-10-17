@@ -1,0 +1,18 @@
+$ nova bench list
+matmul  - C = A*B, n x n doubles, i-j-k loops (n = matrix dimension)
+    tuning sizes: 256, 384
+    holdout sizes: 320, 448
+vector_add  - a[i] += b[i], 16 in-place passes (n = vector length)
+    tuning sizes: 1000000, 4000000
+    holdout sizes: 2000000, 6000000
+stencil  - 1-D Jacobi smoothing, 100 sweeps (n = number of cells)
+    tuning sizes: 200000, 800000
+    holdout sizes: 400000, 1600000
+exit 0
+$ nova bench report <missing>
+nova bench: cannot read benchmarks/results/nope/manifest.json
+exit 1
+$ nova bench run --bogus=1
+nova bench: unknown option '--bogus' for 'bench run'
+Try 'nova --help' for usage.
+exit 2

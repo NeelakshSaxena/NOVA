@@ -1,0 +1,1441 @@
+{
+  "experiment_id": "V0.8-table-matmul",
+  "created_utc": "2026-10-14T15:22:39Z",
+  "kind": "table",
+  "benchmark": "matmul",
+  "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1",
+  "kernel_dir": "benchmarks/kernels",
+  "sizes": [
+    {
+      "size": 256,
+      "role": "tuning"
+    },
+    {
+      "size": 384,
+      "role": "tuning"
+    },
+    {
+      "size": 320,
+      "role": "holdout"
+    },
+    {
+      "size": 448,
+      "role": "holdout"
+    }
+  ],
+  "candidate_flags": {
+    "O2": [
+      "-O2"
+    ],
+    "O3": [
+      "-O3"
+    ],
+    "O2+native": [
+      "-O2",
+      "-march=native"
+    ],
+    "O2+prefetch": [
+      "-O2",
+      "-fprefetch-loop-arrays"
+    ],
+    "O2+prefetch+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-march=native"
+    ],
+    "O2+vec": [
+      "-O2",
+      "-ftree-vectorize"
+    ],
+    "O2+vec+native": [
+      "-O2",
+      "-ftree-vectorize",
+      "-march=native"
+    ],
+    "O2+prefetch+vec": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize"
+    ],
+    "O2+prefetch+vec+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-march=native"
+    ],
+    "O2+unroll": [
+      "-O2",
+      "-funroll-loops"
+    ],
+    "O2+unroll+native": [
+      "-O2",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O2+prefetch+unroll": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops"
+    ],
+    "O2+prefetch+unroll+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O2+vec+unroll": [
+      "-O2",
+      "-ftree-vectorize",
+      "-funroll-loops"
+    ],
+    "O2+vec+unroll+native": [
+      "-O2",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O2+prefetch+vec+unroll": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops"
+    ],
+    "O2+prefetch+vec+unroll+native": [
+      "-O2",
+      "-fprefetch-loop-arrays",
+      "-ftree-vectorize",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O3+native": [
+      "-O3",
+      "-march=native"
+    ],
+    "O3+prefetch": [
+      "-O3",
+      "-fprefetch-loop-arrays"
+    ],
+    "O3+prefetch+native": [
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-march=native"
+    ],
+    "O3+unroll": [
+      "-O3",
+      "-funroll-loops"
+    ],
+    "O3+unroll+native": [
+      "-O3",
+      "-funroll-loops",
+      "-march=native"
+    ],
+    "O3+prefetch+unroll": [
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops"
+    ],
+    "O3+prefetch+unroll+native": [
+      "-O3",
+      "-fprefetch-loop-arrays",
+      "-funroll-loops",
+      "-march=native"
+    ]
+  },
+  "protocol": {
+    "repetitions": 15,
+    "warmup_runs": 2,
+    "input_seed": "1",
+    "order_seed": "20261014",
+    "order": "interleaved rounds over ALL configurations, seeded Fisher-Yates shuffle per round",
+    "cpu_affinity_mask": "16",
+    "high_priority": true,
+    "relative_tolerance": 1.0000000000000001e-009,
+    "fixed_flags": [
+      "-std=c++17",
+      "-msse2",
+      "-mfpmath=sse"
+    ]
+  },
+  "environment": {
+    "os": "Windows 11 Home 26H2 (build 26300)",
+    "cpu": "Intel(R) Core(TM) Ultra 7 155H",
+    "logical_cpus": 22,
+    "ram_bytes": 16556167168,
+    "compiler_command": "g++",
+    "compiler_version": "g++ (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "compiler_target": "mingw32",
+    "nova_version": "0.1.0"
+  },
+  "missing_environment_fields": [],
+  "commands": [
+    {
+      "phase": "build",
+      "candidate_id": "O2",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_0.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_1.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_2.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_3.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_4.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_5.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_6.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_7.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_8.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_9.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_10.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_11.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_12.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_13.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_14.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_15.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O2",
+        "-fprefetch-loop-arrays",
+        "-ftree-vectorize",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_16.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_17.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_18.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_19.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_20.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_21.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_22.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "build",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-msse2",
+        "-mfpmath=sse",
+        "-O3",
+        "-fprefetch-loop-arrays",
+        "-funroll-loops",
+        "-march=native",
+        "benchmarks/kernels/matmul.cpp",
+        "-o",
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_23.exe"
+      ],
+      "exit_ok": true
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_0.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_1.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_2.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_3.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_4.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_5.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_6.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_7.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_8.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_9.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_10.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_11.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_12.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_13.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_14.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_15.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_16.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_17.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_18.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_19.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_20.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_21.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_22.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_23.exe",
+        "256",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_0.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_1.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_2.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_3.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_4.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_5.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_6.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_7.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_8.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_9.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_10.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_11.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_12.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_13.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_14.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_15.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_16.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_17.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_18.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_19.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_20.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_21.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_22.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_23.exe",
+        "384",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_0.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_1.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_2.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_3.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_4.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_5.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_6.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_7.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_8.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_9.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_10.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_11.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_12.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_13.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_14.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_15.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_16.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_17.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_18.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_19.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_20.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_21.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_22.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_23.exe",
+        "320",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_0.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_1.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_2.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_3.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_4.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_5.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_6.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_7.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_8.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_9.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_10.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_11.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_12.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_13.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_14.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_15.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O2+prefetch+vec+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_16.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_17.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_18.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_19.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_20.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_21.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_22.exe",
+        "448",
+        "1"
+      ]
+    },
+    {
+      "phase": "validate",
+      "candidate_id": "O3+prefetch+unroll+native",
+      "argv": [
+        "benchmarks/results/V0.8-table-matmul/bin/matmul_23.exe",
+        "448",
+        "1"
+      ]
+    }
+  ],
+  "note": "exhaustive measurement of every configuration; nothing is selected here"
+}

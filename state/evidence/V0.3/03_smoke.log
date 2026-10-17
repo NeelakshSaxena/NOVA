@@ -1,0 +1,39 @@
+$ nova ast examples/basic.nova
+Program
+  Let x
+    Integer 10
+  Let y
+    Integer 20
+  Let z
+    Binary +
+      Binary *
+        Variable x
+        Integer 2
+      Variable y
+  Print
+    Variable z
+exit 0
+$ nova ast examples/invalid_syntax.nova
+examples/invalid_syntax.nova:2:14: error: expected expression, found ';'
+exit 1
+$ nova ast examples/invalid_char.nova
+examples/invalid_char.nova:2:11: error: unexpected character '@'
+exit 1
+$ nova ast (no file)
+nova: 'ast' requires exactly one file argument
+Try 'nova --help' for usage.
+exit 2
+$ nova --help
+Usage: nova <command> [arguments]
+       nova [option]
+
+Commands:
+  tokens <file>  Print the token stream of a NOVA Script file
+  ast <file>     Parse a NOVA Script file and print its syntax tree
+
+Options:
+  -h, --help     Show this help and exit
+      --version  Print the version and exit
+
+Exit codes: 0 success, 1 input error (unreadable file or source diagnostics), 2 usage error.
+exit 0

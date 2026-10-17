@@ -1,0 +1,43 @@
+tuning vector_add -> benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6
+build O2 ... ok
+build O3 ... ok
+build O2+prefetch+vec+unroll ... ok
+build O3+prefetch+unroll ... ok
+build O2+prefetch+vec ... ok
+build O3+prefetch ... ok
+build O2+vec+unroll ... ok
+build O3+unroll ... ok
+  validate O2 n=1000000: PASS
+  validate O3 n=1000000: PASS
+  validate O2+prefetch+vec+unroll n=1000000: PASS
+  validate O3+prefetch+unroll n=1000000: PASS
+  validate O2+prefetch+vec n=1000000: PASS
+  validate O3+prefetch n=1000000: PASS
+  validate O2+vec+unroll n=1000000: PASS
+  validate O3+unroll n=1000000: PASS
+  O2 n=1000000 median 16.7690 ms (IQR 0.8899, 15 samples)
+  O3 n=1000000 median 15.7395 ms (IQR 1.4080, 15 samples)
+  O2+prefetch+vec+unroll n=1000000 median 14.8513 ms (IQR 0.8591, 15 samples)
+  O3+prefetch+unroll n=1000000 median 14.7262 ms (IQR 0.7317, 15 samples)
+  O2+prefetch+vec n=1000000 median 14.6292 ms (IQR 0.8110, 15 samples)
+  O3+prefetch n=1000000 median 14.5824 ms (IQR 0.6305, 15 samples)
+  O2+vec+unroll n=1000000 median 14.6432 ms (IQR 0.9572, 15 samples)
+  O3+unroll n=1000000 median 14.7249 ms (IQR 0.5390, 15 samples)
+
+SmartPass tuning result: vector_add, input size 1000000, experiment V0.8-real-vector_add-adaptive-no-features-s2-B6
+strategy adaptive (search seed 2), budget 6 search candidates; evaluated 6 + baselines (8 builds total)
+tuning wall time 24.19 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     8  O2                              ELIGIBLE                16.7690   0.8899       81722  
+     7  O3                              ELIGIBLE                15.7395   1.4080       82320  
+     6  O2+prefetch+vec+unroll          ELIGIBLE                14.8513   0.8591       90426  
+     5  O3+prefetch+unroll              ELIGIBLE                14.7262   0.7317       89488  
+     2  O2+prefetch+vec                 ELIGIBLE                14.6292   0.8110       86842  
+     1  O3+prefetch                     ELIGIBLE                14.5824   0.6305       86928  WINNER
+     3  O2+vec+unroll                   ELIGIBLE                14.6432   0.9572       84282  
+     4  O3+unroll                       ELIGIBLE                14.7249   0.5390       84368  
+
+winner: O3+prefetch [-std=c++17 -msse2 -mfpmath=sse -O3 -fprefetch-loop-arrays], median 14.5824 ms over 15 samples
+best baseline: O3, median 15.7395 ms; ratio of medians 1.079; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)
+results written to benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s2-B6

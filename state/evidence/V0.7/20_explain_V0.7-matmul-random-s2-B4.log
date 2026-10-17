@@ -1,0 +1,14 @@
+SmartPass tuning result: matmul, input size 256, experiment V0.7-matmul-random-s2-B4
+strategy random (search seed 2), budget 4 search candidates; evaluated 4 + baselines (6 builds total)
+tuning wall time 12.66 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     4  O2                              ELIGIBLE                14.0499   0.2281       82232  
+     3  O3                              ELIGIBLE                13.9812   0.2510       82318  
+     2  O3+prefetch                     ELIGIBLE                12.9257   0.1758       86926  
+     1  O2+prefetch                     ELIGIBLE                12.8641   0.1897       86840  WINNER
+     5  O2+prefetch+unroll+native       ELIGIBLE                22.9323   0.2933       90936  
+     6  O3+native                       ELIGIBLE                24.1282   0.1037       82318  
+
+winner: O2+prefetch [-std=c++17 -msse2 -mfpmath=sse -O2 -fprefetch-loop-arrays], median 12.8641 ms over 15 samples
+best baseline: O3, median 13.9812 ms; ratio of medians 1.087; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)

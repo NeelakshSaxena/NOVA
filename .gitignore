@@ -1,0 +1,18 @@
+# Build products
+build/
+build-*/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+Testing/
+*.o
+*.obj
+*.exe
+*.a
+# Local experiment outputs
+out/
+*.tmp
+
+# Benchmark build products (results and raw data are kept)
+benchmarks/results/*/bin/
+test_tmp/

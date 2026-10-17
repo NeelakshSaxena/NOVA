@@ -1,0 +1,30 @@
+evaluating benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6 -> benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout
+build O2 ... ok
+build O3 ... ok
+build O2+prefetch+vec+unroll ... ok
+  validate O2 n=400000: PASS
+  validate O3 n=400000: PASS
+  validate O2+prefetch+vec+unroll n=400000: PASS
+  O2 n=400000 median 32.4616 ms (IQR 0.5600, 15 samples)
+  O3 n=400000 median 23.1550 ms (IQR 0.2319, 15 samples)
+  O2+prefetch+vec+unroll n=400000 median 18.2303 ms (IQR 0.4288, 15 samples)
+  validate O2 n=1600000: PASS
+  validate O3 n=1600000: PASS
+  validate O2+prefetch+vec+unroll n=1600000: PASS
+  O2 n=1600000 median 188.6911 ms (IQR 7.5170, 15 samples)
+  O3 n=1600000 median 169.1704 ms (IQR 2.8436, 15 samples)
+  O2+prefetch+vec+unroll n=1600000 median 170.4241 ms (IQR 3.9392, 15 samples)
+
+size 400000 (holdout)
+  O2                                  32.4616 ms  IQR   0.5600  (15 samples)
+  O3                                  23.1550 ms  IQR   0.2319  (15 samples)
+  O2+prefetch+vec+unroll              18.2303 ms  IQR   0.4288  (15 samples)
+  selected vs best baseline (O3): median ratio 1.270; interquartile ranges are disjoint
+
+size 1600000 (holdout)
+  O2                                 188.6911 ms  IQR   7.5170  (15 samples)
+  O3                                 169.1704 ms  IQR   2.8436  (15 samples)
+  O2+prefetch+vec+unroll             170.4241 ms  IQR   3.9392  (15 samples)
+  selected vs best baseline (O3): median ratio 0.993; interquartile ranges overlap -> inconclusive
+
+results written to benchmarks/results/V0.8-real-stencil-adaptive-no-features-s2-B6-holdout

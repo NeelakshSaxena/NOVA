@@ -1,0 +1,6 @@
+build semantic exit 0
+all semantic tests passed
+run semantic exit 0
+build tac exit 0
+all tac/interpreter tests passed
+run tac exit 0

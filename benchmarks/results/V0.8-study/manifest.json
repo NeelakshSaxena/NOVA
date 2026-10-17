@@ -1,0 +1,118 @@
+{
+  "kind": "study",
+  "created_utc": "2026-10-14T16:13:55Z",
+  "config": {
+    "methods": [
+      "fixed",
+      "random",
+      "adaptive",
+      "adaptive-no-features",
+      "adaptive-no-history",
+      "adaptive-no-feedback",
+      "baseline-O2",
+      "baseline-O3"
+    ],
+    "budgets": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12,
+      22
+    ],
+    "seeds": 30,
+    "pilot_reps": 5,
+    "history_across_workloads": true
+  },
+  "tables": [
+    {
+      "benchmark": "stencil",
+      "size": 200000,
+      "role": "tuning",
+      "source_experiment": "V0.8-table-stencil",
+      "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 400000,
+      "role": "holdout",
+      "source_experiment": "V0.8-table-stencil",
+      "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 800000,
+      "role": "tuning",
+      "source_experiment": "V0.8-table-stencil",
+      "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668"
+    },
+    {
+      "benchmark": "stencil",
+      "size": 1600000,
+      "role": "holdout",
+      "source_experiment": "V0.8-table-stencil",
+      "source_hash": "b52748e70977dfbb3b00494affc0dd1972e9bf2475966b767f61ebd415d3b668"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 1000000,
+      "role": "tuning",
+      "source_experiment": "V0.8-table-vector_add",
+      "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 2000000,
+      "role": "holdout",
+      "source_experiment": "V0.8-table-vector_add",
+      "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 4000000,
+      "role": "tuning",
+      "source_experiment": "V0.8-table-vector_add",
+      "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173"
+    },
+    {
+      "benchmark": "vector_add",
+      "size": 6000000,
+      "role": "holdout",
+      "source_experiment": "V0.8-table-vector_add",
+      "source_hash": "99645b13055e892466edc924da7a025593ab9f8862220abb3dda98d2e8e0d173"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 256,
+      "role": "tuning",
+      "source_experiment": "V0.8-table-matmul",
+      "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 320,
+      "role": "holdout",
+      "source_experiment": "V0.8-table-matmul",
+      "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 384,
+      "role": "tuning",
+      "source_experiment": "V0.8-table-matmul",
+      "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1"
+    },
+    {
+      "benchmark": "matmul",
+      "size": 448,
+      "role": "holdout",
+      "source_experiment": "V0.8-table-matmul",
+      "source_hash": "80344e67fc4dd313cb88e9942f1a31913ffe63ad0e28808dc49253a7c121a5e1"
+    }
+  ],
+  "rows": 7260,
+  "method": "replay of search strategies against saved exhaustive tables; pilot gains re-sample saved raw samples; holdout tables are only used to score the final choice",
+  "leakage_rules": "history = tuning tables of OTHER workloads only; holdout tables never enter history, policy or selection"
+}

@@ -1,0 +1,14 @@
+SmartPass tuning result: vector_add, input size 1000000, experiment V0.7-vector_add-random-s2-B4
+strategy random (search seed 2), budget 4 search candidates; evaluated 4 + baselines (6 builds total)
+tuning wall time 15.21 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     6  O2                              ELIGIBLE                16.8361   1.4567       81722  
+     3  O3                              ELIGIBLE                15.8592   1.4112       82320  
+     1  O3+prefetch                     ELIGIBLE                14.6814   0.9248       86928  WINNER
+     5  O2+prefetch                     ELIGIBLE                16.7754   4.1884       86330  
+     4  O2+prefetch+unroll+native       ELIGIBLE                16.6584   2.6568       89402  
+     2  O3+native                       ELIGIBLE                15.1159   1.0285       82320  
+
+winner: O3+prefetch [-std=c++17 -msse2 -mfpmath=sse -O3 -fprefetch-loop-arrays], median 14.6814 ms over 15 samples
+best baseline: O3, median 15.8592 ms; ratio of medians 1.080; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)

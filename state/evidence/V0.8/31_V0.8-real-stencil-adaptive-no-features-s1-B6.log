@@ -1,0 +1,43 @@
+tuning stencil -> benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6
+build O2 ... ok
+build O3 ... ok
+build O2+prefetch+vec+unroll ... ok
+build O2+prefetch+vec ... ok
+build O3+prefetch+unroll ... ok
+build O3+prefetch ... ok
+build O2+vec+unroll ... ok
+build O3+unroll ... ok
+  validate O2 n=200000: PASS
+  validate O3 n=200000: PASS
+  validate O2+prefetch+vec+unroll n=200000: PASS
+  validate O2+prefetch+vec n=200000: PASS
+  validate O3+prefetch+unroll n=200000: PASS
+  validate O3+prefetch n=200000: PASS
+  validate O2+vec+unroll n=200000: PASS
+  validate O3+unroll n=200000: PASS
+  O2 n=200000 median 16.2034 ms (IQR 0.1851, 15 samples)
+  O3 n=200000 median 11.6519 ms (IQR 0.2359, 15 samples)
+  O2+prefetch+vec+unroll n=200000 median 9.3186 ms (IQR 0.1939, 15 samples)
+  O2+prefetch+vec n=200000 median 9.8837 ms (IQR 0.4097, 15 samples)
+  O3+prefetch+unroll n=200000 median 9.3978 ms (IQR 0.2712, 15 samples)
+  O3+prefetch n=200000 median 9.8357 ms (IQR 0.1540, 15 samples)
+  O2+vec+unroll n=200000 median 9.8257 ms (IQR 0.2738, 15 samples)
+  O3+unroll n=200000 median 9.7649 ms (IQR 0.3464, 15 samples)
+
+SmartPass tuning result: stencil, input size 200000, experiment V0.8-real-stencil-adaptive-no-features-s1-B6
+strategy adaptive (search seed 1), budget 6 search candidates; evaluated 6 + baselines (8 builds total)
+tuning wall time 18.94 s
+
+  rank  candidate                       state                 median_ms   IQR_ms  size_bytes  note
+     8  O2                              ELIGIBLE                16.2034   0.1851       81660  
+     7  O3                              ELIGIBLE                11.6519   0.2359       81746  
+     1  O2+prefetch+vec+unroll          ELIGIBLE                 9.3186   0.1939       87804  WINNER
+     6  O2+prefetch+vec                 ELIGIBLE                 9.8837   0.4097       85244  
+     2  O3+prefetch+unroll              ELIGIBLE                 9.3978   0.2712       87378  
+     5  O3+prefetch                     ELIGIBLE                 9.8357   0.1540       85330  
+     4  O2+vec+unroll                   ELIGIBLE                 9.8257   0.2738       84220  
+     3  O3+unroll                       ELIGIBLE                 9.7649   0.3464       83794  
+
+winner: O2+prefetch+vec+unroll [-std=c++17 -msse2 -mfpmath=sse -O2 -fprefetch-loop-arrays -ftree-vectorize -funroll-loops], median 9.3186 ms over 15 samples
+best baseline: O3, median 11.6519 ms; ratio of medians 1.250; interquartile ranges are disjoint (selection on this tuning size only; not evidence for other sizes)
+results written to benchmarks/results/V0.8-real-stencil-adaptive-no-features-s1-B6

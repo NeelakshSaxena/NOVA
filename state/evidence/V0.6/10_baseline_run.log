@@ -1,0 +1,69 @@
+experiment V0.6-baseline -> benchmarks/results/V0.6-baseline
+build matmul-O2 ... ok (0.5049 s)
+build matmul-O3 ... ok (0.5883 s)
+  validate matmul-O2 n=256: PASS
+  validate matmul-O3 n=256: PASS
+  matmul-O2 n=256 median 12.4505 ms (IQR 0.3276, 15 samples)
+  matmul-O3 n=256 median 12.2028 ms (IQR 0.4946, 15 samples)
+  validate matmul-O2 n=384: PASS
+  validate matmul-O3 n=384: PASS
+  matmul-O2 n=384 median 44.2999 ms (IQR 2.6101, 15 samples)
+  matmul-O3 n=384 median 45.8561 ms (IQR 3.7333, 15 samples)
+build vector_add-O2 ... ok (0.4947 s)
+build vector_add-O3 ... ok (0.5223 s)
+  validate vector_add-O2 n=1000000: PASS
+  validate vector_add-O3 n=1000000: PASS
+  vector_add-O2 n=1000000 median 8.5736 ms (IQR 1.2277, 15 samples)
+  vector_add-O3 n=1000000 median 6.8924 ms (IQR 0.8906, 15 samples)
+  validate vector_add-O2 n=4000000: PASS
+  validate vector_add-O3 n=4000000: PASS
+  vector_add-O2 n=4000000 median 53.7870 ms (IQR 4.0450, 15 samples)
+  vector_add-O3 n=4000000 median 50.9734 ms (IQR 4.7956, 15 samples)
+build stencil-O2 ... ok (0.5782 s)
+build stencil-O3 ... ok (0.4985 s)
+  validate stencil-O2 n=200000: PASS
+  validate stencil-O3 n=200000: PASS
+  stencil-O2 n=200000 median 9.8681 ms (IQR 2.8194, 15 samples)
+  stencil-O3 n=200000 median 7.0768 ms (IQR 1.0943, 15 samples)
+  validate stencil-O2 n=800000: PASS
+  validate stencil-O3 n=800000: PASS
+  stencil-O2 n=800000 median 38.8742 ms (IQR 3.8744, 15 samples)
+  stencil-O3 n=800000 median 29.6425 ms (IQR 4.7452, 15 samples)
+
+matmul  n=256
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      12.4505     0.3276      2.6%   12.0494       15  82232
+  O3                  PASS      12.2028     0.4946      4.1%   12.0554       15  82318
+  median(O2)/median(O3) = 1.020 over 15 samples each; interquartile ranges overlap -> inconclusive
+
+matmul  n=384
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      44.2999     2.6101      5.9%   41.0536       15  82232
+  O3                  PASS      45.8561     3.7333      8.1%   41.4531       15  82318
+  median(O2)/median(O3) = 0.966 over 15 samples each; interquartile ranges overlap -> inconclusive
+
+stencil  n=200000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS       9.8681     2.8194     28.6%    8.4063       15  81660
+  O3                  PASS       7.0768     1.0943     15.5%    6.0826       15  81746
+  median(O2)/median(O3) = 1.394 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+
+stencil  n=800000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      38.8742     3.8744     10.0%   35.4780       15  81660
+  O3                  PASS      29.6425     4.7452     16.0%   25.2951       15  81746
+  median(O2)/median(O3) = 1.311 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+
+vector_add  n=1000000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS       8.5736     1.2277     14.3%    6.9141       15  81722
+  O3                  PASS       6.8924     0.8906     12.9%    5.7494       15  82320
+  median(O2)/median(O3) = 1.244 over 15 samples each; interquartile ranges are disjoint -> O3 faster in this measurement
+
+vector_add  n=4000000
+  candidate           status   median_ms     IQR_ms   IQR/med   min_ms   samples  bytes
+  O2                  PASS      53.7870     4.0450      7.5%   49.9854       15  81722
+  O3                  PASS      50.9734     4.7956      9.4%   46.7287       15  82320
+  median(O2)/median(O3) = 1.055 over 15 samples each; interquartile ranges overlap -> inconclusive
+
+results written to benchmarks/results/V0.6-baseline (manifest.json, results.json, results.csv, raw_timings.csv)

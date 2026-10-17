@@ -1,0 +1,86 @@
+$ nova opt examples/optimize_demo.nova --show-all
+== original ==
+a = 4
+$t1 = a * 2
+b = $t1 + 0
+unused = b - b
+z = 1 - 1
+$t2 = b * 1
+print $t2
+$t3 = 3 + 4
+$t4 = a * $t3
+print $t4
+== after fold (iteration 1) ==
+a = 4
+$t1 = a * 2
+b = $t1 + 0
+unused = b - b
+z = 0
+$t2 = b * 1
+print $t2
+$t3 = 7
+$t4 = a * $t3
+print $t4
+== after propagate (iteration 1) ==
+a = 4
+$t1 = 4 * 2
+b = $t1 + 0
+unused = b - b
+z = 0
+$t2 = b * 1
+print $t2
+$t3 = 7
+$t4 = 4 * 7
+print $t4
+== after simplify (iteration 1) ==
+a = 4
+$t1 = 4 * 2
+b = $t1
+unused = 0
+z = 0
+$t2 = b
+print $t2
+$t3 = 7
+$t4 = 4 * 7
+print $t4
+== after dce (iteration 1) ==
+$t1 = 4 * 2
+b = $t1
+$t2 = b
+print $t2
+$t4 = 4 * 7
+print $t4
+== after fold (iteration 2) ==
+$t1 = 8
+b = $t1
+$t2 = b
+print $t2
+$t4 = 28
+print $t4
+== after propagate (iteration 2) ==
+$t1 = 8
+b = 8
+$t2 = 8
+print 8
+$t4 = 28
+print 28
+== after dce (iteration 2) ==
+print 8
+print 28
+== final (fixed point after 3 iterations) ==
+print 8
+print 28
+exit 0
+$ nova opt examples/divzero.nova
+print 10
+$t1 = 10 / 0
+print $t1
+exit 0
+$ nova run examples/divzero.nova
+10
+examples/divzero.nova:4:9: error: runtime error: division by zero
+exit 1
+$ nova opt --passes=bogus
+nova: unknown pass 'bogus' (available: fold, propagate, simplify, dce)
+Try 'nova --help' for usage.
+exit 2

@@ -1,0 +1,79 @@
+[
+ {
+  "name": "V0.7 budget off by one (B+1 candidates)",
+  "file": "src/tune/space.cpp",
+  "old": "if (static_cast<size_t>(budget) < pool.size()) pool.resize(static_cast<size_t>(budget));",
+  "new": "if (static_cast<size_t>(budget) + 1 < pool.size()) pool.resize(static_cast<size_t>(budget) + 1);",
+  "test": "test_tune_unit"
+ },
+ {
+  "name": "V0.7 budget off by one is also caught end to end",
+  "file": "src/tune/space.cpp",
+  "old": "if (static_cast<size_t>(budget) < pool.size()) pool.resize(static_cast<size_t>(budget));",
+  "new": "if (static_cast<size_t>(budget) + 1 < pool.size()) pool.resize(static_cast<size_t>(budget) + 1);",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 failed candidates are not excluded from ranking (incorrect candidate can win)",
+  "file": "src/tune/tuner.cpp",
+  "old": "if (r.lifecycle != \"BENCHMARKED\") continue;",
+  "new": "if (r.lifecycle == \"BUILD_FAILED\") continue;",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 flag whitelist is not enforced",
+  "file": "src/tune/space.cpp",
+  "old": "        if (!whitelist.allows(f)) {",
+  "new": "        if (false) {",
+  "test": "test_tune_unit"
+ },
+ {
+  "name": "V0.7 binary-size policy ignored",
+  "file": "src/tune/tuner.cpp",
+  "old": "} else if (cfg.max_binary_growth > 0 && reference_size > 0 &&",
+  "new": "} else if (false && cfg.max_binary_growth > 0 && reference_size > 0 &&",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 baselines dropped from the run",
+  "file": "src/tune/tuner.cpp",
+  "old": "std::vector<Candidate> all = space.baselines;",
+  "new": "std::vector<Candidate> all;",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 random strategy ignores its seed",
+  "file": "src/tune/space.cpp",
+  "old": "nova::bench::Rng rng(seed);",
+  "new": "nova::bench::Rng rng(0);",
+  "test": "test_tune_unit"
+ },
+ {
+  "name": "V0.7 holdout sizes accepted for tuning",
+  "file": "src/tune/tuner.cpp",
+  "old": "if (std::find(def->holdout_sizes.begin(), def->holdout_sizes.end(), size) != def->holdout_sizes.end()) {",
+  "new": "if (false) {",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 no eligible candidate still exits 0",
+  "file": "src/tune/cli.cpp",
+  "old": "    if (!result.has_winner) {\n        err << \"nova tune: no eligible candidate\\n\";\n        return 1;\n    }",
+  "new": "    if (false) {\n        return 1;\n    }",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 evaluation counter never increments",
+  "file": "src/tune/tuner.cpp",
+  "old": "if (!c.baseline) ++result.evaluations;",
+  "new": "",
+  "test": "test_tune_integration"
+ },
+ {
+  "name": "V0.7 failure reasons are discarded",
+  "file": "src/bench/harness.cpp",
+  "old": "s.record.failure_reason = reason;",
+  "new": ";",
+  "test": "test_tune_integration"
+ }
+]

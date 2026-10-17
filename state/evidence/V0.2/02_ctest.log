@@ -1,0 +1,22 @@
+Test project G:/Projects/NOVA/build
+    Start 1: cli_unit
+1/8 Test #1: cli_unit .........................   Passed    0.07 sec
+    Start 2: lexer_unit
+2/8 Test #2: lexer_unit .......................   Passed    0.17 sec
+    Start 3: cli_help
+3/8 Test #3: cli_help .........................   Passed    0.04 sec
+    Start 4: cli_version
+4/8 Test #4: cli_version ......................   Passed    0.08 sec
+    Start 5: cli_unknown_option
+5/8 Test #5: cli_unknown_option ...............   Passed    0.01 sec
+    Start 6: cli_tokens_basic
+6/8 Test #6: cli_tokens_basic .................   Passed    0.01 sec
+    Start 7: cli_tokens_invalid_exit
+7/8 Test #7: cli_tokens_invalid_exit ..........   Passed    0.02 sec
+    Start 8: cli_tokens_invalid_location
+8/8 Test #8: cli_tokens_invalid_location ......   Passed    0.01 sec
+
+100% tests passed out of 8
+
+Total Test time (real) =   0.44 sec
+ctest exit 0

@@ -1,0 +1,30 @@
+evaluating benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6 -> benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout
+build O2 ... ok
+build O3 ... ok
+build O3+prefetch+unroll ... ok
+  validate O2 n=2000000: PASS
+  validate O3 n=2000000: PASS
+  validate O3+prefetch+unroll n=2000000: PASS
+  O2 n=2000000 median 37.0148 ms (IQR 3.6398, 15 samples)
+  O3 n=2000000 median 34.1308 ms (IQR 2.7686, 15 samples)
+  O3+prefetch+unroll n=2000000 median 32.3121 ms (IQR 2.3900, 15 samples)
+  validate O2 n=6000000: PASS
+  validate O3 n=6000000: PASS
+  validate O3+prefetch+unroll n=6000000: PASS
+  O2 n=6000000 median 110.4510 ms (IQR 3.6240, 15 samples)
+  O3 n=6000000 median 105.0679 ms (IQR 1.8151, 15 samples)
+  O3+prefetch+unroll n=6000000 median 101.9884 ms (IQR 2.3861, 15 samples)
+
+size 2000000 (holdout)
+  O2                                  37.0148 ms  IQR   3.6398  (15 samples)
+  O3                                  34.1308 ms  IQR   2.7686  (15 samples)
+  O3+prefetch+unroll                  32.3121 ms  IQR   2.3900  (15 samples)
+  selected vs best baseline (O3): median ratio 1.056; interquartile ranges overlap -> inconclusive
+
+size 6000000 (holdout)
+  O2                                 110.4510 ms  IQR   3.6240  (15 samples)
+  O3                                 105.0679 ms  IQR   1.8151  (15 samples)
+  O3+prefetch+unroll                 101.9884 ms  IQR   2.3861  (15 samples)
+  selected vs best baseline (O3): median ratio 1.030; interquartile ranges are disjoint
+
+results written to benchmarks/results/V0.8-real-vector_add-adaptive-no-features-s3-B6-holdout
